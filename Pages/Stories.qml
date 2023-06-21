@@ -24,6 +24,7 @@ Item
             Layout.fillWidth: true
             height: parent.height
             cellWidth: parent.width / 2
+            cellHeight: parent.width / 2
             model: storiesList
             delegate: Image {
                 width: parent.width / 2
