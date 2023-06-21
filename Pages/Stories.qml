@@ -12,7 +12,7 @@ Item
 
     function parseData( data ) {
         let response = JSON.parse( data )
-        storiesList = resource[ "data" ]
+        storiesList = response[ "data" ]
     }
 
     ColumnLayout {
