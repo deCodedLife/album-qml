@@ -24,7 +24,7 @@ Item
             model: storiesList
             delegate: Image {
                 anchors.fill: parent
-                source: [SERVER, "/", (modelData[ "file" ][0]["file"])].join("/")
+                source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                 Component.onCompleted: console.log( source )
             }
         }
