@@ -7,6 +7,7 @@ import Network
 Item
 {
     anchors.fill: parent
+    clip: true
 
     property var storiesList: []
 
@@ -18,13 +19,15 @@ Item
     ColumnLayout {
         anchors.fill: parent
 
-        ListView {
+        GridView {
+            clip: true
             Layout.fillWidth: true
             height: 200
+            cellWidth: parent.width / 2
             model: storiesList
             delegate: Image {
-                width: parent.width
-                height: parent.width
+                width: parent.width / 2
+                height: parent.width / 2
                 source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                 Component.onCompleted: console.log( source )
             }
