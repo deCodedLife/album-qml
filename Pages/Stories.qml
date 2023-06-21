@@ -23,7 +23,8 @@ Item
             height: 200
             model: storiesList
             delegate: Image {
-                anchors.fill: parent
+                width: 100
+                height: 100
                 source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                 Component.onCompleted: console.log( source )
             }
