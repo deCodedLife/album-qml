@@ -8,17 +8,23 @@ Item
 {
     anchors.fill: parent
 
+    property var storiesList: []
+
     function parseData( data ) {
         let response = JSON.parse( data )
-        let storiesIDs = []
-        for ( let i = 0; i < response[ "data" ].length; i++ ) {
-            storiesIDs.push( response[ "data" ][ i ][ "id" ] )
-        }
-        console.log(storiesIDs)
+        storiesList = resource[ "data" ]
     }
 
     ColumnLayout {
         anchors.fill: parent
+
+        ListView {
+            model: storiesList
+            delegate: Image {
+                source: SERVER + ( modelData[ "file" ][0]["file"] ?? "" )
+            }
+        }
+
     }
 
     Component.onCompleted: {
