@@ -14,7 +14,7 @@ Item
         for ( let i = 0; i < data[ "data" ].length; i++ ) {
             storiesIDs.push( response[ "data" ][ i ][ "id" ] )
         }
-
+        console.log(storiesIDs)
     }
 
     ColumnLayout {
@@ -34,8 +34,8 @@ Item
         function getRequest( cb, url ) {
             net.loaded.connect((data) => cb(data))
             net.loaded.connect(function release () {
-                net.loaded.triggered.disconnect(cb)
-                net.loaded.triggered.disconnect(release)
+                net.loaded.disconnect(cb)
+                net.loaded.disconnect(release)
             })
             net.get( url )
         }
