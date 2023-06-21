@@ -32,8 +32,8 @@ Item
 
         onLoaded: ( data ) => parseData( data )
         function getRequest( cb, url ) {
-            net.loaded.triggered.connect((data) => cb(data))
-            net.loaded.triggered.connect(function release () {
+            net.loaded.connect((data) => cb(data))
+            net.loaded.connect(function release () {
                 net.loaded.triggered.disconnect(cb)
                 net.loaded.triggered.disconnect(release)
             })
