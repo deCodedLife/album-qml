@@ -11,7 +11,7 @@ Item
     function parseData( data ) {
         let response = JSON.parse( data )
         let storiesIDs = []
-        for ( let i = 0; i < data[ "data" ].length; i++ ) {
+        for ( let i = 0; i < response[ "data" ].length; i++ ) {
             storiesIDs.push( response[ "data" ][ i ][ "id" ] )
         }
         console.log(storiesIDs)
