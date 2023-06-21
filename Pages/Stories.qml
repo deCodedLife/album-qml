@@ -22,7 +22,7 @@ Item
         GridView {
             clip: true
             Layout.fillWidth: true
-            height: 200
+            height: parent.height
             cellWidth: parent.width / 2
             model: storiesList
             delegate: Image {
