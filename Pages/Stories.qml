@@ -34,7 +34,7 @@ Item
     Component.onCompleted: {
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
-        net.getRequest( parseData, [ SERVER, "api", "stories" ].join("/") )
+        net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
     Network {
