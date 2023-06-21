@@ -13,7 +13,6 @@ Item
     function parseData( data ) {
         let response = JSON.parse( data )
         storiesList = response[ "data" ]
-        console.log( storiesList )
     }
 
     ColumnLayout {
@@ -26,6 +25,7 @@ Item
             delegate: Image {
                 anchors.fill: parent
                 source: SERVER + ( modelData[ "file" ][0]["file"] ?? "" )
+                Component.onCompleted: console.log( JSON.stringify( modelData ) )
             }
         }
 
