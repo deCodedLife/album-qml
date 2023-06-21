@@ -13,14 +13,18 @@ Item
     function parseData( data ) {
         let response = JSON.parse( data )
         storiesList = response[ "data" ]
+        console.log( storiesList )
     }
 
     ColumnLayout {
         anchors.fill: parent
 
         ListView {
+            Layout.fillWidth: true
+            height: 200
             model: storiesList
             delegate: Image {
+                anchors.fill: parent
                 source: SERVER + ( modelData[ "file" ][0]["file"] ?? "" )
             }
         }
