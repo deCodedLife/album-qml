@@ -63,7 +63,6 @@ Item
                     }
 
                     onClicked: {
-                        event.accepted = false
                         mousePos = Qt.point( mouseX, mouseY )
                     }
                 }
