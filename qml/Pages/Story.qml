@@ -10,7 +10,7 @@ Item {
 
     id: page
     width: parent.width
-    height: implicitHeight
+    height: body.implicitHeight
 
     ColumnLayout {
         id: body
@@ -18,8 +18,6 @@ Item {
         anchors.leftMargin: Settings.defaultmargin
         anchors.rightMargin: Settings.defaultmargin
         spacing: Settings.defaultmargin
-
-        onImplicitHeightChanged: parent.height = implicitHeight
 
         Text {
             text: "Фотографии"
