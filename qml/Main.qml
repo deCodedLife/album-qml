@@ -40,6 +40,7 @@ ApplicationWindow
 
         Item {
             clip: true
+            id: body
 
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -60,7 +61,8 @@ ApplicationWindow
 
                 Loader {
                     id: loader
-                    anchors.fill: parent
+                    width: body.width
+                    height: body.height
                     source: Settings.currentPage
                 }
             }
