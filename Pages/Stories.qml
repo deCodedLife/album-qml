@@ -83,7 +83,7 @@ Item
 
     }
 
-    Component.completed: {
+    Component.onCompleted: {
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
         Settings.showHeader()
