@@ -43,7 +43,7 @@ Rectangle {
 
                 Text {
                     id: title
-                    Layout.alignment: Settings.headerSubtitle == "" ? Qt.AlignVCenter : Qt.AlignTop
+//                    Layout.alignment: Settings.headerSubtitle == "" ? Qt.AlignVCenter : Qt.AlignTop
                     Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
                     text: Settings.headerTitle
                     color: Material.primaryTextColor
