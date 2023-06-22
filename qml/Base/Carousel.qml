@@ -18,6 +18,28 @@ Item {
 
         model: images
         delegate: Image {
+            states: [
+                State {
+                    name: "normal"
+                    PropertyChanges {
+                        target: image
+                        width: carousel.width - 50
+                        height: itemHeight
+                    }
+                },
+                State {
+                    name: "resized"
+                    PropertyChanges{
+                        target: image
+                        width: Settings.root.width
+                        height:Settings.root.height
+                        x: 0
+                        y: 0
+                    }
+                }
+
+            ]
+
             width: carousel.width - 50
             height: itemHeight
             fillMode: Image.PreserveAspectCrop
@@ -42,7 +64,11 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log( "Test" )
+                    console.log( image.mapToItem( Settings.root, Qt.point(0, 0) ) )
+                    image.parent = Settings.root
+                    image.x = Settings.appMosue.mouseX - image.width / 2
+                    image.y = Settings.appMosue.mouseY - mou
+                    image.z = 100
                 }
             }
         }
