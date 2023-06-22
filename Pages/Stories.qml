@@ -56,6 +56,10 @@ Item
                     property var mousePos: Qt.point(0, 0)
                     propagateComposedEvents: false
 
+                    onDragChanged: mouse.accepted = false
+                    onMouseXChanged: mouse.accepted = false
+                    onMouseYChanged: mouse.accepted = false
+                    onPressAndHold: mouse.accepted = false
                     onPressed: mouse.accepted = false
                     onReleased: {
                         if (!propagateComposedEvents) {
@@ -68,6 +72,7 @@ Item
                     }
 
                     onClicked: {
+                        mouse.accepted = false
                         mousePos = Qt.point( mouseX, mouseY )
                     }
                 }
