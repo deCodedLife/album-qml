@@ -49,9 +49,9 @@ ApplicationWindow
             Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
             Layout.bottomMargin: Settings.is_mobile ? 0 : Settings.defaultmargin
 
-            ScrollView {
-//                contentWidth: root.width
-//                contentHeight: loader.children.implicitHeight
+            Flickable {
+                contentWidth: body.width
+                contentHeight: loader.children.implicitHeight
 
                 width: body.width
                 height: body.height
