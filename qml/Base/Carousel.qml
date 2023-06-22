@@ -5,9 +5,10 @@ import ".."
 
 Item {
     property var images:[]
+    property int itemHeight: 0
     anchors.margins: Settings.defaultmargin
     clip: true
-    height: 500
+    height: itemHeight
 
     ListView {
         anchors.fill: parent
@@ -18,7 +19,7 @@ Item {
         model: images
         delegate: Image {
             width: parent.width - 50
-            height: 450
+            height: itemHeight
             fillMode: Image.PreserveAspectCrop
 
             id: image
