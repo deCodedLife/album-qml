@@ -54,8 +54,10 @@ Item
                     }
 
                     transitions: Transition {
-                        NumberAnimation { properties: "width, height"; easing.type: Easing.InOutQuart; duration: 200 }
+
                     }
+
+                    NumberAnimation { id: imageShow; properties: "width,height"; easing.type: Easing.InOutQuart; duration: 200 }
                 }
 
                 Rectangle {
@@ -69,6 +71,7 @@ Item
                     MouseArea {
                         id: imageMouseHandle
                         anchors.fill: parent
+                        onClicked: imageShow.start()
                     }
                 }
 
