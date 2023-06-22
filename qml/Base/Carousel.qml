@@ -1,13 +1,17 @@
 import QtQuick
 import Qt5Compat.GraphicalEffects
 
+import ".."
+
 Item {
     property var images:[]
-
+    anchors.fill: parent
+    anchors.margins: Settings.defaultmargin
     clip: true
 
     ListView {
         anchors.fill: parent
+        flickableDirection: Qt.Horizontal
         layoutDirection: Qt.Horizontal
 
         model: images
