@@ -10,16 +10,15 @@ Item {
 
     id: page
     width: parent.width
-    height: body.implicitHeight
 
     ColumnLayout {
         id: body
-        width: parent.width
-        height: implicitHeight
-
+        anchors.fill: parent
         anchors.leftMargin: Settings.defaultmargin
         anchors.rightMargin: Settings.defaultmargin
         spacing: Settings.defaultmargin
+
+        onImplicitHeightChanged: parent.height = implicitHeight
 
         Text {
             text: "Фотографии"
@@ -54,7 +53,6 @@ Item {
     {
         Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
         Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
-        Settings.hideHeader()
         Settings.showHeader()
     }
 }
