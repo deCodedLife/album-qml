@@ -53,7 +53,7 @@ QtObject
         return false
     }
 
-    property Rectangle popupRecrangle: Rectangle {
+    property Rectangle popupRecrangle: `Rectangle {
         width: 0
         height: width
         color: Material.backgroundDimColor
@@ -64,14 +64,16 @@ QtObject
             properties: "width,height"
             easing.type: Easing.InOutQuart
             duration: 200
-            to: root.height * 2
+            to: ${root.height} * 2
             running: true
         }
-    }
+    }`
 
     function openEffect ( itemComponent, item, cb ) {
         popupRecrangle.x = appMosue.mouseX
         popupRecrangle.y = appMosue.mouseY
+        console.log( popupRecrangle )
+//        const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
         const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
         newObject.destroy(500)
     }
