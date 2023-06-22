@@ -38,7 +38,7 @@ Item {
                     }
                     ParentChange {
                         target: image
-                        parent: Settings.root
+                        parent: Settings.imageLayout
                     }
                 }
 
