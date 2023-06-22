@@ -52,8 +52,7 @@ QtObject
         return false
     }
 
-    NumberAnimation {
-        id: transition
+    property NumberAnimation transition: NumberAnimation {
         properties: "width, height, x, y"
         easing.type: Easing.InOutQuart
         duration: 200
