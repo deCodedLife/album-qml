@@ -57,7 +57,7 @@ Item
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.bottom: parent.bottom
-                    anchors.margins: Settings.minimalMargin
+                    anchors.margins: Settings.defaultmargin
                     color: "white"
                     font.pointSize: Settings.h6
                     font.bold: true
