@@ -36,6 +36,11 @@ Item {
                         x: 0
                         y: 0
                     }
+                    ParentChange {
+                        target: image
+                        parent: Settings.root
+                        z: 100
+                    }
                 }
 
             ]
@@ -61,14 +66,15 @@ Item {
                 }
             }
 
+
+
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
                     let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
-                    image.parent = Settings.root
                     image.x = coords.x
                     image.y = coords.y
-                    image.z = 100
+                    image.state = "resized"
                 }
             }
         }
