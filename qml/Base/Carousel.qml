@@ -13,7 +13,6 @@ Item {
     ListView {
         anchors.fill: parent
         orientation: ListView.Horizontal
-        layoutDirection: Qt.Horizontal
         spacing: Settings.defaultmargin
         currentIndex: 0
 
