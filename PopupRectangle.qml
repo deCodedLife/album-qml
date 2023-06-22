@@ -7,7 +7,7 @@ Rectangle {
     id: rect
     width: 0
     height: 0
-    color: Material.backgroundDimColor
+    color: "white"
     radius: width / 2
     z: 100
 
@@ -19,7 +19,7 @@ Rectangle {
         id: animate
         properties: "width,height"
         easing.type: Easing.InOutQuart
-        duration: 200
+        duration: 500
         to: Settings.root.height * 2
         onFinished: rect.destroy()
     }
