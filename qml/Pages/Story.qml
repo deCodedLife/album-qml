@@ -48,7 +48,7 @@ Item {
 
     Component.onCompleted:
     {
-        Settings.headerTitle = ""
+        Settings.headerTitle = storyData[ "timestamp" ]
         Settings.showHeader()
     }
 }

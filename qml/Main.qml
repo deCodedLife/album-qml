@@ -51,7 +51,7 @@ ApplicationWindow
 
             Flickable {
                 contentWidth: body.width
-                contentHeight: loader.childrenRect.height
+                contentHeight: loader.children.)
 
                 width: body.width
                 height: body.height
