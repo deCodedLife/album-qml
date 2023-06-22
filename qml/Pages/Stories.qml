@@ -10,9 +10,6 @@ Item
     id: page
 
     anchors.fill: parent
-    anchors.leftMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
-    anchors.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
-    anchors.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
     clip: true
 
     property var storiesList: []
@@ -53,7 +50,10 @@ Item
                     id: imageMouseHandle
                     anchors.fill: image
                     onClicked: {
-                        Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
+                        Settings.popupCallback = () => {
+                            Settings.pageContent = { "story_id": modelData[ "id" ] }
+                            Settings.loadPage("Pages/Story.qml")
+                        }
                         Settings.openEffect()
                     }
                 }

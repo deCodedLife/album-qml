@@ -36,6 +36,7 @@ QtObject
 
     property var pagesDom: [ "Pages/HomePage.qml" ]
     property string currentPage: "Pages/HomePage.qml"
+    property var pageContent: [{}]
 
     function loadPage( page ) {
         pagesDom.push( page )
