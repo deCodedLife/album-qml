@@ -2,16 +2,14 @@ import QtQuick
 import QtQuick.Controls.Material
 
 Rectangle {
-    x: 0
-    y: 0
     id: rect
-    width: 500
-    height: 500
+    width: 0
+    height: 0
     color: Material.backgroundDimColor
     radius: width / 2
     z: 100
 
-    property int value: 5000
+    property int value: 0
 
     NumberAnimation {
         target: rect
