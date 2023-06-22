@@ -44,6 +44,7 @@ ApplicationWindow
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 source: Settings.currentPage
+                clip: true
             }
         }
     }

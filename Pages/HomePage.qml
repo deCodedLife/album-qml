@@ -6,6 +6,7 @@ import "../Base"
 
 Item {
     anchors.fill: parent
+    clip: true
 
     MapComponent {
         anchors.fill: parent
