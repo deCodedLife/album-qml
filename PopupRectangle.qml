@@ -2,9 +2,11 @@ import QtQuick
 import QtQuick.Controls.Material
 
 Rectangle {
+    x: 0
+    y: 0
     id: rect
-    width: 0
-    height: 0
+    width: 500
+    height: 500
     color: Material.backgroundDimColor
     radius: width / 2
     z: 100
