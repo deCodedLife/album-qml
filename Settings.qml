@@ -70,11 +70,14 @@ QtObject
     }`
 
     function openEffect ( itemComponent, item, cb ) {
-        popupRecrangle.x = appMosue.mouseX
-        popupRecrangle.y = appMosue.mouseY
         console.log( popupRecrangle )
 //        const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
-        const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
+        const newObject = Qt.createComponent( "PopupRectangle.qml", root )
+        if (newObject.status === Component.Ready) {
+            newObject.value = root.height
+            newObject.x = appMosue.mouseX
+            newObject.y = appMosue.mouseY
+        }
         newObject.destroy(500)
     }
 }

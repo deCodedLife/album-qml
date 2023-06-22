@@ -1,3 +1,4 @@
 singleton Settings Settings.qml
 MapComponent Base/MapComponent.qml
 Header Base/Header.qml
+PopupRectangle PopupRectangle.qml
