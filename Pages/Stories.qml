@@ -54,8 +54,6 @@ Item
                     propagateComposedEvents: true
                     property bool isDragged: false
                     onPressAndHold: isDragged = true
-                    drag.active: true
-
                     onReleased: isDragged = false
 
                     onClicked: {
