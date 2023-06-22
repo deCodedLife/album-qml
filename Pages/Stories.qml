@@ -26,6 +26,7 @@ Item
         anchors.fill: parent
 
         GridView {
+            id: grid
             clip: true
             cacheBuffer: 999
             Layout.fillWidth: true
@@ -51,17 +52,16 @@ Item
                 MouseArea {
                     id: imageMouseHandle
                     anchors.fill: parent
-                    propagateComposedEvents: true
                     property bool isDragged: false
                     onPressAndHold: isDragged = true
                     onReleased: isDragged = false
-                    drag.target: image
+                    drag.target: parent
                     drag.axis: Drag.XAndYAxis
 
                     onClicked: {
                         if ( yChanged() || xChanged() ) return
                         if ( isDragged ) return
-                        if ( drag.active ) return
+                        if ( grid.flicking ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
                     }
