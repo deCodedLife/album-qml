@@ -3,13 +3,14 @@ import QtQuick.Controls.Material
 
 import ".."
 
-Rectangle {
+Rectangle
+{
     id: rect
     width: 0
     height: 0
     color: Material.backgroundColor
     radius: width / 2
-    z: 100
+    z: 9
 
     x: Settings.lastMousePos.x - width / 2
     y: Settings.lastMousePos.y - height / 2
@@ -24,8 +25,12 @@ Rectangle {
         onFinished: {
             if ( Settings.popupCallback != null ) Settings.popupCallback()
             rect.destroy()
+            Settings.root.background.z = 0
         }
     }
 
-    Component.onCompleted: animate.start()
+    Component.onCompleted: {
+        Settings.root.background.z = 10
+        animate.start()
+    }
 }
