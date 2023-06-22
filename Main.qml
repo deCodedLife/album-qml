@@ -49,16 +49,9 @@ ApplicationWindow
         }
     }
 
-    MouseArea {
-        id: appMouse
-        anchors.fill: parent
-        onReleased: mouse.accepted = false
-        onClicked: mouse.accepted = false
-    }
-
     Component.onCompleted: {
         Settings.root = root
-        Settings.appMosue = appMouse
+        Settings.appMosue = MouseArea
         Settings.loadPage( "Pages/Stories.qml" )
     }
 }
