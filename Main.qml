@@ -57,8 +57,8 @@ ApplicationWindow
         if ( !Settings.is_mobile ) {
             x = Screen.width - 460
             y = (Screen.height / 2) - (height / 2)
-            color = "transparent"
-            flags = Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
+            root.color = "transparent"
+            root.flags = Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
         }
     }
 }
