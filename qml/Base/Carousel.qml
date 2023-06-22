@@ -6,7 +6,6 @@ import ".."
 Item {
     property var images:[]
     property int itemHeight: 0
-    anchors.margins: Settings.defaultmargin
     clip: true
     height: itemHeight
 

@@ -13,6 +13,7 @@ Item {
         anchors.fill: parent
         anchors.leftMargin: Settings.defaultmargin
         anchors.rightMargin: Settings.defaultmargin
+        spacing: Settings.defaultmargin
 
         Text {
             text: "Фотографии"
@@ -34,5 +35,6 @@ Item {
     {
         Settings.headerTitle = ""
         Settings.showHeader()
+        console.log( JSON.stringify(storyData) )
     }
 }
