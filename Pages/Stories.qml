@@ -56,7 +56,7 @@ Item
                     property var mousePos: Qt.point(0, 0)
                     propagateComposedEvents: false
 
-                    onPressed: mouse.accepted
+                    onPressed: mouse.accepted = false
                     onReleased: {
                         if (!propagateComposedEvents) {
                                 propagateComposedEvents = true
