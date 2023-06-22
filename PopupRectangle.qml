@@ -11,8 +11,8 @@ Rectangle {
     radius: width / 2
     z: 100
 
-    x: Settings.lastMousePos.x
-    y: Settings.lastMousePos.y
+    x: Settings.lastMousePos.x - width / 2
+    y: Settings.lastMousePos.y - height / 2
 
     NumberAnimation {
         target: rect
