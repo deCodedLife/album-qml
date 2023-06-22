@@ -53,12 +53,10 @@ Item
                     id: imageMouseHandle
                     anchors.fill: image
                     property var mousePos: Qt.point(0, 0)
-                    onPressed: mouse.accepted = false
                     onReleased: {
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
-                        mouse.accepted = false
                     }
 
                     onClicked: {
