@@ -48,11 +48,6 @@ Item
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                     Component.onCompleted: console.log( source )
 
-                    MouseArea {
-                        id: imageMouseHandle
-                        anchors.fill: parent
-                    }
-
                     states: State {
                         name: "resized"; when: imageMouseHandle.pressed
                         PropertyChanges{ target: image; width: page.width; height: page.height }
@@ -80,6 +75,11 @@ Item
                     font.pointSize: Settings.h6
                     font.bold: true
                     text: modelData[ "timestamp" ].split(" ")[0]
+                }
+
+                MouseArea {
+                    id: imageMouseHandle
+                    anchors.fill: parent
                 }
             }
         }
