@@ -53,9 +53,10 @@ Rectangle {
                 Text {
                     id: subtitle
                     enabled: Settings.headerSubtitle != ""
+                    visible: enabled
                     text: Settings.headerSubtitle
                     color: Material.primaryTextColor
-                    opacity: 0.8
+                    opacity: 0.7
                     font.pointSize: Settings.h5
                 }
             }
