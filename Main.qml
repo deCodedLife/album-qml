@@ -22,7 +22,7 @@ ApplicationWindow
     x: Screen.width - 460
     y: (Screen.height / 2) - (height / 2)
 
-    flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
+//    flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
     color: "transparent"
 
     background: Rectangle {
