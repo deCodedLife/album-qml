@@ -15,6 +15,7 @@ Item
     property var storiesList: []
 
     function parseData( data ) {
+        console.log( data )
         let response = JSON.parse( data )
         storiesList = response[ "data" ]
     }
@@ -86,6 +87,7 @@ Item
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
         Settings.showHeader()
+        console.log( "WTF?" )
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
