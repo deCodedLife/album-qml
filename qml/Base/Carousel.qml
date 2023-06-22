@@ -15,8 +15,9 @@ Item {
         orientation: ListView.Horizontal
         layoutDirection: Qt.Horizontal
         spacing: Settings.defaultmargin
+        currentIndex: 0
 
-        model: images
+        model: images.reverse()
         delegate: Image {
             width: carousel.width - 50
             height: itemHeight
