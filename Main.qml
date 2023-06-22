@@ -22,11 +22,11 @@ ApplicationWindow
 
     flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
     color: "transparent"
-
-    Rectangle {
+    background: Rectangle {
         anchors.fill: parent
         color: Material.backgroundColor
         radius: Settings.is_mobile ? 0 : 20
+        clip: true
     }
 
     ColumnLayout {
