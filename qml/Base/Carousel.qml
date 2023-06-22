@@ -5,7 +5,6 @@ import ".."
 
 Item {
     property var images:[]
-    anchors.fill: parent
     anchors.margins: Settings.defaultmargin
     clip: true
 

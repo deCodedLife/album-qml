@@ -24,7 +24,7 @@ Item {
         Carousel {
             images: storyData[ "file" ]
             Layout.fillWidth: true
-            height: 400
+            height: 600
         }
 
         Rectangle{ Layout.fillHeight: true }
