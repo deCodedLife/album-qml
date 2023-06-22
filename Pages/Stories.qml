@@ -7,6 +7,8 @@ import Network
 
 Item
 {
+    id: page
+
     anchors.fill: parent
     clip: true
 
@@ -30,8 +32,8 @@ Item
 
             model: storiesList
             delegate: Item {
-                height: parent.width / 2
-                width: parent.width / 2
+                height: page.width / 2
+                width: page.width / 2
 
                 Image {
                     fillMode: Image.PreserveAspectCrop
@@ -58,6 +60,7 @@ Item
                     anchors.margins: Settings.minimalMargin
                     color: "white"
                     font.pointSize: Settings.h4
+                    text: modelData[ "timestamp" ]
                 }
             }
         }
