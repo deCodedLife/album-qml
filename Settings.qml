@@ -58,6 +58,7 @@ QtObject
         height: width
         color: Material.backgroundDimColor
         radius: width / 2
+        z: 100
 
         NumberAnimation {
             properties: "width,height"
@@ -71,7 +72,7 @@ QtObject
     function openEffect ( itemComponent, item, cb ) {
         popupRecrangle.x = appMosue.mouseX
         popupRecrangle.y = appMosue.mouseY
-        const newObject = Qt.createQmlObject( popupRecrangle, root, "" )
+        const newObject = Qt.createComponent( popupRecrangle, root )
         newObject.destroy(500)
     }
 }
