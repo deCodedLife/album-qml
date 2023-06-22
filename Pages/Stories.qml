@@ -59,14 +59,13 @@ Item
                     onPressAndHold: mouse.accepted = false
                     onPressed: mouse.accepted = false
                     onReleased: {
-                        mouse.accepted = false
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
+                        mouse.accepted = false
                     }
 
                     onClicked: {
-                        mouse.accepted = false
                         mousePos = Qt.point( mouseX, mouseY )
                     }
                 }
