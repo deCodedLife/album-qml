@@ -54,17 +54,17 @@ Item
                     anchors.fill: parent
                     property var mousePos: Qt.point(0, 0)
 
-                    enabled: !grid.flicking
                     preventStealing:true
                     propagateComposedEvents: true
 
                     onReleased: {
+                        mouse.accepted = false
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
                     }
 
-                    onClicked: (mouse) => {
+                    onClicked: () => {
                         mousePos = Qt.point( mouseX, mouseY )
                         mouse.accepted = false
                     }
