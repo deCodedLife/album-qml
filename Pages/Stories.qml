@@ -62,8 +62,9 @@ Item
                         Settings.openEffect()
                     }
 
-                    onClicked: {
+                    onClicked: (mouse) => {
                         mousePos = Qt.point( mouseX, mouseY )
+                        mouse.accepted = false
                     }
                 }
 
