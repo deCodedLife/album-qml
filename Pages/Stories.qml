@@ -71,7 +71,12 @@ Item
                     MouseArea {
                         id: imageMouseHandle
                         anchors.fill: parent
-                        onClicked: imageShow.start()
+                        onClicked: {
+                            imageShow.start()
+                            console.log( index )
+                        }
+
+                        propagateComposedEvents: true
                     }
                 }
 
