@@ -70,10 +70,10 @@ Item
                         Settings.openEffect()
                     }
 
-                    onClicked: {
-                        mouse.accepted = false
-                        mousePos = Qt.point( mouseX, mouseY )
-                    }
+//                    onClicked: {
+//                        mouse.accepted = false
+//                        mousePos = Qt.point( mouseX, mouseY )
+//                    }
                 }
 
                 Rectangle {
