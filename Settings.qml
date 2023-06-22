@@ -72,7 +72,7 @@ QtObject
     function openEffect ( itemComponent, item, cb ) {
         popupRecrangle.x = appMosue.mouseX
         popupRecrangle.y = appMosue.mouseY
-        const newObject = Qt.createComponent( popupRecrangle, root )
+        const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
         newObject.destroy(500)
     }
 }
