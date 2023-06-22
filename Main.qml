@@ -22,8 +22,8 @@ ApplicationWindow
 //    x: Screen.width - 460
 //    y: (Screen.height / 2) - (height / 2)
 
-//    flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
-//    color: "transparent"
+    flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
+    color: Settings.is_mobile ? Material.backgroundColor : "transparent"
 
     background: Rectangle {
         anchors.fill: parent
