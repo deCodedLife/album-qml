@@ -53,8 +53,7 @@ Item
                     anchors.fill: parent
                     propagateComposedEvents: true
                     onClicked: {
-                        Settings.openEffect()
-                        Settings.loadPage("Pages/HomePage.qml")
+                        Settings.openEffect( Settings.loadPage("Pages/HomePage.qml") )
                     }
                 }
 
