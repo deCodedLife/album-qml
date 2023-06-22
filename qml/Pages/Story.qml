@@ -13,6 +13,7 @@ Page {
     ColumnLayout {
         id: body
         anchors.fill: parent
+        anchors.topMargin: Settings.defaultmargin
         anchors.leftMargin: Settings.defaultmargin
         anchors.rightMargin: Settings.defaultmargin
         spacing: Settings.defaultmargin
@@ -49,6 +50,7 @@ Page {
 
     Component.onCompleted:
     {
+        Settings.headerColor = "transparent"
         Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
         Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
     }
