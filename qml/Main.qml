@@ -38,16 +38,22 @@ ApplicationWindow
             Component.onCompleted: Settings.headerTitle
         }
 
-        Loader {
-            id: loader
+        Flickable {
+            contentWidth: root.width
+            contentHeight: loader.implicitHeight
+            flickableDirection: Qt.Vertical
+
             Layout.fillWidth: true
             Layout.fillHeight: true
-
             Layout.leftMargin: Settings.is_mobile ? 0 : Settings.minimalMargin
             Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
             Layout.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
 
-            source: Settings.currentPage
+            Loader {
+                id: loader
+                anchors.fill: parent
+                source: Settings.currentPage
+            }
         }
     }
 
