@@ -39,4 +39,6 @@ Item {
             }
         }
     }
+
+    Component.onCompleted: console.log( JSON.stringify( images ) )
 }

@@ -35,6 +35,5 @@ Item {
     {
         Settings.headerTitle = ""
         Settings.showHeader()
-        console.log( JSON.stringify(storyData) )
     }
 }
