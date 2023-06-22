@@ -6,6 +6,7 @@ import QtQuick.Controls.Material
 QtObject
 {
     signal domUpdated(string page)
+    property bool is_mobile: checkPlatform()
 
     readonly property int defaultmargin: 16
     readonly property int minimalMargin: 5
@@ -43,5 +44,11 @@ QtObject
     function goBack() {
         pagesDom.pop()
         currentPage = pagesDom[ pagesDom.length - 1 ]
+    }
+
+    function checkPlatform() {
+        if ( Qt.platform.os === "android" ) return true
+        if ( Qt.platform.os === "ios" ) return true
+        return false
     }
 }

@@ -10,6 +10,9 @@ Item
     id: page
 
     anchors.fill: parent
+    anchors.leftMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
+    anchors.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
+    anchors.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
     clip: true
 
     property var storiesList: []

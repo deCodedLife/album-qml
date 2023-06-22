@@ -26,12 +26,11 @@ ApplicationWindow
     Rectangle {
         anchors.fill: parent
         color: Material.backgroundColor
-        radius: 20
+        radius: Settings.is_mobile ? 0 : 20
     }
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: Settings.defaultmargin
         spacing: 0
 
         Header {
