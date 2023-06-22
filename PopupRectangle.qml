@@ -14,6 +14,7 @@ Rectangle {
     property int value: 5000
 
     NumberAnimation {
+        target: rect
         id: animate
         properties: "width,height"
         easing.type: Easing.InOutQuart
