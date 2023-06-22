@@ -17,12 +17,12 @@ Item {
             layer.enabled: true
             layer.effect: OpacityMask {
                 maskSource: Item {
-                    width: img.width
-                    height: img.height
+                    width: image.width
+                    height: image.height
                     Rectangle {
                         anchors.centerIn: parent
-                        width: img.adapt ? img.width : Math.min(img.width, img.height)
-                        height: img.adapt ? img.height : width
+                        width: image.adapt ? image.width : Math.min(image.width, image.height)
+                        height: image.adapt ? image.height : width
                         radius: Math.min(width, height)
                     }
                 }
