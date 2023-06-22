@@ -54,13 +54,15 @@ Item
                     anchors.fill: image
                     property var mousePos: Qt.point(0, 0)
                     onReleased: {
-                        if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
-                        Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
-                        Settings.openEffect()
+                        if ( mousePos.x !== mouseX || mousePos.y !== mouseY ) return
+
                     }
 
                     onClicked: {
                         mousePos = Qt.point( mouseX, mouseY )
+
+                        Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
+                        Settings.openEffect()
                     }
                 }
 
