@@ -12,7 +12,7 @@ ApplicationWindow
     id: root
 
     width: 420
-    height: 750
+    height: 730
 
     visible: true
 
