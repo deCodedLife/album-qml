@@ -52,18 +52,16 @@ Item
                 MouseArea {
                     id: imageMouseHandle
                     anchors.fill: parent
-                    property bool isDragged: false
-                    onPressAndHold: isDragged = true
-                    onReleased: isDragged = false
-                    drag.target: parent
-                    drag.axis: Drag.XAndYAxis
+                    property var mousePos: Qt.point(0, 0)
 
-                    onClicked: {
-                        if ( yChanged() || xChanged() ) return
-                        if ( isDragged ) return
-                        if ( grid.flicking ) return
+                    onReleased: {
+                        if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
+                    }
+
+                    onClicked: {
+                        mousePos = Qt.point( mouseX, mouseY )
                     }
                 }
 
