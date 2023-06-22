@@ -55,6 +55,8 @@ Item
                     property bool isDragged: false
                     onPressAndHold: isDragged = true
                     onReleased: isDragged = false
+                    drag.target: image
+                    drag.axis: Drag.XAndYAxis
 
                     onClicked: {
                         if ( yChanged() || xChanged() ) return
