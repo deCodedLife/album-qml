@@ -53,31 +53,16 @@ QtObject
         return false
     }
 
-    property Rectangle popupRecrangle: `Rectangle {
-        width: 0
-        height: width
-        color: Material.backgroundDimColor
-        radius: width / 2
-        z: 100
-
-        NumberAnimation {
-            properties: "width,height"
-            easing.type: Easing.InOutQuart
-            duration: 200
-            to: ${root.height} * 2
-            running: true
-        }
-    }`
-
     function openEffect ( itemComponent, item, cb ) {
-        console.log( popupRecrangle )
 //        const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
-        const newObject = Qt.createComponent( "PopupRectangle.qml", root )
+        const newObject = Qt.createComponent( "PopupRectangle.qml" )
         if (newObject.status === Component.Ready) {
             newObject.value = root.height
             newObject.x = appMosue.mouseX
             newObject.y = appMosue.mouseY
         }
+        newObject.createObject(root)
+        console.log( newObject )
         newObject.destroy(500)
     }
 }

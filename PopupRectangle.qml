@@ -16,4 +16,6 @@ Rectangle {
         to: value * 2
         running: true
     }
+
+    Component.onCompleted: console.log( "test" )
 }
