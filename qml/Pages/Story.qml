@@ -11,6 +11,8 @@ Item {
 
     ColumnLayout {
         anchors.fill: parent
+        anchors.leftMargin: Settings.defaultmargin
+        anchors.rightMargin: Settings.defaultmargin
 
         Text {
             text: "Фотографии"
