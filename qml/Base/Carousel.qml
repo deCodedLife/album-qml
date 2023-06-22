@@ -4,6 +4,7 @@ import Qt5Compat.GraphicalEffects
 import ".."
 
 Item {
+    id: carousel
     property var images:[]
     property int itemHeight: 0
     clip: true
@@ -17,7 +18,7 @@ Item {
 
         model: images
         delegate: Image {
-            width: parent.width - 50
+            width: carousel.width - 50
             height: itemHeight
             fillMode: Image.PreserveAspectCrop
 
@@ -39,6 +40,4 @@ Item {
             }
         }
     }
-
-    Component.onCompleted: console.log( JSON.stringify( images ) )
 }
