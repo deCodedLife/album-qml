@@ -10,6 +10,7 @@ Item {
 
     id: page
     width: parent.width
+    height: implicitHeight
 
     ColumnLayout {
         id: body
