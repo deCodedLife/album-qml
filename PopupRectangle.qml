@@ -21,5 +21,9 @@ Rectangle {
         onFinished: rect.destroy()
     }
 
-    Component.onCompleted: animate.start()
+    Component.onCompleted: {
+        animate.start()
+        console.log( rect.x )
+        console.log( rect.y )
+    }
 }
