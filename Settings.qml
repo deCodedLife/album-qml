@@ -56,12 +56,16 @@ QtObject
         properties: "width, height, x, y"
         easing.type: Easing.InOutQuart
         duration: 200
+        running: true
     }
 
-    function openEffect ( item, cb ) {
-        console.log( transition.toString() )
-        console.log( JSON.stringify( transition ) )
+    function openEffect ( itemComponent, item, cb ) {
+        console.log( JSON.stringify( item ) )
 
+        text = `
+        import QtQUick
+        ${itemComponent}
+        `
 
 //        const newObject = Qt.createQmlObject( item + `
 //                                             import QtQuick
