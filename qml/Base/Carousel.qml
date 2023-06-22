@@ -16,7 +16,7 @@ Item {
         spacing: Settings.defaultmargin
         currentIndex: 0
 
-        model: images.reverse()
+        model: images
         delegate: Image {
             width: carousel.width - 50
             height: itemHeight
