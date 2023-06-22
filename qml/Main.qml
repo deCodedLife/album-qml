@@ -43,18 +43,19 @@ ApplicationWindow
 
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.leftMargin: Settings.is_mobile ? 0 : Settings.minimalMargin
-            Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
-            Layout.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
+
+//            Layout.leftMargin:   Settings.is_mobile ? 0 : Settings.minimalMargin
+//            Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
+//            Layout.bottomMargin: Settings.is_mobile ? 0 : Settings.defaultmargin
 
             Flickable {
-                flickableDirection: Qt.Vertical
+//                flickableDirection: Qt.Vertical
 
-                contentWidth: root.width
-                contentHeight: loader.height
+//                contentWidth: root.width
+//                contentHeight: loader.children.implicitHeight
 
-                width: parent.width
-                height: parent.height
+//                width: parent.width
+//                height: parent.height
 
 
                 Loader {
