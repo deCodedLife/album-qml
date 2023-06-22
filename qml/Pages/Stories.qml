@@ -77,6 +77,7 @@ Page
                     anchors.centerIn: parent
                     anchors.margins: Settings.minimalMargin
                     color: Qt.rgba(0, 0, 0, 0.6)
+                    radius: 20
                 }
 
 
