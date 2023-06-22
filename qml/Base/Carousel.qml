@@ -36,10 +36,6 @@ Item {
                         x: 0
                         y: 0
                     }
-                    ParentChange {
-                        target: image
-                        parent: Settings.imageLayout
-                    }
                 }
 
             ]
@@ -65,12 +61,20 @@ Item {
                 }
             }
 
-
+            transitions: Transition {
+                NumberAnimation {
+                    target: image
+                    properties: "width,height,x,y"
+                    easing.type: Easing.InOutQuart
+                    duration: 500
+                }
+            }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
                     let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
+                    image.parent = Settings.imageLayout
                     image.x = coords.x
                     image.y = coords.y
                     image.z = 100
