@@ -68,6 +68,10 @@ ApplicationWindow
         }
     }
 
+    Item {
+        id: topItem
+    }
+
     MouseArea {
         id: appMouse
         anchors.fill: parent
@@ -90,6 +94,7 @@ ApplicationWindow
         })
 
         Settings.root = root
+        Settings.imageLayout = topItem
         Settings.appMosue = appMouse
         Settings.loadPage( "Pages/Stories.qml" )
     }

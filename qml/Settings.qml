@@ -6,6 +6,7 @@ import QtQuick.Controls.Material
 QtObject
 {
     property ApplicationWindow root: null
+    property Item imageLayout: null
     property MouseArea appMosue: null
     property bool is_mobile: checkPlatform()
 
