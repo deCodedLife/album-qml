@@ -21,7 +21,10 @@ Rectangle {
         easing.type: Easing.InOutQuart
         duration: 500
         to: Settings.root.height * 2
-        onFinished: rect.destroy()
+        onFinished: {
+            if ( Settings.popupCallback != null ) Settings.popupCallback()
+            rect.destroy()
+        }
     }
 
     Component.onCompleted: animate.start()
