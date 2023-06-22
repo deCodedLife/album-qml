@@ -43,9 +43,9 @@ ApplicationWindow
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            Lauout.leftMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
-            anchors.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
-            anchors.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
+            Layout.leftMargin: Settings.is_mobile ? 0 : Settings.minimalMargin
+            Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
+            Layout.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
 
             source: Settings.currentPage
         }
