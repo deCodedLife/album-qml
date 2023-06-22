@@ -15,6 +15,14 @@ Item {
         color: "white"
     }
 
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            Settings.popupCallback = () => Settings.loadPage( "Pages/Stories.qml" )
+            Settings.openEffect()
+        }
+    }
+
     Component.onCompleted:
     {
         Settings.hideHeader()
