@@ -49,14 +49,12 @@ ApplicationWindow
             Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
             Layout.bottomMargin: Settings.is_mobile ? 0 : Settings.defaultmargin
 
-            Flickable {
-                flickableDirection: Qt.Vertical
+            ScrollView {
+//                contentWidth: root.width
+//                contentHeight: loader.children.implicitHeight
 
-                contentWidth: root.width
-                contentHeight: loader.children.implicitHeight
-
-                width: parent.width
-                height: parent.height
+                width: body.width
+                height: body.height
 
 
                 Loader {
