@@ -36,10 +36,17 @@ Item
                     fillMode: Image.PreserveAspectCrop
                     anchors.fill: parent
                     anchors.centerIn: parent
-                    sourceSize.width: parent.width - Settings.minimalMargin
+                    sourceSize.height: parent.height - Settings.minimalMargin
                     anchors.margins: Settings.minimalMargin
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                     Component.onCompleted: console.log( source )
+                }
+
+                Rectangle {
+                    x: 0
+                    y: 0
+                    anchors.fill: parent
+                    color: Qt.rgba(0, 0, 0, 0.6)
                 }
             }
         }
