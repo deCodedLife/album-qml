@@ -28,6 +28,19 @@ Item {
             itemHeight: 450
         }
 
+        Text {
+            text: "Описание"
+            font.pointSize: Settings.h3
+            font.bold: true
+            color: Material.primaryTextColor
+        }
+
+        TextArea {
+            Layout.fillWidth: true
+            height: 250
+            text: storyData[ "comment" ]
+        }
+
         Rectangle{ Layout.fillHeight: true }
     }
 
