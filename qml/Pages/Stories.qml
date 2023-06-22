@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Material
+import Qt5Compat.QtGraphicalEffects
 
 import ".."
 import Network
@@ -41,6 +42,20 @@ Page
                     sourceSize.height: parent.height - Settings.minimalMargin
                     anchors.margins: Settings.minimalMargin
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
+                    layer.enabled: true
+                    layer.effect: OpacityMask {
+                        maskSource: Item {
+                            width: image.width
+                            height: image.height
+
+                            Rectangle {
+                                anchors.centerIn: parent
+                                width: image.width
+                                height: image.height
+                                radius: 20
+                            }
+                        }
+                    }
                 }
 
                 MouseArea {
