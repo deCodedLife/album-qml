@@ -3,7 +3,7 @@ import QtQuick.Controls.Material
 
 Rectangle {
     width: 0
-    height: width
+    height: 0
     color: Material.backgroundDimColor
     radius: width / 2
     z: 100
@@ -11,6 +11,7 @@ Rectangle {
     property int value: 0
 
     NumberAnimation {
+        id: animate
         properties: "width,height"
         easing.type: Easing.InOutQuart
         duration: 200
@@ -19,5 +20,5 @@ Rectangle {
         loops: 0
     }
 
-    Component.onCompleted: console.log( "test" )
+    Component.onCompleted: animate.start()
 }
