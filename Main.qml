@@ -52,6 +52,8 @@ ApplicationWindow
     MouseArea {
         id: appMouse
         anchors.fill: parent
+        onReleased: mouse.accepted = false
+        onClicked: mouse.accepted = false
     }
 
     Component.onCompleted: {
