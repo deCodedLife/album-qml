@@ -19,8 +19,6 @@ Rectangle {
         easing.type: Easing.InOutQuart
         duration: 200
         to: value * 2
-        running: true
-        loops: 0
         onFinished: rect.destroy()
     }
 
