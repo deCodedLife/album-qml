@@ -37,12 +37,27 @@ Rectangle {
                 Layout.alignment: Qt.AlignVCenter
             }
 
-            Text {
-                Layout.alignment: Qt.AlignVCenter
-                Layout.bottomMargin: Settings.minimalMargin
-                text: Settings.headerTitle
-                color: Material.primaryTextColor
-                font.pointSize: Settings.h3
+            ColumnLayout{
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                Text {
+                    id: title
+                    Layout.alignment: Settings.headerSubtitle == "" ? Qt.AlignVCenter : Qt.AlignTop
+                    Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
+                    text: Settings.headerTitle
+                    color: Material.primaryTextColor
+                    font.pointSize: Settings.h3
+                }
+
+                Text {
+                    id: subtitle
+                    enabled: Settings.headerSubtitle != ""
+                    text: Settings.headerSubtitle
+                    color: Material.primaryTextColor
+                    opacity: 0.8
+                    font.pointSize: Settings.h5
+                }
             }
 
             Rectangle { Layout.fillWidth: true }

@@ -22,6 +22,7 @@ QtObject
     property int currentAccent: Material.Red
 
     property string headerTitle: ""
+    property string headerSubtitle: ""
     property bool isHeaderVisible: true
     property color headerColor: Material.accentColor
     property var headerOptions: []
