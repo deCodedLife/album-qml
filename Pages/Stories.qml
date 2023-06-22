@@ -54,6 +54,8 @@ Item
                     anchors.fill: parent
                     property var mousePos: Qt.point(0, 0)
 
+                    enabled: !grid.flicking
+                    preventStealing:true
                     propagateComposedEvents: true
 
                     onReleased: {
