@@ -84,7 +84,7 @@ Item
 
     Component.onCompleted: {
         Settings.headerTitle = "Наши моменты"
-        Settings.headerColor = "transparent"
+//        Settings.headerColor = "transparent"
         Settings.showHeader()
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
