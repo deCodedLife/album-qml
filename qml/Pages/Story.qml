@@ -5,12 +5,9 @@ import QtQuick.Controls.Material
 import ".."
 import "../Base"
 
-Item {
+Page {
     property var storyData: Settings.pageContent
-
     id: page
-    width: parent.width
-    height: body.implicitHeight
 
     ColumnLayout {
         id: body
@@ -52,6 +49,5 @@ Item {
     {
         Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
         Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
-        Settings.showHeader()
     }
 }

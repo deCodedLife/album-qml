@@ -3,3 +3,4 @@ MapComponent Base/MapComponent.qml
 Header Base/Header.qml
 PopupRectangle PopupRectangle.qml
 Carousel Base/Carousel.qml
+Page Base/Page.qml
