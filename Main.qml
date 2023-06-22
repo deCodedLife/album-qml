@@ -55,10 +55,8 @@ ApplicationWindow
         Settings.loadPage( "Pages/Stories.qml" )
 
         if ( !Settings.is_mobile ) {
-            x = Screen.width - 460
-            y = (Screen.height / 2) - (height / 2)
-            root.color = "transparent"
-            root.flags = Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
+            root.x = Screen.width - 460
+            root.y = (Screen.height / 2) - (height / 2)
         }
     }
 }
