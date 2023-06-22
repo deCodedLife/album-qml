@@ -2,13 +2,14 @@ import QtQuick
 import QtQuick.Controls.Material
 
 Rectangle {
+    id: rect
     width: 0
     height: 0
     color: Material.backgroundDimColor
     radius: width / 2
     z: 100
 
-    property int value: 0
+    property int value: 5000
 
     NumberAnimation {
         id: animate
@@ -18,6 +19,7 @@ Rectangle {
         to: value * 2
         running: true
         loops: 0
+        onFinished: rect.destroy()
     }
 
     Component.onCompleted: animate.start()
