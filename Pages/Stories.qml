@@ -65,6 +65,11 @@ Item
                     anchors.centerIn: parent
                     anchors.margins: Settings.minimalMargin
                     color: Qt.rgba(0, 0, 0, 0.6)
+
+                    MouseArea {
+                        id: imageMouseHandle
+                        anchors.fill: parent
+                    }
                 }
 
                 Text {
@@ -75,11 +80,6 @@ Item
                     font.pointSize: Settings.h6
                     font.bold: true
                     text: modelData[ "timestamp" ].split(" ")[0]
-                }
-
-                MouseArea {
-                    id: imageMouseHandle
-                    anchors.fill: parent
                 }
             }
         }
