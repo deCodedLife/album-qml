@@ -17,7 +17,7 @@ Item {
         Text {
             text: "Фотографии"
             color: Material.primaryTextColor
-            font.pointSize: Settings.h4
+            font.pointSize: Settings.h3
             font.bold: true
         }
 
