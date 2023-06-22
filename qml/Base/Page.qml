@@ -7,7 +7,6 @@ Item {
     id: page
     clip: true
 
-
     onHeightChanged: Settings.setHeight( height )
     Component.onCompleted: {
         Settings.headerColor = Material.accentColor

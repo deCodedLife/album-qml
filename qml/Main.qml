@@ -61,7 +61,7 @@ ApplicationWindow
                 Loader {
                     id: loader
                     width: body.width
-                    height: children.implicitHeight ?? body.height
+                    height: body.height
                     source: Settings.currentPage
                 }
             }
