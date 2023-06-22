@@ -33,6 +33,7 @@ Item
             height: parent.height
             cellWidth: parent.width / 2
             cellHeight: parent.width / 2
+            flickableDirection: Flickable.VerticalFlick
 
             model: storiesList
             delegate: Item {
@@ -55,6 +56,7 @@ Item
                     property var mousePos: Qt.point(0, 0)
                     propagateComposedEvents: false
 
+                    onPressed: mouse.accepted
                     onReleased: {
                         if (!propagateComposedEvents) {
                                 propagateComposedEvents = true
