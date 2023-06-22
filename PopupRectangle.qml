@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls.Material
 
+import ".."
+
 Rectangle {
     id: rect
     width: 0
@@ -9,7 +11,8 @@ Rectangle {
     radius: width / 2
     z: 100
 
-    property int value: 0
+    x: Settings.lastMousePos.x
+    y: Settings.lastMousePos.y
 
     NumberAnimation {
         target: rect
@@ -17,13 +20,9 @@ Rectangle {
         properties: "width,height"
         easing.type: Easing.InOutQuart
         duration: 200
-        to: value * 2
+        to: Settings.root.height * 2
         onFinished: rect.destroy()
     }
 
-    Component.onCompleted: {
-        animate.start()
-        console.log( rect.x )
-        console.log( rect.y )
-    }
+    Component.onCompleted: animate.start()
 }

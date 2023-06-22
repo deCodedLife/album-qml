@@ -54,15 +54,10 @@ QtObject
     }
 
     property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
+    property Qt.point lastMousePos: Qt.point(0, 0)
 
     function openEffect () {
-        popupRectangle.statusChanged.connect( (state) => {
-                                                 if ( state != Component.Ready ) return
-                                                 popupRectangle.value = root.height
-                                                 popupRectangle.x = appMosue.mouseX
-                                                 popupRectangle.y = appMosue.mouseY
-                                             } )
-
+        lastMousePos = Qt.point( appMosue.mouseX, appMosue.mouseY )
         popupRectangle.createObject(root)
 //        newObject.destroy(500)
     }
