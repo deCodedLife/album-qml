@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Material
-import Qt5Compat.QtGraphicalEffects
+import Qt5Compat.GraphicalEffects
 
 import ".."
 import Network
