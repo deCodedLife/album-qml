@@ -30,7 +30,7 @@ Item
             model: storiesList
             delegate: Item {
                 height: parent.width / 2
-                width: parent.height / 2
+                width: parent.width / 2
 
                 Image {
                     anchors.fill: parent
