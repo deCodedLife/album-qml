@@ -59,7 +59,7 @@ Item
                     anchors.bottom: parent.bottom
                     anchors.margins: Settings.minimalMargin
                     color: "white"
-                    font.pointSize: Settings.h4
+                    font.pointSize: Settings.h6
                     text: modelData[ "timestamp" ]
                 }
             }
