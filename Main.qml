@@ -19,8 +19,8 @@ ApplicationWindow
     Material.theme: Settings.currentTheme
     Material.accent: Settings.currentAccent
 
-//    x: Screen.width - 460
-//    y: (Screen.height / 2) - (height / 2)
+    x: Screen.width - 460
+    y: (Screen.height / 2) - (height / 2)
 
     flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
     color: Settings.is_mobile ? Material.backgroundColor : "transparent"
