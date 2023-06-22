@@ -14,7 +14,9 @@ Item {
 
     ColumnLayout {
         id: body
-        anchors.fill: parent
+        width: parent.width
+        height: implicitHeight
+
         anchors.leftMargin: Settings.defaultmargin
         anchors.rightMargin: Settings.defaultmargin
         spacing: Settings.defaultmargin
