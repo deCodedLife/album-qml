@@ -53,25 +53,25 @@ QtObject
         return false
     }
 
-    property NumberAnimation transition: NumberAnimation {
-        properties: "width, height, x, y"
-        easing.type: Easing.InOutQuart
-        duration: 200
-        running: true
+    property Rectangle popupRecrangle: Rectangle {
+        width: 0
+        height: width
+        color: Material.backgroundDimColor
+        radius: width / 2
+
+        NumberAnimation {
+            properties: "width,height"
+            easing.type: Easing.InOutQuart
+            duration: 200
+            to: root.height * 2
+            running: true
+        }
     }
 
     function openEffect ( itemComponent, item, cb ) {
-        console.log( appMosue.mouseX, appMosue.mouseY )
-
-        text = `
-            import QtQUick
-            ${itemComponent}
-        `
-
-//        const newObject = Qt.createQmlObject( item + `
-//                                             import QtQuick
-
-
-//                                             `)
+        popupRecrangle.x = appMosue.mouseX
+        popupRecrangle.y = appMosue.mouseY
+        const newObject = Qt.createQmlObject( popupRecrangle, root, "" )
+        newObject.destroy(500)
     }
 }
