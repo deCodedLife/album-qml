@@ -1,21 +1,16 @@
 import QtQuick
 import QtQuick.Controls.Material
-import QtGraphicalEffects
 
 import ".."
 
-Item {
+Rectangle {
 
     width: Settings.root.width
     height: Settings.root.height
 
-    layer.enabled: true
-    layer.effect: OpacityMask {
-        maskSource: Settings.root
-    }
-
+    radius: Settings.is_mobile ? 0 : 20
+    color: "transparent"
     clip: true
-    z: 10
 
     Rectangle
     {
@@ -24,6 +19,7 @@ Item {
         height: 0
         color: Material.backgroundColor
         radius: width / 2
+        z: 10
 
         x: Settings.lastMousePos.x - width / 2
         y: Settings.lastMousePos.y - height / 2
