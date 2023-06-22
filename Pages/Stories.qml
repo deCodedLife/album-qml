@@ -60,7 +60,8 @@ Item
                     anchors.margins: Settings.minimalMargin
                     color: "white"
                     font.pointSize: Settings.h6
-                    text: modelData[ "timestamp" ]
+                    font.bold: true
+                    text: modelData[ "timestamp" ].split(" ")[0]
                 }
             }
         }
