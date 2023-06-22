@@ -53,16 +53,14 @@ QtObject
         return false
     }
 
+    property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
+
     function openEffect ( itemComponent, item, cb ) {
-        const newObject = Qt.createComponent( "PopupRectangle.qml" )
-        newObject.onStatusChanged.connect( (status) => {
-                                              if ( status != Component.Ready ) return;
-                                              newObject.value = root.height
-                                              newObject.x = appMosue.mouseX
-                                              newObject.y = appMosue.mouseY
-                                          } )
-        newObject.createObject(root)
-        console.log( newObject )
-        newObject.destroy(500)
+        popupRectangle.value = root.height
+        popupRectangle.x = appMosue.mouseX
+        popupRectangle.y = appMosue.mouseY
+
+        popupRectangle.createObject(root)
+//        newObject.destroy(500)
     }
 }
