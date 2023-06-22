@@ -64,10 +64,10 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log( image.mapToItem( Settings.root, Qt.point(0, 0) ) )
+                    let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
                     image.parent = Settings.root
-                    image.x = Settings.appMosue.mouseX - image.width / 2
-                    image.y = Settings.appMosue.mouseY - mou
+                    image.x = coords.x
+                    image.y = coords.y
                     image.z = 100
                 }
             }

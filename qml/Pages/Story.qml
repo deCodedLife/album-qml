@@ -44,7 +44,6 @@ Page {
             text: storyData[ "comment" ]
         }
 
-//        onImplicitHeightChanged: Settings.setHeight( implicitHeight )
         Rectangle{ Layout.fillHeight: true }
     }
 
