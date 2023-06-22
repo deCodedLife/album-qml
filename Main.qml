@@ -19,12 +19,6 @@ ApplicationWindow
     Material.theme: Settings.currentTheme
     Material.accent: Settings.currentAccent
 
-    x: Screen.width - 460
-    y: (Screen.height / 2) - (height / 2)
-
-    flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
-    color: Settings.is_mobile ? Material.backgroundColor : "transparent"
-
     background: Rectangle {
         anchors.fill: parent
         color: Material.backgroundColor
@@ -59,5 +53,12 @@ ApplicationWindow
         Settings.root = root
         Settings.appMosue = appMouse
         Settings.loadPage( "Pages/Stories.qml" )
+
+        if ( !Settings.is_mobile ) {
+            x = Screen.width - 460
+            y = (Screen.height / 2) - (height / 2)
+            color = "transparent"
+            flags = Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
+        }
     }
 }
