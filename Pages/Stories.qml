@@ -53,6 +53,7 @@ Item
                     anchors.fill: parent
                     propagateComposedEvents: true
                     onClicked: {
+                        if ( imageMouseHandle.yChanged() || imageMouseHandle.xChanged() ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
                     }
@@ -82,9 +83,10 @@ Item
 
     }
 
-    Component.onCompleted: {
+    Component.completedw: {
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
+        Settings.showHeader()
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
