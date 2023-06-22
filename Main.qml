@@ -22,27 +22,29 @@ ApplicationWindow
 
     flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
     color: "transparent"
-    background: Rectangle {
+
+    Rectangle {
         anchors.fill: parent
         color: Material.backgroundColor
         radius: Settings.is_mobile ? 0 : 20
         clip: true
-    }
 
-    ColumnLayout {
-        anchors.fill: parent
-        spacing: 0
+        ColumnLayout {
+            anchors.fill: parent
+            spacing: 0
+            clip: true
 
-        Header {
-            Layout.fillWidth: true
-            Component.onCompleted: Settings.headerTitle
-        }
+            Header {
+                Layout.fillWidth: true
+                Component.onCompleted: Settings.headerTitle
+            }
 
-        Loader {
-            id: loader
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            source: Settings.currentPage
+            Loader {
+                id: loader
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                source: Settings.currentPage
+            }
         }
     }
 
