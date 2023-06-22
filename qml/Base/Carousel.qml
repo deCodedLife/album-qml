@@ -7,11 +7,13 @@ Item {
     property var images:[]
     anchors.margins: Settings.defaultmargin
     clip: true
+    height: 500
 
     ListView {
         anchors.fill: parent
         flickableDirection: Qt.Horizontal
         layoutDirection: Qt.Horizontal
+        spacing: Settings.defaultmargin
 
         model: images
         delegate: Image {
