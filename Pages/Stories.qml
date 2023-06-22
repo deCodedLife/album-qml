@@ -46,16 +46,13 @@ Item
                     sourceSize.height: parent.height - Settings.minimalMargin
                     anchors.margins: Settings.minimalMargin
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
-                    Component.onCompleted: console.log( source )
+                }
 
-                    property NumberAnimation transition: Settings.transition
-
-                    MouseArea {
-                        id: imageMouseHandle
-                        anchors.fill: parent
-                        propagateComposedEvents: true
-                        onClicked: Settings.openEffect( "Image", image, () => {} )
-                    }
+                MouseArea {
+                    id: imageMouseHandle
+                    anchors.fill: parent
+                    propagateComposedEvents: true
+                    onClicked: Settings.openEffect( "Image", image, () => {} )
                 }
 
                 Rectangle {
