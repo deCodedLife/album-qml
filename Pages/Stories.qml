@@ -54,26 +54,23 @@ Item
                     id: imageMouseHandle
                     anchors.fill: image
                     property var mousePos: Qt.point(0, 0)
-                    propagateComposedEvents: false
+                    enabled: false
 
                     onMouseXChanged: mouse.accepted = false
                     onMouseYChanged: mouse.accepted = false
                     onPressAndHold: mouse.accepted = false
                     onPressed: mouse.accepted = false
                     onReleased: {
-                        if (!propagateComposedEvents) {
-                                propagateComposedEvents = true
-                            }
                         mouse.accepted = false
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
                     }
 
-//                    onClicked: {
-//                        mouse.accepted = false
-//                        mousePos = Qt.point( mouseX, mouseY )
-//                    }
+                    onClicked: {
+                        mouse.accepted = false
+                        mousePos = Qt.point( mouseX, mouseY )
+                    }
                 }
 
                 Rectangle {
