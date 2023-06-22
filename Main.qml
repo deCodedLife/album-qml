@@ -52,7 +52,6 @@ ApplicationWindow
     MouseArea {
         id: appMouse
         anchors.fill: parent
-        propagateComposedEvents: true
     }
 
     Component.onCompleted: {
