@@ -6,6 +6,7 @@ import ".."
 import "../Base"
 
 Item {
+    id: page
     width: parent.width
     height: body.implicitHeight
     property var storyData: Settings.pageContent
@@ -52,4 +53,6 @@ Item {
         Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
         Settings.showHeader()
     }
+
+    onHeightChanged: parent.height = page.implicitHeight
 }
