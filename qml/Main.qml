@@ -51,7 +51,7 @@ ApplicationWindow
 
             Flickable {
                 contentWidth: body.width
-                contentHeight: loader.children.children.implicitHeight
+                contentHeight: loader.implicitHeight
 
                 width: body.width
                 height: body.height
@@ -60,7 +60,7 @@ ApplicationWindow
                 Loader {
                     id: loader
                     width: body.width
-                    height: body.height
+                    height: children.implicitHeight
                     source: Settings.currentPage
                 }
             }
