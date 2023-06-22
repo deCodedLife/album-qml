@@ -8,8 +8,11 @@ Item {
     anchors.fill: parent
     clip: true
 
-    MapComponent {
-        anchors.fill: parent
+    Text {
+        anchors.centerIn: parent
+        text: "Hello world"
+        font.pointSize: Settings.h4
+        color: "white"
     }
 
     Component.onCompleted:
