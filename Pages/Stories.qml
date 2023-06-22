@@ -52,11 +52,11 @@ Item
 
                     states: State {
                         name: "resized"; when: imageMouseHandle.pressed
-                        PropertyChanges{ target: image; width: page.width; height: page.height }
+                        PropertyChanges{ target: image; width: page.width; height: page.height; x: 0; y: 0; z: 5 }
                     }
 
                     transitions: Transition {
-                        NumberAnimation { properties: "width, height"; easing.type: Easing.InOutQuart; duration: 200 }
+                        NumberAnimation { properties: "width, height, x, y"; easing.type: Easing.InOutQuart; duration: 200 }
                     }
 
                     MouseArea {
