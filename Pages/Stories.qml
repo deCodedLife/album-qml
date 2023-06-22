@@ -41,9 +41,7 @@ Item
                 Image {
                     id: image
                     fillMode: Image.PreserveAspectCrop
-//                    anchors.fill: parent
-                    width: parent.width
-                    height: parent.height
+                    anchors.fill: parent
                     anchors.centerIn: parent
                     sourceSize.height: parent.height - Settings.minimalMargin
                     anchors.margins: Settings.minimalMargin
@@ -63,17 +61,19 @@ Item
                         id: imageMouseHandle
                         anchors.fill: parent
                         propagateComposedEvents: true
+                        onClicked: Settings.openEffect( image, () => {} )
                     }
                 }
 
-//                Rectangle {
-//                    x: 0
-//                    y: 0
-//                    anchors.fill: parent
-//                    anchors.centerIn: parent
-//                    anchors.margins: Settings.minimalMargin
-//                    color: Qt.rgba(0, 0, 0, 0.6)
-//                }
+                Rectangle {
+                    x: 0
+                    y: 0
+                    anchors.fill: parent
+                    anchors.centerIn: parent
+                    anchors.margins: Settings.minimalMargin
+                    color: Qt.rgba(0, 0, 0, 0.6)
+                }
+
 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter

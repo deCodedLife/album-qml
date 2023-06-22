@@ -5,7 +5,7 @@ import QtQuick.Controls.Material
 
 QtObject
 {
-    signal domUpdated(string page)
+    property var root: null
     property bool is_mobile: checkPlatform()
 
     readonly property int defaultmargin: 16
@@ -50,5 +50,24 @@ QtObject
         if ( Qt.platform.os === "android" ) return true
         if ( Qt.platform.os === "ios" ) return true
         return false
+    }
+
+    NumberAnimation {
+        id: transition
+        properties: "width, height, x, y"
+        easing.type: Easing.InOutQuart
+        duration: 200
+    }
+
+    function openEffect ( item, cb ) {
+        console.log( transition.toString() )
+        console.log( JSON.stringify( transition ) )
+
+
+//        const newObject = Qt.createQmlObject( item + `
+//                                             import QtQuick
+
+
+//                                             `)
     }
 }

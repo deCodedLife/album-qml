@@ -9,6 +9,8 @@ import "Base"
 
 ApplicationWindow
 {
+    id: root
+
     width: 420
     height: 760
 
@@ -47,5 +49,8 @@ ApplicationWindow
         }
     }
 
-    Component.onCompleted: Settings.loadPage( "Pages/Stories.qml" )
+    Component.onCompleted: {
+        Settings.root = root
+        Settings.loadPage( "Pages/Stories.qml" )
+    }
 }
