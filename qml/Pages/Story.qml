@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls.Material
 
 import ".."
 
@@ -12,8 +13,11 @@ Item {
 
         Text {
             text: "Фотографии"
+            color: Material.primaryTextColor
             font.pointSize: Settings.h5
         }
+
+        Rectangle{ Layout.fillHeight: true }
     }
 
     Component.onCompleted:
