@@ -11,7 +11,6 @@ Item
 
     anchors.fill: parent
     clip: true
-    height: body.implicitHeight
 
     property var storiesList: []
 
