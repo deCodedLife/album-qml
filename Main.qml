@@ -49,6 +49,12 @@ ApplicationWindow
         }
     }
 
+    MouseArea {
+        id: appMouse
+        anchors.fill: parent
+        propagateComposedEvents: true
+    }
+
     Component.onCompleted: {
         Settings.root = root
         Settings.loadPage( "Pages/Stories.qml" )

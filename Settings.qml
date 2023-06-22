@@ -5,7 +5,8 @@ import QtQuick.Controls.Material
 
 QtObject
 {
-    property var root: null
+    property ApplicationWindow root: null
+    property MouseArea appMosue: null
     property bool is_mobile: checkPlatform()
 
     readonly property int defaultmargin: 16
@@ -60,11 +61,11 @@ QtObject
     }
 
     function openEffect ( itemComponent, item, cb ) {
-        console.log( JSON.stringify( item ) )
+        console.log( appMosue.mouseX, appMosue.mouseY )
 
         text = `
-        import QtQUick
-        ${itemComponent}
+            import QtQUick
+            ${itemComponent}
         `
 
 //        const newObject = Qt.createQmlObject( item + `
