@@ -21,14 +21,16 @@ Item
 
         GridView {
             clip: true
+            cacheBuffer: 999
             Layout.fillWidth: true
             height: parent.height
             cellWidth: parent.width / 2
             cellHeight: parent.width / 2
             model: storiesList
             delegate: Image {
-                width: parent.width / 2
-                height: parent.width / 2
+                anchors.centerIn: parent
+                width: parent.width / 2 - Settings.minimalMargin
+                height: parent.width / 2 - Settings.minimalMargin
                 source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                 Component.onCompleted: console.log( source )
             }
