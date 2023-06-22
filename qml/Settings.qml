@@ -46,7 +46,7 @@ QtObject
     }
 
     function setHeight( height ) {
-        pageHeight = max( pageHeight, height )
+        pageHeight = Math.max( pageHeight, height )
     }
 
     function goBack() {
