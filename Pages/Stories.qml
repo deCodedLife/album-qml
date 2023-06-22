@@ -53,9 +53,12 @@ Item
                     id: imageMouseHandle
                     anchors.fill: image
                     property var mousePos: Qt.point(0, 0)
-                    propagateComposedEvents: true
+                    propagateComposedEvents: false
 
                     onReleased: {
+                        if (!propagateComposedEvents) {
+                                propagateComposedEvents = true
+                            }
                         mouse.accepted = false
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
