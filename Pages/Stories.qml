@@ -52,8 +52,16 @@ Item
                     id: imageMouseHandle
                     anchors.fill: parent
                     propagateComposedEvents: true
+                    property bool isDragged: false
+                    onPressAndHold: isDragged = true
+                    drag.active: true
+
+                    onReleased: isDragged = false
+
                     onClicked: {
-                        if ( imageMouseHandle.yChanged() || imageMouseHandle.xChanged() ) return
+                        if ( yChanged() || xChanged() ) return
+                        if ( isDragged ) return
+                        if ( drag.active ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
                     }

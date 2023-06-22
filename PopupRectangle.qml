@@ -7,7 +7,7 @@ Rectangle {
     id: rect
     width: 0
     height: 0
-    color: "#f0f0f0"
+    color: Material.backgroundColor
     radius: width / 2
     z: 100
 
