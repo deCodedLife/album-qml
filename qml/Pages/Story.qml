@@ -52,6 +52,7 @@ Item {
     {
         Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
         Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
+        Settings.hideHeader()
         Settings.showHeader()
     }
 }
