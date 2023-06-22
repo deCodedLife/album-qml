@@ -30,6 +30,7 @@ ApplicationWindow
     }
 
     ColumnLayout {
+        id: page
         anchors.fill: parent
         spacing: 0
 

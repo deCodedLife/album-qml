@@ -7,6 +7,7 @@ import "../Base"
 
 Page {
     property var storyData: Settings.pageContent
+    height: body.implicitHeight
     id: page
 
     ColumnLayout {
@@ -42,7 +43,7 @@ Page {
             text: storyData[ "comment" ]
         }
 
-        onImplicitHeightChanged: Settings.setHeight( implicitHeight )
+//        onImplicitHeightChanged: Settings.setHeight( implicitHeight )
         Rectangle{ Layout.fillHeight: true }
     }
 
