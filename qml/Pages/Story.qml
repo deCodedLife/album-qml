@@ -6,10 +6,12 @@ import ".."
 import "../Base"
 
 Item {
-    anchors.fill: parent
+    width: parent.width
+    height: body.implicitHeight
     property var storyData: Settings.pageContent
 
     ColumnLayout {
+        id: body
         anchors.fill: parent
         anchors.leftMargin: Settings.defaultmargin
         anchors.rightMargin: Settings.defaultmargin

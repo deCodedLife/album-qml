@@ -86,7 +86,6 @@ Item
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
         Settings.showHeader()
-        console.log( width, height )
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
