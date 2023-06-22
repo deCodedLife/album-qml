@@ -22,7 +22,7 @@ Rectangle {
 
             Button {
                 id: actionButton
-                icon.source: SERVER + "/Images/back.svg"
+                icon.source: [SERVER, QML, "Images/back.svg"].join("/")
                 icon.color: Material.primaryTextColor
                 icon.width: 24
                 icon.height: 24
