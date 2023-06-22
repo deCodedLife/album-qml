@@ -57,6 +57,7 @@ ApplicationWindow
 
     Component.onCompleted: {
         Settings.root = root
+        Settings.appMosue = appMouse
         Settings.loadPage( "Pages/Stories.qml" )
     }
 }
