@@ -54,7 +54,7 @@ Item
                         id: imageMouseHandle
                         anchors.fill: parent
                         propagateComposedEvents: true
-                        onClicked: Settings.openEffect( image, () => {} )
+                        onClicked: Settings.openEffect( "Image", image, () => {} )
                     }
                 }
 
