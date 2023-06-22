@@ -11,7 +11,7 @@ Item {
 
     ListView {
         anchors.fill: parent
-        flickableDirection: Qt.Horizontal
+        orientation: ListView.Horizontal
         layoutDirection: Qt.Horizontal
         spacing: Settings.defaultmargin
 
