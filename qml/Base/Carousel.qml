@@ -13,7 +13,7 @@ Item {
         model: images
         delegate: Image {
             id: image
-            source: modelData
+            source: modelData[ "file" ]
             layer.enabled: true
             layer.effect: OpacityMask {
                 maskSource: Item {
