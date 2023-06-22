@@ -33,8 +33,10 @@ Item
                 width: parent.width / 2
 
                 Image {
+                    fillMode: Image.PreserveAspectCrop
                     anchors.fill: parent
                     anchors.centerIn: parent
+                    sourceSize.height: parent.height - Settings.minimalMargin
                     anchors.margins: Settings.minimalMargin
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                     Component.onCompleted: console.log( source )
