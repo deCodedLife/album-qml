@@ -17,12 +17,10 @@ ApplicationWindow
     Material.theme: Settings.currentTheme
     Material.accent: Settings.currentAccent
 
-    title: qsTr("Hello World")
-
     x: Screen.width - 460
     y: (Screen.height / 2) - (height / 2)
 
-    flags: Qt.WindowStaysOnTopHint
+    flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
 
     ColumnLayout {
         anchors.fill: parent
