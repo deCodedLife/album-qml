@@ -48,7 +48,7 @@ Item
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                     Component.onCompleted: console.log( source )
 
-                    NumberAnimation { properties: "width, height, x, y"; easing.type: Easing.InOutQuart; duration: 200 }
+                    property NumberAnimation transition: Settings.transition
 
                     MouseArea {
                         id: imageMouseHandle
