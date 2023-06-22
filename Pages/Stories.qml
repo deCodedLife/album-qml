@@ -39,6 +39,7 @@ Item
                 width: page.width / 2
 
                 Image {
+                    id: image
                     fillMode: Image.PreserveAspectCrop
                     anchors.fill: parent
                     anchors.centerIn: parent
@@ -46,6 +47,20 @@ Item
                     anchors.margins: Settings.minimalMargin
                     source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
                     Component.onCompleted: console.log( source )
+
+                    MouseArea {
+                        id: imageMouseHandle
+                        anchors.fill: parent
+                    }
+
+                    states: State {
+                        name: "resized"; when: imageMouseHandle.pressed
+                        PropertyChanges{ target: image; width: page.width; height: page.height }
+                    }
+
+                    transitions: Transition {
+                        NumberAnimation { properties: "width, height"; easing.type: Easing.InOutQuart; duration: 200 }
+                    }
                 }
 
                 Rectangle {
