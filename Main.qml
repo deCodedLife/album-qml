@@ -12,7 +12,7 @@ ApplicationWindow
     id: root
 
     width: 420
-    height: 730
+    height: Settings.is_mobile ? 780 : 730
 
     visible: true
 
