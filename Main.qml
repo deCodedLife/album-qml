@@ -21,6 +21,13 @@ ApplicationWindow
     y: (Screen.height / 2) - (height / 2)
 
     flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint
+    color: "transparent"
+
+    Rectangle {
+        anchors.fill: parent
+        color: Material.backgroundColor
+        radius: 20
+    }
 
     ColumnLayout {
         anchors.fill: parent
