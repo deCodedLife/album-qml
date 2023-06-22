@@ -51,7 +51,7 @@ Item
                     anchors.fill: image
                     onClicked: {
                         Settings.popupCallback = () => {
-                            Settings.pageContent = { "story_id": modelData[ "id" ] }
+                            Settings.pageContent = modelData
                             Settings.loadPage("Pages/Story.qml")
                         }
                         Settings.openEffect()
