@@ -18,7 +18,7 @@ Item {
         model: images
         delegate: Image {
             width: parent.width - 50
-            height: 500
+            height: 450
             fillMode: Image.PreserveAspectCrop
 
             id: image
