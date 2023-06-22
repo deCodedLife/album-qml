@@ -54,6 +54,8 @@ Item
                     anchors.fill: parent
                     property var mousePos: Qt.point(0, 0)
 
+                    propagateComposedEvents: true
+
                     onReleased: {
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
                         Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
@@ -61,6 +63,7 @@ Item
                     }
 
                     onClicked: {
+                        event.accepted = false
                         mousePos = Qt.point( mouseX, mouseY )
                     }
                 }
