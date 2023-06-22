@@ -53,7 +53,7 @@ Item
                     anchors.fill: parent
                     propagateComposedEvents: true
                     onClicked: {
-                        Settings.popupCallback = Settings.loadPage("Pages/HomePage.qml")
+                        Settings.popupCallback = () => Settings.loadPage("Pages/HomePage.qml")
                         Settings.openEffect()
                     }
                 }
