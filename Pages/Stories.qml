@@ -53,10 +53,6 @@ Item
                     id: imageMouseHandle
                     anchors.fill: image
                     property var mousePos: Qt.point(0, 0)
-
-                    onMouseXChanged: mouse.accepted = false
-                    onMouseYChanged: mouse.accepted = false
-                    onPressAndHold: mouse.accepted = false
                     onPressed: mouse.accepted = false
                     onReleased: {
                         if ( mousePos.x != mouseX || mousePos.y != mouseY ) return
