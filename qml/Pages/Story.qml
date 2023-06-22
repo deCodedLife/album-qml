@@ -8,7 +8,6 @@ import "../Base"
 Item {
     width: parent.width
     height: body.implicitHeight
-    implicitHeight: body.implicitHeight
     property var storyData: Settings.pageContent
 
     ColumnLayout {
