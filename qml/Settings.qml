@@ -41,6 +41,7 @@ QtObject
     property double pageHeight: 0
 
     function loadPage( page ) {
+        pageHeight = 0
         pagesDom.push( page )
         currentPage = page
     }
