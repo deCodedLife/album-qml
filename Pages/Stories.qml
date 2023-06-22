@@ -51,10 +51,8 @@ Item
 
                 MouseArea {
                     id: imageMouseHandle
-                    anchors.fill: parent
+                    anchors.fill: image
                     property var mousePos: Qt.point(0, 0)
-
-                    preventStealing:true
                     propagateComposedEvents: true
 
                     onReleased: {
@@ -65,8 +63,8 @@ Item
                     }
 
                     onClicked: {
-                        mousePos = Qt.point( mouseX, mouseY )
                         mouse.accepted = false
+                        mousePos = Qt.point( mouseX, mouseY )
                     }
                 }
 
