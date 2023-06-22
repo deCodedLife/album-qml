@@ -41,7 +41,9 @@ Item
                 Image {
                     id: image
                     fillMode: Image.PreserveAspectCrop
-                    anchors.fill: parent
+//                    anchors.fill: parent
+                    width: parent.width
+                    height: parent.height
                     anchors.centerIn: parent
                     sourceSize.height: parent.height - Settings.minimalMargin
                     anchors.margins: Settings.minimalMargin
@@ -56,15 +58,6 @@ Item
                     transitions: Transition {
                         NumberAnimation { properties: "width, height"; easing.type: Easing.InOutQuart; duration: 200 }
                     }
-                }
-
-                Rectangle {
-                    x: 0
-                    y: 0
-                    anchors.fill: parent
-                    anchors.centerIn: parent
-                    anchors.margins: Settings.minimalMargin
-                    color: Qt.rgba(0, 0, 0, 0.6)
 
                     MouseArea {
                         id: imageMouseHandle
@@ -72,6 +65,15 @@ Item
                         propagateComposedEvents: true
                     }
                 }
+
+//                Rectangle {
+//                    x: 0
+//                    y: 0
+//                    anchors.fill: parent
+//                    anchors.centerIn: parent
+//                    anchors.margins: Settings.minimalMargin
+//                    color: Qt.rgba(0, 0, 0, 0.6)
+//                }
 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
