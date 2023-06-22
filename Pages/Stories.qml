@@ -26,13 +26,19 @@ Item
             height: parent.height
             cellWidth: parent.width / 2
             cellHeight: parent.width / 2
+
             model: storiesList
-            delegate: Image {
-                anchors.centerIn: parent
-                width: parent.width / 2 - Settings.minimalMargin
-                height: parent.width / 2 - Settings.minimalMargin
-                source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
-                Component.onCompleted: console.log( source )
+            delegate: Item {
+                height: parent.width / 2
+                width: parent.height / 2
+
+                Image {
+                    anchors.fill: parent
+                    anchors.centerIn: parent
+                    anchors.margins: Settings.minimalMargin
+                    source: [SERVER, (modelData[ "file" ][0]["file"])].join("/")
+                    Component.onCompleted: console.log( source )
+                }
             }
         }
 
