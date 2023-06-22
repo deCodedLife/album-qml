@@ -12,12 +12,15 @@ ApplicationWindow
     id: root
 
     width: 420
-    height: 760
+    height: 750
 
     visible: true
 
     Material.theme: Settings.currentTheme
     Material.accent: Settings.currentAccent
+
+    x: Settings.is_mobile ? 0 : Screen.width - 460
+    y: Settings.is_mobile ? 0 : (Screen.height / 2) - (height / 2)
 
     background: Rectangle {
         anchors.fill: parent
@@ -53,10 +56,5 @@ ApplicationWindow
         Settings.root = root
         Settings.appMosue = appMouse
         Settings.loadPage( "Pages/Stories.qml" )
-
-        if ( !Settings.is_mobile ) {
-            root.x = Screen.width - 460
-            root.y = (Screen.height / 2) - (height / 2)
-        }
     }
 }
