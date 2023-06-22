@@ -31,7 +31,7 @@ ApplicationWindow
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: Settings.minimalMargin
+        anchors.margins: Settings.defaultmargin
         spacing: 0
 
         Header {
