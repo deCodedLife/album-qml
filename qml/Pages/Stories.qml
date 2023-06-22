@@ -5,13 +5,9 @@ import QtQuick.Controls.Material
 import ".."
 import Network
 
-Item
+Page
 {
     id: page
-
-    anchors.fill: parent
-    clip: true
-
     property var storiesList: []
 
     function parseData( data ) {
@@ -84,16 +80,13 @@ Item
     }
 
     Component.onCompleted: {
-        Settings.headerSubtitle = ""
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
-        Settings.showHeader()
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
     Network {
         id: net
-
         onLoaded: ( data ) => parseData( data )
         function getRequest( cb, url ) {
             net.loaded.connect((data) => cb(data))

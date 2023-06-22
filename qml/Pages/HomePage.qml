@@ -4,10 +4,7 @@ import QtQuick
 import "../"
 import "../Base"
 
-Item {
-    anchors.fill: parent
-    clip: true
-
+Page {
     Text {
         anchors.centerIn: parent
         text: "Hello world"
@@ -23,8 +20,5 @@ Item {
         }
     }
 
-    Component.onCompleted:
-    {
-        Settings.hideHeader()
-    }
+    Component.onCompleted: Settings.hideHeader()
 }

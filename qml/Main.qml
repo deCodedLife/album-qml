@@ -74,7 +74,21 @@ ApplicationWindow
         onPressed: mouse.accepted = false
     }
 
+    onClosing: {
+        if( Settings.pagesDom.length > 1 ) {
+            close.accepted = false
+            Settings.goBack()
+        }
+    }
+
     Component.onCompleted: {
+        contentItem.Keys.released.connect( function(event) {
+            if (event.key === Qt.Key_Back) {
+                event.accepted = true
+                Settings.goBack()
+            }
+        })
+
         Settings.root = root
         Settings.appMosue = appMouse
         Settings.loadPage( "Pages/Stories.qml" )
