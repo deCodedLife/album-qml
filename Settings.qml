@@ -54,8 +54,8 @@ QtObject
     }
 
     function openEffect ( itemComponent, item, cb ) {
-//        const newObject = Qt.createComponent( `import QtQuick ${popupRecrangle}`, root, "" )
         const newObject = Qt.createComponent( "PopupRectangle.qml" )
+        newObject.onStatusChanged.connect( (status) => { console.log( status ) } )
         if (newObject.status === Component.Ready) {
             newObject.value = root.height
             newObject.x = appMosue.mouseX
