@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls.Material
 
 import ".."
 import Network
@@ -46,7 +47,17 @@ Item
                     x: 0
                     y: 0
                     anchors.fill: parent
+                    anchors.centerIn: parent
+                    anchors.margins: Settings.minimalMargin
                     color: Qt.rgba(0, 0, 0, 0.6)
+                }
+
+                Text {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.bottom: parent.bottom
+                    anchors.margins: Settings.minimalMargin
+                    color: "white"
+                    font.pointSize: Settings.h4
                 }
             }
         }
