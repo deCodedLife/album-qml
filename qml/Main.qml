@@ -38,10 +38,8 @@ ApplicationWindow
             Component.onCompleted: Settings.headerTitle
         }
 
-        Flickable {
-            contentWidth: root.width
-            contentHeight: loader.implicitHeight
-            flickableDirection: Qt.Vertical
+        Item {
+            clip: true
 
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -49,10 +47,21 @@ ApplicationWindow
             Layout.rightMargin:  Settings.is_mobile ? 0 : Settings.minimalMargin
             Layout.bottomMargin:  Settings.is_mobile ? 0 : Settings.defaultmargin
 
-            Loader {
-                id: loader
-                anchors.fill: parent
-                source: Settings.currentPage
+            Flickable {
+                flickableDirection: Qt.Vertical
+
+                contentWidth: root.width
+                contentHeight: loader.height
+
+                width: parent.width
+                height: parent.height
+
+
+                Loader {
+                    id: loader
+                    anchors.fill: parent
+                    source: Settings.currentPage
+                }
             }
         }
     }
