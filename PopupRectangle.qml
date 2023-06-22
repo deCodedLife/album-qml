@@ -7,7 +7,7 @@ Rectangle {
     id: rect
     width: 0
     height: 0
-    color: "white"
+    color: "#f0f0f0"
     radius: width / 2
     z: 100
 

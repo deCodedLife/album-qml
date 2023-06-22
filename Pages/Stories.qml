@@ -52,7 +52,10 @@ Item
                     id: imageMouseHandle
                     anchors.fill: parent
                     propagateComposedEvents: true
-                    onClicked: Settings.openEffect( "Image", image, () => {} )
+                    onClicked: {
+                        Settings.openEffect()
+                        Settings.loadPage("Pages/HomePage.qml")
+                    }
                 }
 
                 Rectangle {
