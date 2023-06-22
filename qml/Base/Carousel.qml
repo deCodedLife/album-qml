@@ -12,6 +12,10 @@ Item {
 
         model: images
         delegate: Image {
+            width: parent.width - 50
+            height: parent.height
+            fillMode: Image.PreserveAspectCrop
+
             id: image
             source: [SERVER, modelData[ "file" ]].join("/")
             layer.enabled: true
@@ -19,11 +23,12 @@ Item {
                 maskSource: Item {
                     width: image.width
                     height: image.height
+
                     Rectangle {
                         anchors.centerIn: parent
-                        width: image.adapt ? image.width : Math.min(image.width, image.height)
-                        height: image.adapt ? image.height : width
-                        radius: Math.min(width, height)
+                        width: image.width
+                        height: image.height
+                        radius: 20
                     }
                 }
             }
