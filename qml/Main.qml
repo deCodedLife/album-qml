@@ -70,6 +70,7 @@ ApplicationWindow
 
     Item {
         id: topItem
+        anchors.fill: parent
     }
 
     MouseArea {

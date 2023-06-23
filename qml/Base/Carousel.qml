@@ -20,6 +20,8 @@ Item {
         model: images
         delegate: Image {
             property var originParent: null
+            property int rounded: 20
+
             state: "normal"
 
             states: [
@@ -30,6 +32,7 @@ Item {
                         width: carousel.width - 50
                         height: itemHeight
                         layer.enabled: true
+                        rounded: 20
                     }
                 },
                 State {
@@ -40,7 +43,7 @@ Item {
                         height:Settings.root.height
                         x: 0
                         y: 0
-                        layer.enabled: false
+                        rounded: 0
                     }
                 }
 
@@ -62,7 +65,7 @@ Item {
                         anchors.centerIn: parent
                         width: image.width
                         height: image.height
-                        radius: 20
+                        radius: image.rounded
                     }
                 }
             }
@@ -73,13 +76,19 @@ Item {
                     properties: "width,height,x,y"
                     easing.type: Easing.InOutQuart
                     duration: 500
+                    onFinished: image.animationAfter()
                 }
+            }
+
+            function animationAfter() {
+                image.x = 0
+                image.y = 0
             }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if ( image.state == "normal" ) {
+                    if ( image.state === "normal" ) {
                         let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
                         image.parent = Settings.imageLayout
                         image.x = coords.x
