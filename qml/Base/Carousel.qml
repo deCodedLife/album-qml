@@ -19,7 +19,7 @@ Item {
 
         model: images
         delegate: Image {
-            property var originIndex: 0
+            property var originParent: null
             property int rounded: 20
 
             state: "normal"
@@ -107,13 +107,13 @@ Item {
                         image.z = 0
                         image.state = "normal"
 
-                        body.model = []
-                        body.model = images
+                        originParent.model = []
+                        originParent.model = images
                     }
                 }
             }
 
-            Component.onCompleted: originIndex
+            Component.onCompleted: originParent = body
         }
     }
 }
