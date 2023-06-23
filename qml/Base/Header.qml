@@ -28,6 +28,7 @@ Rectangle {
                 spacing: Settings.defaultmargin
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignVCenter
+                clip: true
 
                 Button {
                     Layout.preferredWidth: 32
@@ -60,10 +61,9 @@ Rectangle {
 
                     Text {
                         id: title
-//                        Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
                         text: Settings.headerTitle
                         color: Material.primaryTextColor
-                        font.pointSize: Settings.h3
+                        font.pointSize: Settings.headerSubtitle == "" ? Settings.h3 : Settings.h5
                     }
 
                     Text {
@@ -73,7 +73,7 @@ Rectangle {
                         text: Settings.headerSubtitle
                         color: Material.primaryTextColor
                         opacity: 0.7
-                        font.pointSize: Settings.h5
+                        font.pointSize: Settings.h6
                     }
                 }
             }
