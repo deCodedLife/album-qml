@@ -40,9 +40,6 @@ Item {
                 properties: "width,height,x,y"
                 easing.type: Easing.InOutQuart
                 duration: 500
-                onRunningChanged: {
-                    console.log( "TEST TEST TEST" )
-                }
             }
         }
 
@@ -118,10 +115,24 @@ Item {
                         body.y = coords.y
                         body.state = "resized"
                     } else {
-                        body.parent = body.originParent
                         body.state = "normal"
+                        animationTimeout.addAction( () => body.parent = body.originParent, 500 )
                     }
                 }
+            }
+        }
+
+        Timer {
+            id: animationTimeout
+            repeat: false
+
+            function addAction( cb, duration ) {
+                animationTimeout.interval = duration
+                animationTimeout.triggered.connect( cb )
+                animationTimeout.triggered.connect( function afterCB () {
+                    animationTimeout.triggered.disconnect( cb )
+                    animationTimeout.triggered.disconnect( afterCB )
+                } )
             }
         }
     }
