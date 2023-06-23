@@ -68,7 +68,8 @@ Rectangle {
 
                 ListView {
                     id: optionsList
-                    layoutDirection: ListView.Horizontal
+                    orientation: ListView.Horizontal
+
                     Layout.fillWidth: true
                     height: 24
 
