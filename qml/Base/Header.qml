@@ -82,7 +82,7 @@ Rectangle {
                         icon.height: 48
                         flat: true
                         width: 32
-                        height: 32
+                        height: parent.height
                         padding: 0
                         topInset: 0
                         bottomInset: 0
