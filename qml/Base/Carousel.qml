@@ -28,6 +28,8 @@ Item {
         ]
 
         property var originParent: null
+        property int itemSelected: 0
+
         Component.onCompleted: originParent = carousel
 
         onStateChanged: {
@@ -37,6 +39,7 @@ Item {
                 let image = currentItem
                 image.state = body.state
             }
+            currentIndex = itemSelected
         }
 
         model: images
@@ -104,11 +107,14 @@ Item {
                     if ( image.state === "normal" ) {
                         let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
                         body.parent = Settings.imageLayout
+                        body.x = coords.x
+                        body.y = coords.y
                         body.state = "resized"
                     } else {
                         body.parent = body.originParent
                         body.state = "normal"
                     }
+                    body.itemSelected = index
                 }
             }
         }
