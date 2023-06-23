@@ -125,11 +125,13 @@ Item {
                 anchors.fill: parent
                 onClicked: {
                     body.itemSelected = index
+                    let gPos = body.mapToItem( Settings.root, Qt.point(0, 0) )
                     if ( image.state === "normal" ) {
                         body.parent = Settings.imageLayout
-                        body.x = body.mapToItem( Settings.root, Qt.point(0, 0) ).x
-                        body.y = body.mapToItem( Settings.root, Qt.point(0, 0) ).y
+                        body.x = gPos.x
+                        body.y = gPos.y
                         body.state = "resized"
+                        console.log()
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
