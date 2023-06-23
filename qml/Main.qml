@@ -73,9 +73,31 @@ ApplicationWindow
         anchors.fill: parent
 
         Rectangle {
+            id: background
             anchors.fill: parent
             color: "black"
-            visible: topItem.children.length > 1
+            opacity: 0
+
+            state: "normal"
+            states: [
+                State { name: "normal" },
+                State {
+                    name: "activated"
+                    PropertyChanges {
+                        target: background
+                        opacity: 1
+                    }
+                }
+            ]
+
+            transitions: Transition {
+                NumberAnimation on opacity { target: background; easing.type: Easing.InOutQuart; duration: 500 }
+            }
+        }
+
+        onChildrenChanged: {
+            if ( children.length > 1 ) background.state = "activated"
+            else background.state = "normal"
         }
     }
 
