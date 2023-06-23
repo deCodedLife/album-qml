@@ -23,6 +23,10 @@ Item {
         spacing: Settings.defaultmargin
         currentIndex: 0
 
+        move: Transition {
+                NumberAnimation { properties: "x,y"; duration: 100 }
+            }
+
         x: 0
         y: 0
 
