@@ -83,11 +83,12 @@ Rectangle {
             RowLayout {
                 Layout.fillHeight: true
                 Layout.preferredWidth: optionsList.width
+                clip: true
 
                 ListView {
                     id: optionsList
                     orientation: ListView.Horizontal
-                    Layout.fillHeight: true
+                    height: 32
                     width: 32 * model.length
 
                     interactive: false
@@ -95,8 +96,8 @@ Rectangle {
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
-                        icon.width: 48
-                        icon.height: 48
+                        icon.width: 32
+                        icon.height: 32
                         flat: true
                         width: 32
                         height: 32
@@ -113,10 +114,10 @@ Rectangle {
 
                     }
 
-//                    Connections {
-//                        target: Settings
-//                        function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
-//                    }
+                    Connections {
+                        target: Settings
+                        function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
+                    }
                 }
             }
         }
