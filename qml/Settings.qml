@@ -78,7 +78,7 @@ QtObject
     }
 
     function newHeaderOptions( icon, action ) {
-        let newObject = [...headerOptions]
+        let newObject = structuredClone(headerOptions)
         newObject.push({ "icon": icon, "action": action })
         headerOptions = newObject
     }
