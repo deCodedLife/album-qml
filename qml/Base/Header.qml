@@ -81,8 +81,8 @@ Rectangle {
                         icon.width: 24
                         icon.height: 24
                         flat: true
-                        width: 24
-                        height: 24
+                        width: 32
+                        height: 32
                         padding: 0
                         topInset: 0
                         bottomInset: 0
@@ -100,7 +100,6 @@ Rectangle {
                         function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
                     }
                 }
-                Rectangle { Layout.fillWidth: true; Layout.fillHeight: true; color: "white" }
             }
         }
     }
