@@ -118,15 +118,15 @@ Item {
                     body.itemSelected = index
                     if ( image.state === "normal" ) {
                         body.parent = Settings.imageLayout
-                        image.x = body.globalCoords.x
-                        image.y = body.globalCoords.y
+                        image.x = image.globalCoords.x
+                        image.y = image.globalCoords.y
                         body.state = "resized"
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
                         let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
-                        image.x = body.globalCoords.x
-                        image.y = body.globalCoords.y
+                        image.x = image.globalCoords.x
+                        image.y = image.globalCoords.y
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent
                             image.x = 0
