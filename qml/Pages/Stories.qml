@@ -99,7 +99,6 @@ Page
         Settings.headerColor = "transparent"
         Settings.newHeaderOptions( "add.svg", () => Settings.loadPage( "Pages/StoryAdd.qml" ) )
         Settings.newHeaderOptions( "play.svg", () => Settings.loadPage( "Pages/Playback.qml" ) )
-        console.log( JSON.stringify( Settings.headerOptions ) )
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
