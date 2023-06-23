@@ -36,11 +36,13 @@ Rectangle {
                 verticalPadding: 0
                 leftPadding: 0
                 rightPadding: 0
+
                 onClicked: Settings.goBack()
-                Layout.alignment: Qt.AlignVCenter
 
                 width: 32
                 height: 32
+
+                Layout.alignment: Qt.AlignVCenter
             }
 
             ColumnLayout{
@@ -66,11 +68,10 @@ Rectangle {
                 }
             }
 
-//            Rectangle { Layout.fillWidth: true }
+            Rectangle { Layout.fillWidth: true }
 
             RowLayout {
                 Layout.fillHeight: true
-                width: 200
 
                 ListView {
                     id: optionsList
