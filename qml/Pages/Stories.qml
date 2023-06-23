@@ -25,7 +25,6 @@ Page
 
         GridView {
             id: grid
-            clip: true
             Layout.fillWidth: true
             height: parent.height
             cellWidth: parent.width / 2
