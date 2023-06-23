@@ -99,6 +99,8 @@ ApplicationWindow
             if ( children.length > 1 ) background.state = "activated"
             else background.state = "normal"
         }
+
+        function hide() { background.state = "nornal" }
     }
 
     MouseArea {

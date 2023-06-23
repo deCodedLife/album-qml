@@ -117,6 +117,7 @@ Item {
                         body.state = "resized"
                     } else {
                         body.state = "normal"
+                        Settings.imageLayout.hide()
                         animationTimeout.addAction( () => body.parent = body.originParent, 600 )
                     }
                 }
