@@ -38,6 +38,9 @@ Rectangle {
                 rightPadding: 0
                 onClicked: Settings.goBack()
                 Layout.alignment: Qt.AlignVCenter
+
+                width: 32
+                height: 32
             }
 
             ColumnLayout{
@@ -85,7 +88,7 @@ Rectangle {
                         icon.height: 48
                         flat: true
                         width: 32
-                        height: parent.height
+                        height: 32
                         padding: 0
                         topInset: 0
                         bottomInset: 0
