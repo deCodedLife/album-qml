@@ -115,10 +115,10 @@ Rectangle {
 
                     }
 
-                    Connections {
-                        target: Settings
-                        function onOptionsUpdated( options ) { optionsList.model = options; }
-                    }
+//                    Connections {
+//                        target: Settings
+//                        functio/n onOptionsUpdated( options ) { optionsList.model = options; }
+//                    }
                 }
             }
         }

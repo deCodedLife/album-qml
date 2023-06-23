@@ -10,7 +10,7 @@ Item {
     onHeightChanged: Settings.setHeight( height )
 
     Component.onCompleted: {
-        Settings.newHeaderOptions( [] )
+        Settings.headerOptions = []
         Settings.headerColor = Material.accentColor
         Settings.headerTitle = ""
         Settings.headerSubtitle = ""
