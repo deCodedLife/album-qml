@@ -19,6 +19,9 @@ Item {
 
         model: images
         delegate: Image {
+            property var originParent: null
+            state: "normal"
+
             states: [
                 State {
                     name: "normal"
@@ -84,11 +87,15 @@ Item {
                         image.z = 100
                         image.state = "resized"
                     } else {
-                        image.parent = body
+                        image.parent = parent
+                        image.x = 0
+                        image.y = 0
                         image.state = "normal"
                     }
                 }
             }
+
+            Component.onCompleted: originParent = parent
         }
     }
 }
