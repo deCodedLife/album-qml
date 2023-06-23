@@ -18,6 +18,9 @@ Rectangle {
 
         RowLayout{
             anchors.fill: parent
+            anchors.topMargin: Settings.defaultmargin
+            anchors.bottomMargin: Settings.defaultmargin
+
             spacing: Settings.minimalMargin
 
             Button {
