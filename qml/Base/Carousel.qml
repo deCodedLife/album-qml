@@ -22,6 +22,7 @@ Item {
             State {
                 name: "resized"
                 PropertyChanges {
+                    target: body
                     width: Settings.imageLayout.width
                     height:Settings.imageLayout.height
                 }
@@ -36,7 +37,7 @@ Item {
 
         transitions: Transition {
             NumberAnimation {
-                target: image
+                target: body
                 properties: "width,height,x,y"
                 easing.type: Easing.InOutQuart
                 duration: 500
@@ -133,6 +134,7 @@ Item {
                     animationTimeout.triggered.disconnect( cb )
                     animationTimeout.triggered.disconnect( afterCB )
                 } )
+                animationTimeout.start()
             }
         }
     }
