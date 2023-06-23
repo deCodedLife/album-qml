@@ -82,6 +82,7 @@ Rectangle {
 
             RowLayout {
                 Layout.fillHeight: true
+                Layout.preferredWidth: optionsList.width
 
                 ListView {
                     id: optionsList
