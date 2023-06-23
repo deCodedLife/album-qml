@@ -61,7 +61,13 @@ Rectangle {
             }
 
             RowLayout {
+                Layout.fillHeight: true
+
                 ListView {
+                    Layout.fillHeight: true
+                    width: implicitWidth
+                    Layout.alignment: Qt.AlignVCenter
+
                     interactive: false
                     model: Settings.headerOptions
                     delegate: Button {
@@ -80,7 +86,7 @@ Rectangle {
                             Settings.openEffect()
                             modelData[ "action" ]()
                         }
-                        Layout.alignment: Qt.AlignVCenter
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                 }
             }
