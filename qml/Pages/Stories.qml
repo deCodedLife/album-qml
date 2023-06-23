@@ -98,8 +98,8 @@ Page
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
         Settings.newHeaderOptions( [
-                                      "add.svg", () => Settings.loadPage( "Pages/StoryAdd.qml" ),
-                                      "play.svg", () => Settings.loadPage( "Pages/Playback.qml" )
+                                      { "icon": "add.svg", "action": () => Settings.loadPage( "Pages/StoryAdd.qml" ) },
+                                      { "icon": "play.svg", "action": () => Settings.loadPage( "Pages/Playback.qml" ) }
                                   ])
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
