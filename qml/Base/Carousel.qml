@@ -78,8 +78,16 @@ Item {
                         height: Math.min( sourceSize.height, body.height )
                     }
                 }
-
             ]
+
+            transitions: Transition {
+                NumberAnimation {
+                    target: image
+                    properties: "width,height,x,y"
+                    easing.type: Easing.InOutQuart
+                    duration: 500
+                }
+            }
 
             width: carousel.width - 50
             height: itemHeight
