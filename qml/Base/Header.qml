@@ -67,6 +67,7 @@ Rectangle {
 
                 ListView {
                     Layout.alignment: Qt.AlignVCenter
+                    width: actionButton.implicitBackgroundWidth * model.length
                     id: optionsList
                     spacing: 0
 
