@@ -71,7 +71,7 @@ Rectangle {
                     width: 200
 
                     interactive: false
-                    model: Settings.headerOptions ?? [ "add.svg", "play.svg" ]
+                    model: Settings.headerOptions == [] ? [ "add.svg", "play.svg" ] : Settings.headerOptions
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
@@ -97,6 +97,7 @@ Rectangle {
                         function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
                     }
                 }
+                Rectangle { Layout.fillWidth: true; Layout.fillHeight: true; color: "white" }
             }
         }
     }
