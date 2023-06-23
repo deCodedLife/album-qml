@@ -78,8 +78,8 @@ QtObject
         let object = popupRectangle.createObject(root)
     }
 
-    function newHeaderOptions( icon, action ) {
-        headerOptions.push({ "icon": icon, "action": action })
-        optionsUpdated( headerOptions )
+    function newHeaderOptions( options ) {
+        headerOptions = options
+        optionsUpdated( options )
     }
 }

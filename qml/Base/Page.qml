@@ -8,8 +8,9 @@ Item {
     clip: true
 
     onHeightChanged: Settings.setHeight( height )
+
     Component.onCompleted: {
-        Settings.headerOptions = []
+        Settings.newHeaderOptions()
         Settings.headerColor = Material.accentColor
         Settings.headerTitle = ""
         Settings.headerSubtitle = ""
