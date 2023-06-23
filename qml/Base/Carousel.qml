@@ -76,7 +76,6 @@ Item {
                     properties: "width,height,x,y"
                     easing.type: Easing.InOutQuart
                     duration: 500
-                    onFinished: image.animationAfter()
                 }
             }
 
@@ -107,6 +106,9 @@ Item {
                         image.y = 0
                         image.z = 0
                         image.state = "normal"
+
+                        body.model = []
+                        body.model = images
                     }
                 }
             }
