@@ -12,7 +12,10 @@ Item {
 
     ListView {
         id: body
-        anchors.fill: parent
+
+        width: parent.width
+        height: originalHeight
+
         orientation: ListView.Horizontal
         spacing: Settings.defaultmargin
         currentIndex: 0
@@ -36,10 +39,14 @@ Item {
         ]
 
         property var originParent: null
+        property int originalHeight: 0
         property int itemSelected: 0
 
 
-        Component.onCompleted: originParent = carousel
+        Component.onCompleted: {
+            originalHeight = itemHeight
+            originParent = carousel
+        }
 
         transitions: Transition {
             NumberAnimation {
