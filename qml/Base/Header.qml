@@ -64,7 +64,12 @@ Rectangle {
 
             RowLayout {
                 Layout.fillHeight: true
-                width: 32 * Settings.headerOptions.length
+
+                Rectangle {
+                    width: 32
+                    Layout.fillHeight: true
+                    color: "white"
+                }
 
                 ListView {
                     Layout.fillHeight: true
