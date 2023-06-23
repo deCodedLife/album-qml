@@ -65,13 +65,8 @@ Rectangle {
             RowLayout {
                 Layout.fillHeight: true
 
-                Rectangle {
-                    width: 32
-                    Layout.fillHeight: true
-                    color: "white"
-                }
-
                 ListView {
+                    id: optionsList
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     width: implicitWidth
@@ -97,6 +92,11 @@ Rectangle {
                             modelData[ "action" ]()
                         }
                         anchors.verticalCenter: parent.verticalCenter
+                    }
+
+                    Connections {
+                        target: Settings
+                        function onOptionsUpdated( options ) { optionsList.model = options }
                     }
                 }
             }

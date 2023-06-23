@@ -33,6 +33,7 @@ QtObject
       * }
     */
     property var headerOptions: []
+    signal optionsUpdated( var option )
 
     function hideHeader() {
         isHeaderVisible = false
@@ -79,5 +80,6 @@ QtObject
 
     function newHeaderOptions( icon, action ) {
         headerOptions.push({ "icon": icon, "action": action })
+        optionsUpdated( headerOptions )
     }
 }
