@@ -110,6 +110,15 @@ Item {
                 }
             }
 
+            onStateChanged: {
+                image.x = image.globalCoords.x
+                image.y = image.globalCoords.y
+                if ( state === "normal" ) {
+                    image.x = 0
+                    image.y = 0
+                }
+            }
+
 
 
             MouseArea {
@@ -118,19 +127,13 @@ Item {
                     body.itemSelected = index
                     if ( image.state === "normal" ) {
                         body.parent = Settings.imageLayout
-                        image.x = image.globalCoords.x
-                        image.y = image.globalCoords.y
                         body.state = "resized"
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
                         let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
-                        image.x = image.globalCoords.x
-                        image.y = image.globalCoords.y
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent
-                            image.x = 0
-                            image.y = 0
                         }, 600 )
                     }
                 }
