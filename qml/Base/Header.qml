@@ -19,8 +19,8 @@ Rectangle {
         RowLayout{
             anchors.fill: parent
 
-            anchors.topMargin: Settings.defaultmargin
-            anchors.bottomMargin: Settings.defaultmargin
+            anchors.topMargin: Settings.defaultmargin + Settings.minimalMargin
+            anchors.bottomMargin: Settings.defaultmargin + Settings.minimalMargin
             Layout.alignment: Qt.AlignVCenter
 
 
