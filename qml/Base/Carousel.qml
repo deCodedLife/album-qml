@@ -17,9 +17,6 @@ Item {
         height: originalHeight
 
         orientation: ListView.Horizontal
-        snapMode: ListView.SnapToItem
-        highlightMoveDuration: 100
-        highlightMoveVelocity: -1
         spacing: Settings.defaultmargin
         currentIndex: 0
 
@@ -43,6 +40,9 @@ Item {
                     y: 0
                     width: Settings.imageLayout.width
                     height:Settings.imageLayout.height
+                    snapMode: ListView.SnapToItem
+                    highlightMoveDuration: 100
+                    highlightMoveVelocity: -1
                 }
             }
 

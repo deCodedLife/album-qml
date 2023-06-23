@@ -19,11 +19,13 @@ Page
     ColumnLayout {
         id: body
         anchors.fill: parent
+        anchors.topMargin: Settings.defaultmargin
+        anchors.leftMargin: Settings.defaultmargin
+        anchors.rightMargin: Settings.defaultmargin
 
         GridView {
             id: grid
             clip: true
-            cacheBuffer: 999
             Layout.fillWidth: true
             height: parent.height
             cellWidth: parent.width / 2
