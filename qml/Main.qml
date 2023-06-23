@@ -91,7 +91,7 @@ ApplicationWindow
             ]
 
             transitions: Transition {
-                NumberAnimation on opacity { target: background; easing.type: Easing.InOutQuart; duration: 500 }
+                NumberAnimation { target: background; properties: "opacity"; easing.type: Easing.InOutQuart; duration: 500 }
             }
         }
 
