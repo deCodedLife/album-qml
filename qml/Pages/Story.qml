@@ -47,7 +47,7 @@ Page {
         Rectangle{ Layout.fillHeight: true }
     }
 
-    Component.onCompleted:
+    onAfterInit:
     {
         Settings.headerColor = "transparent"
         Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
