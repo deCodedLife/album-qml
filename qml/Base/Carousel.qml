@@ -110,11 +110,6 @@ Item {
                 }
             ]
 
-            onStateChanged: {
-                if ( state === "normal" ) image.fillMode = Image.PreserveAspectCrop
-                else image.fillMode = Image.PreserveAspectFit
-            }
-
             Image {
                 property int rounded: 20
                 property var globalCoords: null
@@ -167,6 +162,9 @@ Item {
                         body.x = gPos.x
                         body.y = gPos.y
                         body.state = "resized"
+                        animationTimeout.addAction( () => {
+                            image.fillMode = Image.PreserveAspectFit
+                        }, 500 )
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
@@ -175,6 +173,7 @@ Item {
                             body.parent = body.originParent
                             body.x = 0
                             body.y = 0
+                            image.fillMode = Image.PreserveAspectCrop
                         }, 600 )
                     }
                 }
