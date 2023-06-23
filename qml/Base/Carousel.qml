@@ -17,9 +17,11 @@ Item {
         spacing: Settings.defaultmargin
         currentIndex: 0
 
+        property var originParent: null
+        Component.onCompleted: originParent = carousel
+
         model: images
         delegate: Image {
-            property var originParent: null
             property int rounded: 20
 
             state: "normal"
@@ -76,18 +78,16 @@ Item {
                     properties: "width,height,x,y"
                     easing.type: Easing.InOutQuart
                     duration: 500
+                    onRunningChanged: {
+                        if ( running === false ) image.animationAfter()
+                    }
                 }
             }
 
             function animationAfter() {
                 image.x = 0
                 image.y = 0
-
-                if ( image.state === "normal" ) {
-                    image.destroy()
-                } else {
-                    body.model = body.model.splice( image.originIndex, 1 )
-                }
+                image.z = 0
             }
 
             MouseArea {
@@ -95,25 +95,22 @@ Item {
                 onClicked: {
                     if ( image.state === "normal" ) {
                         let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
-                        image.parent = Settings.imageLayout
+                        body.parent = Settings.imageLayout
                         image.x = coords.x
                         image.y = coords.y
                         image.z = 100
                         image.state = "resized"
                     } else {
-                        image.parent = parent
+                        body.parent = body.originParent
                         image.x = 0
                         image.y = 0
                         image.z = 0
                         image.state = "normal"
-
-                        image.originParent.model = []
-                        image.originParent.model = images
                     }
                 }
             }
 
-            Component.onCompleted: originParent = body
+
         }
     }
 }
