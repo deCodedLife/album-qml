@@ -78,11 +78,11 @@ Rectangle {
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
-                        icon.width: 24
-                        icon.height: 24
+                        icon.width: 48
+                        icon.height: 48
                         flat: true
                         width: 48
-                        height: 24
+                        height: 48
                         padding: 0
                         topInset: 0
                         bottomInset: 0
@@ -93,6 +93,7 @@ Rectangle {
                             Settings.openEffect()
                             modelData[ "action" ]()
                         }
+                        Layout.alignment: Qt.AlignVCenter
                     }
 
                     Connections {
