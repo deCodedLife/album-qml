@@ -101,13 +101,13 @@ Item {
                     name: "resized"
                     PropertyChanges{
                         target: imageItem
-                        rounded: 0
                         width: body.width
                     }
                     PropertyChanges {
                         target: image
-                        width: imageItem.width
-                        height: image.sourceSize.height
+                        rounded: 0
+//                        width: imageItem.width
+//                        height: image.sourceSize.height
                         image.scale: Qt.KeepAspectRatio
                     }
                 }
