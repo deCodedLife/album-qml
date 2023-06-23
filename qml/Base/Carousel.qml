@@ -40,7 +40,7 @@ Item {
                 properties: "width,height,x,y"
                 easing.type: Easing.InOutQuart
                 duration: 500
-                onFinished: {
+                onRunningChanged: {
                     console.log( "TEST TEST TEST" )
                 }
             }
