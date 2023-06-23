@@ -66,11 +66,9 @@ Rectangle {
                 Layout.fillHeight: true
 
                 ListView {
-                    id: optionsList
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-                    width: implicitWidth
                     Layout.alignment: Qt.AlignVCenter
+                    id: optionsList
+                    width: implicitWidth
                     spacing: 0
 
                     interactive: false
@@ -91,7 +89,6 @@ Rectangle {
                             Settings.openEffect()
                             modelData[ "action" ]()
                         }
-                        anchors.verticalCenter: parent.verticalCenter
                     }
 
                     Connections {
