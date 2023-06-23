@@ -109,17 +109,6 @@ Item {
                 }
             }
 
-            onStateChanged: {
-                image.x =
-                image.y = image.globalCoords.y
-                if ( state === "normal" ) {
-                    image.x = 0
-                    image.y = 0
-                }
-            }
-
-
-
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
