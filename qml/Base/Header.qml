@@ -78,6 +78,7 @@ Rectangle {
                         icon.width: 24
                         icon.height: 24
                         flat: true
+                        width: 24
                         padding: 0
                         topInset: 0
                         bottomInset: 0
