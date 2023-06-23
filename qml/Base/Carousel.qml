@@ -27,8 +27,6 @@ Item {
             State {
                 name: "normal"
                 PropertyChanges {
-                    x: 0
-                    y: 0
                     target: body
                     height: originalHeight
                 }
@@ -66,6 +64,11 @@ Item {
         }
 
         onStateChanged: {
+            if ( state === "normal" ) {
+                x = 0
+                y = 0
+            }
+
             let childrenLength = model.length
             for ( let i = 0; i < childrenLength; i++ ) {
                 currentIndex = i
