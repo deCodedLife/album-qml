@@ -26,8 +26,8 @@ Item {
                 name: "resized"
                 PropertyChanges {
                     target: body
-//                    width: Settings.imageLayout.width
-//                    height:Settings.imageLayout.height
+                    width: Settings.imageLayout.width
+                    height:Settings.imageLayout.height
                 }
             }
 
@@ -35,12 +35,9 @@ Item {
 
         property var originParent: null
         property int itemSelected: 0
-        property var globalCoords: null
 
-        Component.onCompleted: {
-            globalCoords = body.mapToItem( Settings.root, Qt.point(0, 0) )
-            originParent = carousel
-        }
+
+        Component.onCompleted: originParent = carousel
 
         transitions: Transition {
             NumberAnimation {
@@ -64,6 +61,7 @@ Item {
         model: images
         delegate: Image {
             property int rounded: 20
+            property var globalCoords: null
 
             state: "normal"
 
@@ -74,6 +72,8 @@ Item {
                     PropertyChanges{
                         target: image
                         rounded: 0
+                        x: 0
+                        y: 0
                         width: body.width
                         height: Math.min( sourceSize.height, body.height )
                     }
@@ -83,7 +83,7 @@ Item {
             transitions: Transition {
                 NumberAnimation {
                     target: image
-                    properties: "width,height"
+                    properties: "width,height,x,y"
                     easing.type: Easing.InOutQuart
                     duration: 500
                 }
@@ -118,23 +118,25 @@ Item {
                     body.itemSelected = index
                     if ( image.state === "normal" ) {
                         body.parent = Settings.imageLayout
-                        body.x = body.globalCoords.x
-                        body.y = body.globalCoords.y
+                        image.x = body.globalCoords.x
+                        image.y = body.globalCoords.y
                         body.state = "resized"
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
                         let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
-                        body.x = body.globalCoords.x
-                        body.y = body.globalCoords.y
+                        image.x = body.globalCoords.x
+                        image.y = body.globalCoords.y
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent
-                            body.x = 0
-                            body.y = 0
+                            image.x = 0
+                            image.y = 0
                         }, 600 )
                     }
                 }
             }
+
+            Component.onCompleted: image.globalCoords = body.mapToItem( Settings.root, Qt.point(0, 0) )
         }
 
         Timer {
