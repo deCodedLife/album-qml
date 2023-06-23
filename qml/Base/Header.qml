@@ -71,18 +71,18 @@ Rectangle {
                     orientation: ListView.Horizontal
 
                     Layout.fillWidth: true
-                    height: 24
+                    height: 32
 
                     interactive: false
                     model: Settings.headerOptions == [] ? [ "add.svg", "play.svg" ] : Settings.headerOptions
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
-                        icon.width: 24
-                        icon.height: 24
+                        icon.width: 32
+                        icon.height: 32
                         flat: true
-                        width: 32
-                        height: 32
+                        width: 24
+                        height: 24
                         padding: 0
                         topInset: 0
                         bottomInset: 0
