@@ -64,13 +64,12 @@ Rectangle {
 
             RowLayout {
                 Layout.fillHeight: true
-                width: 64
+                width: 200
 
                 ListView {
                     id: optionsList
-                    Layout.alignment: Qt.AlignVCenter
-                    width: 64
-                    spacing: 0
+//                    Layout.alignment: Qt.AlignVCenter
+                    width: 200
 
                     interactive: false
                     model: Settings.headerOptions
@@ -81,6 +80,7 @@ Rectangle {
                         icon.height: 24
                         flat: true
                         width: 24
+                        height: 24
                         padding: 0
                         topInset: 0
                         bottomInset: 0
