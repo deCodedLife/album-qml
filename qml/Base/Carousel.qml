@@ -99,6 +99,7 @@ Item {
                         image.parent = parent
                         image.x = 0
                         image.y = 0
+                        image.z = 0
                         image.state = "normal"
                     }
                 }
