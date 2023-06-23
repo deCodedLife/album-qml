@@ -7,6 +7,7 @@ Item {
     id: page
     clip: true
 
+    property func afterInit: () => {}
     onHeightChanged: Settings.setHeight( height )
 
     Component.onCompleted: {
@@ -16,5 +17,6 @@ Item {
         Settings.headerSubtitle = ""
         Settings.showHeader()
         Settings.setHeight( page.height )
+        afterInit()
     }
 }
