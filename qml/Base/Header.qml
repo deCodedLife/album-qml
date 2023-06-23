@@ -91,7 +91,7 @@ Rectangle {
                     width: 32 * model.length
 
                     interactive: false
-                    model: Settings.headerOptions == [] ? [ "add.svg", "play.svg" ] : Settings.headerOptions
+                    model: Settings.headerOptions
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
