@@ -108,7 +108,7 @@ Item {
                         rounded: 0
 //                        width: imageItem.width
 //                        height: image.sourceSize.height
-                        image.scale: Qt.KeepAspectRatio
+                        fillMode: Image.PreserveAspectFit
                     }
                 }
             ]
@@ -116,6 +116,8 @@ Item {
             Image {
                 property int rounded: 20
                 property var globalCoords: null
+
+                scale: Qt.KeepAspectRatio
 
                 fillMode: Image.PreserveAspectCrop
                 width: parent.width
