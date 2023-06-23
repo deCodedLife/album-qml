@@ -114,6 +114,7 @@ Item {
                         body.parent = Settings.imageLayout
                         body.x = coords.x
                         body.y = coords.y
+                        console.log( coords.x, coords.y )
                         body.state = "resized"
                     } else {
                         body.state = "normal"
