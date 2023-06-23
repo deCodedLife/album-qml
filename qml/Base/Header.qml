@@ -23,50 +23,53 @@ Rectangle {
             anchors.bottomMargin: Settings.defaultmargin
             Layout.alignment: Qt.AlignVCenter
 
-            spacing: Settings.minimalMargin
 
-            Button {
-                id: actionButton
-                icon.source: [SERVER, QML, "Images/back.svg"].join("/")
-                icon.color: Material.primaryTextColor
-                icon.width: 24
-                icon.height: 24
-                flat: true
-                padding: 0
-                topInset: 0
-                bottomInset: 0
-                verticalPadding: 0
-                leftPadding: 0
-                rightPadding: 0
+            RowLayout {
+                spacing: Settings.minimalMargin
 
-                onClicked: Settings.goBack()
+                Button {
+                    id: actionButton
+                    icon.source: [SERVER, QML, "Images/back.svg"].join("/")
+                    icon.color: Material.primaryTextColor
+                    icon.width: 24
+                    icon.height: 24
+                    flat: true
+                    padding: 0
+                    topInset: 0
+                    bottomInset: 0
+                    verticalPadding: 0
+                    leftPadding: 0
+                    rightPadding: 0
 
-                width: 32
-                height: 32
+                    onClicked: Settings.goBack()
 
-                Layout.alignment: Qt.AlignVCenter
-            }
+                    width: 32
+                    height: 32
 
-            ColumnLayout{
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                Text {
-                    id: title
-                    Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
-                    text: Settings.headerTitle
-                    color: Material.primaryTextColor
-                    font.pointSize: Settings.h3
+                    Layout.alignment: Qt.AlignVCenter
                 }
 
-                Text {
-                    id: subtitle
-                    enabled: Settings.headerSubtitle != ""
-                    visible: enabled
-                    text: Settings.headerSubtitle
-                    color: Material.primaryTextColor
-                    opacity: 0.7
-                    font.pointSize: Settings.h5
+                ColumnLayout{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+
+                    Text {
+                        id: title
+                        Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
+                        text: Settings.headerTitle
+                        color: Material.primaryTextColor
+                        font.pointSize: Settings.h3
+                    }
+
+                    Text {
+                        id: subtitle
+                        enabled: Settings.headerSubtitle != ""
+                        visible: enabled
+                        text: Settings.headerSubtitle
+                        color: Material.primaryTextColor
+                        opacity: 0.7
+                        font.pointSize: Settings.h5
+                    }
                 }
             }
 
