@@ -107,8 +107,8 @@ Item {
                         image.z = 0
                         image.state = "normal"
 
-                        originParent.model = []
-                        originParent.model = images
+                        image.originParent.model = []
+                        image.originParent.model = images
                     }
                 }
             }
