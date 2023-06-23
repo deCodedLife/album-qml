@@ -26,6 +26,8 @@ Item {
                 name: "resized"
                 PropertyChanges {
                     target: body
+                    x: 0
+                    y: 0
                     width: Settings.imageLayout.width
                     height:Settings.imageLayout.height
                 }
@@ -72,8 +74,6 @@ Item {
                     PropertyChanges{
                         target: image
                         rounded: 0
-                        x: 0
-                        y: 0
                         width: body.width
                         height: Math.min( sourceSize.height, body.height )
                     }
@@ -83,7 +83,7 @@ Item {
             transitions: Transition {
                 NumberAnimation {
                     target: image
-                    properties: "width,height,x,y"
+                    properties: "width,height"
                     easing.type: Easing.InOutQuart
                     duration: 500
                 }
@@ -110,7 +110,7 @@ Item {
             }
 
             onStateChanged: {
-                image.x = image.globalCoords.x
+                image.x =
                 image.y = image.globalCoords.y
                 if ( state === "normal" ) {
                     image.x = 0
@@ -126,6 +126,8 @@ Item {
                     body.itemSelected = index
                     if ( image.state === "normal" ) {
                         body.parent = Settings.imageLayout
+                        body.x = body.mapToItem( Settings.root, Qt.point(0, 0) ).x
+                        body.y = body.mapToItem( Settings.root, Qt.point(0, 0) ).y
                         body.state = "resized"
                     } else {
                         body.state = "normal"
@@ -137,8 +139,6 @@ Item {
                     }
                 }
             }
-
-            Component.onCompleted: image.globalCoords = image.mapToItem( Settings.root, Qt.point(0, 0) )
         }
 
         Timer {
