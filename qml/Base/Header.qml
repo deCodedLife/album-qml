@@ -100,7 +100,7 @@ Rectangle {
                             Settings.openEffect()
                             modelData[ "action" ]()
                         }
-                        Layout.alignment: Qt.AlignVCenter
+
                     }
 
                     Connections {
