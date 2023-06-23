@@ -113,10 +113,10 @@ Rectangle {
 
                     }
 
-                    Connections {
-                        target: Settings
-                        function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
-                    }
+//                    Connections {
+//                        target: Settings
+//                        function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
+//                    }
                 }
             }
         }
