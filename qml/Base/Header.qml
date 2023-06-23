@@ -26,6 +26,7 @@ Rectangle {
 
             RowLayout {
                 spacing: Settings.minimalMargin
+                Layout.fillHeight: true
 
                 Button {
                     id: actionButton
