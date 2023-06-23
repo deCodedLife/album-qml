@@ -60,13 +60,18 @@ Rectangle {
                 }
             }
 
+            Rectangle { Layout.fillWidth: true }
+
             RowLayout {
                 Layout.fillHeight: true
+                width: 32 * Settings.headerOptions.length
 
                 ListView {
                     Layout.fillHeight: true
+                    Layout.fillWidth: true
                     width: implicitWidth
                     Layout.alignment: Qt.AlignVCenter
+                    spacing: 0
 
                     interactive: false
                     model: Settings.headerOptions
