@@ -23,6 +23,7 @@ Item {
         x: 0
         y: 0
 
+        state: "normal"
         states: [
             State {
                 name: "normal"
