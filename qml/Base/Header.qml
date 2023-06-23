@@ -13,14 +13,14 @@ Rectangle {
     Item {
         id: header
         anchors.fill: parent
-        anchors.leftMargin: Settings.defaultmargin
-        anchors.rightMargin: Settings.defaultmargin
+        anchors.leftMargin: Settings.defaultmargin + Settings.minimalMargin
+        anchors.rightMargin: Settings.defaultmargin + Settings.minimalMargin
 
         RowLayout{
             anchors.fill: parent
 
-            anchors.topMargin: Settings.defaultmargin + Settings.minimalMargin
-            anchors.bottomMargin: Settings.defaultmargin + Settings.minimalMargin
+            anchors.topMargin: Settings.defaultmargin
+            anchors.bottomMargin: Settings.defaultmargin
             Layout.alignment: Qt.AlignVCenter
 
 
