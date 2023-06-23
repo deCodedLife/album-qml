@@ -110,7 +110,7 @@ Item {
                 onClicked: {
                     body.itemSelected = index
                     if ( image.state === "normal" ) {
-                        let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
+                        let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
                         body.parent = Settings.imageLayout
                         body.x = coords.x
                         body.y = coords.y
@@ -118,7 +118,11 @@ Item {
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
-                        animationTimeout.addAction( () => body.parent = body.originParent, 600 )
+                        animationTimeout.addAction( () => {
+                            body.parent = body.originParent
+                            body.x = 0
+                            body.y = 0
+                        }, 600 )
                     }
                 }
             }
