@@ -88,7 +88,6 @@ Item {
                         target: image
                         rounded: 0
                         width: body.width
-                        height: Math.min( sourceSize.height, body.height )
                     }
                 }
             ]
