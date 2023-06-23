@@ -33,8 +33,8 @@ Page
 
             model: storiesList
             delegate: Item {
-                height: page.width / 2
-                width: page.width / 2
+                height: grid.width / 2
+                width: grid.width / 2
 
                 Image {
                     id: image
@@ -58,6 +58,26 @@ Page
                             }
                         }
                     }
+
+                    Rectangle {
+                        x: 0
+                        y: 0
+                        anchors.fill: parent
+                        anchors.centerIn: parent
+                        anchors.margins: Settings.minimalMargin
+                        color: Qt.rgba(0, 0, 0, 0.6)
+                        radius: 20
+                    }
+
+                    Text {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.bottom: parent.bottom
+                        anchors.margins: Settings.defaultmargin
+                        color: "white"
+                        font.pointSize: Settings.h6
+                        font.bold: true
+                        text: modelData[ "timestamp" ].split(" ")[0]
+                    }
                 }
 
                 MouseArea {
@@ -70,27 +90,6 @@ Page
                         }
                         Settings.openEffect()
                     }
-                }
-
-                Rectangle {
-                    x: 0
-                    y: 0
-                    anchors.fill: parent
-                    anchors.centerIn: parent
-                    anchors.margins: Settings.minimalMargin
-                    color: Qt.rgba(0, 0, 0, 0.6)
-                    radius: 20
-                }
-
-
-                Text {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.bottom: parent.bottom
-                    anchors.margins: Settings.defaultmargin
-                    color: "white"
-                    font.pointSize: Settings.h6
-                    font.bold: true
-                    text: modelData[ "timestamp" ].split(" ")[0]
                 }
             }
         }
