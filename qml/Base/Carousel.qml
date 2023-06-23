@@ -106,9 +106,6 @@ Item {
                     PropertyChanges {
                         target: image
                         rounded: 0
-//                        width: imageItem.width
-//                        height: image.sourceSize.height
-                        fillMode: Image.PreserveAspectFit
                     }
                 }
             ]
@@ -119,7 +116,7 @@ Item {
 
                 scale: Qt.KeepAspectRatio
 
-                fillMode: Image.PreserveAspectCrop
+                fillMode: state === "normal" ? Image.PreserveAspectCrop : Image.PreserveAspectFit
                 width: parent.width
                 height: parent.height
 
