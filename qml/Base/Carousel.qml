@@ -27,6 +27,8 @@ Item {
             State {
                 name: "normal"
                 PropertyChanges {
+                    x: 0
+                    y: 0
                     target: body
                     height: originalHeight
                 }
@@ -138,6 +140,8 @@ Item {
                         let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent
+                            body.x = 0
+                            body.y = 0
                         }, 600 )
                     }
                 }
