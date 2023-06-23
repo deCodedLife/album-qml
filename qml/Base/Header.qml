@@ -89,7 +89,7 @@ Rectangle {
                     id: optionsList
                     orientation: ListView.Horizontal
                     height: 32
-                    width: 32 * model.length + Settings.minimalMargin * ( model.length - 1 )
+                    width: 32 * model.length + ( Settings.minimalMargin * ( model.length - 1 ) )
                     spacing: Settings.minimalMargin
 
                     interactive: false
@@ -117,7 +117,7 @@ Rectangle {
 
                     Connections {
                         target: Settings
-                        function onOptionsUpdated( options ) { optionsList.model = options; console.log( JSON.stringify( options ) ) }
+                        function onOptionsUpdated( options ) { optionsList.model = options; }
                     }
                 }
             }
