@@ -68,7 +68,6 @@ Rectangle {
                 ListView {
                     Layout.alignment: Qt.AlignVCenter
                     id: optionsList
-                    width: implicitWidth
                     spacing: 0
 
                     interactive: false
