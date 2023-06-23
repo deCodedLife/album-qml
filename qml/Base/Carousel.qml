@@ -136,7 +136,7 @@ Item {
                 }
             }
 
-            Component.onCompleted: image.globalCoords = body.mapToItem( Settings.root, Qt.point(0, 0) )
+            Component.onCompleted: image.globalCoords = image.mapToItem( Settings.root, Qt.point(0, 0) )
         }
 
         Timer {
