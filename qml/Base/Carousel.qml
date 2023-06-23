@@ -17,6 +17,9 @@ Item {
         spacing: Settings.defaultmargin
         currentIndex: 0
 
+        x: 0
+        y: 0
+
         states: [
             State { name: "normal" },
             State {
@@ -32,8 +35,12 @@ Item {
 
         property var originParent: null
         property int itemSelected: 0
+        property var globalCoords: null
 
-        Component.onCompleted: originParent = carousel
+        Component.onCompleted: {
+            globalCoords = body.mapToItem( Settings.root, Qt.point(0, 0) )
+            originParent = carousel
+        }
 
         transitions: Transition {
             NumberAnimation {
@@ -76,7 +83,7 @@ Item {
             transitions: Transition {
                 NumberAnimation {
                     target: image
-                    properties: "width,height,x,y"
+                    properties: "width,height"
                     easing.type: Easing.InOutQuart
                     duration: 500
                 }
@@ -110,18 +117,17 @@ Item {
                 onClicked: {
                     body.itemSelected = index
                     if ( image.state === "normal" ) {
-                        let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
                         body.parent = Settings.imageLayout
-                        body.x = coords.x
-                        body.y = coords.y
+                        body.x = body.globalCoords.x
+                        body.y = body.globalCoords.y
                         console.log( coords.x, coords.y )
                         body.state = "resized"
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
                         let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
-                        body.x = coords.x
-                        body.y = coords.y
+                        body.x = body.globalCoords.x
+                        body.y = body.globalCoords.y
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent
                             body.x = 0
