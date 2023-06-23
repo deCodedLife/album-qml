@@ -27,8 +27,12 @@ Rectangle {
             RowLayout {
                 spacing: Settings.minimalMargin
                 Layout.fillHeight: true
+                Layout.alignment: Qt.AlignVCenter
 
                 Button {
+                    Layout.preferredWidth: 32
+                    Layout.preferredHeight: 32
+
                     id: actionButton
                     icon.source: [SERVER, QML, "Images/back.svg"].join("/")
                     icon.color: Material.primaryTextColor
