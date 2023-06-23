@@ -19,7 +19,7 @@ Item {
 
         model: images
         delegate: Image {
-            property var originParent: null
+            property var originIndex: 0
             property int rounded: 20
 
             state: "normal"
@@ -83,6 +83,12 @@ Item {
             function animationAfter() {
                 image.x = 0
                 image.y = 0
+
+                if ( image.state === "normal" ) {
+                    image.destroy()
+                } else {
+                    body.model = body.model.splice( image.originIndex, 1 )
+                }
             }
 
             MouseArea {
@@ -105,7 +111,7 @@ Item {
                 }
             }
 
-            Component.onCompleted: originParent = parent
+            Component.onCompleted: originIndex
         }
     }
 }
