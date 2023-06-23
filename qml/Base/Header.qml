@@ -77,6 +77,7 @@ Rectangle {
                     id: optionsList
                     orientation: ListView.Horizontal
                     Layout.fillHeight: true
+                    width: 48 * model.length
 
                     interactive: false
                     model: Settings.headerOptions == [] ? [ "add.svg", "play.svg" ] : Settings.headerOptions
