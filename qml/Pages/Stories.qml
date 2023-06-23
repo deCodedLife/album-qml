@@ -64,7 +64,6 @@ Page
                         y: 0
                         anchors.fill: parent
                         anchors.centerIn: parent
-                        anchors.margins: Settings.minimalMargin
                         color: Qt.rgba(0, 0, 0, 0.6)
                         radius: 20
                     }
