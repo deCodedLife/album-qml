@@ -60,7 +60,7 @@ Rectangle {
 
                     Text {
                         id: title
-                        Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
+//                        Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
                         text: Settings.headerTitle
                         color: Material.primaryTextColor
                         font.pointSize: Settings.h3
