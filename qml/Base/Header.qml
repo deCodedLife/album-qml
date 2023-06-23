@@ -68,7 +68,8 @@ Rectangle {
 
                 ListView {
                     id: optionsList
-                    width: 200
+                    Layout.fillWidth: true
+                    height: 24
 
                     interactive: false
                     model: Settings.headerOptions == [] ? [ "add.svg", "play.svg" ] : Settings.headerOptions
