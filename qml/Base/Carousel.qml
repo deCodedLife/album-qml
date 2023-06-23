@@ -17,8 +17,27 @@ Item {
         spacing: Settings.defaultmargin
         currentIndex: 0
 
+        states: [
+            State {
+                name: "normal"
+            },
+            State {
+                name: "resized"
+            }
+
+        ]
+
         property var originParent: null
         Component.onCompleted: originParent = carousel
+
+        onStateChanged: {
+            let childrenLength = model.length
+            for ( let i = 0; i < childrenLength; i++ ) {
+                currentIndex = i
+                let image = currentItem
+                image.state = body.state
+            }
+        }
 
         model: images
         delegate: Image {
@@ -43,8 +62,6 @@ Item {
                         target: image
                         width: Settings.root.width
                         height:Settings.root.height
-                        x: 0
-                        y: 0
                         rounded: 0
                     }
                 }
@@ -78,16 +95,7 @@ Item {
                     properties: "width,height,x,y"
                     easing.type: Easing.InOutQuart
                     duration: 500
-                    onRunningChanged: {
-                        if ( running === false ) image.animationAfter()
-                    }
                 }
-            }
-
-            function animationAfter() {
-                image.x = 0
-                image.y = 0
-                image.z = 0
             }
 
             MouseArea {
@@ -96,21 +104,13 @@ Item {
                     if ( image.state === "normal" ) {
                         let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
                         body.parent = Settings.imageLayout
-                        image.x = coords.x
-                        image.y = coords.y
-                        image.z = 100
-                        image.state = "resized"
+                        body.state = "resized"
                     } else {
                         body.parent = body.originParent
-                        image.x = 0
-                        image.y = 0
-                        image.z = 0
-                        image.state = "normal"
+                        body.state = "normal"
                     }
                 }
             }
-
-
         }
     }
 }
