@@ -97,6 +97,8 @@ Page
     Component.onCompleted: {
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
+        Settings.newHeaderOptions( "add.svg", () => Settings.loadPage( "Pages/StoryAdd.qml" ) );
+        Settings.newHeaderOptions( "play.svg", () => Settings.loadPage( "Pages/Playback.qml" ) )
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 

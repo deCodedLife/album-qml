@@ -26,6 +26,12 @@ QtObject
     property string headerSubtitle: ""
     property bool isHeaderVisible: true
     property color headerColor: Material.accentColor
+
+    /** {
+      *   "icon": "",
+      *   "action" () => {}
+      * }
+    */
     property var headerOptions: []
 
     function hideHeader() {
@@ -69,5 +75,9 @@ QtObject
     function openEffect () {
         lastMousePos = Qt.point( appMosue.mouseX, appMosue.mouseY )
         let object = popupRectangle.createObject(root)
+    }
+
+    function newHeaderOptions( icon, action ) {
+        headerOptions.push({ "icon": icon, "action": action })
     }
 }

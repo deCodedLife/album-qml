@@ -43,7 +43,6 @@ Rectangle {
 
                 Text {
                     id: title
-//                    Layout.alignment: Settings.headerSubtitle == "" ? Qt.AlignVCenter : Qt.AlignTop
                     Layout.bottomMargin: Settings.headerSubtitle == "" ? Settings.minimalMargin : 0
                     text: Settings.headerTitle
                     color: Material.primaryTextColor
@@ -61,7 +60,30 @@ Rectangle {
                 }
             }
 
-            Rectangle { Layout.fillWidth: true }
+            RowLayout {
+                ListView {
+                    interactive: false
+                    model: Settings.headerOptions
+                    delegate: Button {
+                        icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
+                        icon.color: Material.primaryTextColor
+                        icon.width: 24
+                        icon.height: 24
+                        flat: true
+                        padding: 0
+                        topInset: 0
+                        bottomInset: 0
+                        verticalPadding: 0
+                        leftPadding: 0
+                        rightPadding: 0
+                        onClicked: {
+                            Settings.openEffect()
+                            modelData[ "action" ]()
+                        }
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                }
+            }
         }
     }
 
