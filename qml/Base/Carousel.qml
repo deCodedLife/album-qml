@@ -23,8 +23,8 @@ Item {
                 name: "resized"
                 PropertyChanges {
                     target: body
-                    width: Settings.imageLayout.width
-                    height:Settings.imageLayout.height
+//                    width: Settings.imageLayout.width
+//                    height:Settings.imageLayout.height
                 }
             }
 
@@ -119,6 +119,9 @@ Item {
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
+                        let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
+                        body.x = coords.x
+                        body.y = coords.y
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent
                             body.x = 0
