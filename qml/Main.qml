@@ -70,7 +70,8 @@ ApplicationWindow
 
     Item {
         id: topItem
-        anchors.fill: parent
+        width: parent.width
+        height: parent.height
 
         Rectangle {
             id: background
