@@ -23,6 +23,10 @@ Item {
             },
             State {
                 name: "resized"
+                PropertyChanges {
+                    width: Settings.root.width
+                    height:Settings.root.height
+                }
             }
 
         ]
@@ -31,6 +35,15 @@ Item {
         property int itemSelected: 0
 
         Component.onCompleted: originParent = carousel
+
+        transitions: Transition {
+            NumberAnimation {
+                target: image
+                properties: "width,height,x,y"
+                easing.type: Easing.InOutQuart
+                duration: 500
+            }
+        }
 
         onStateChanged: {
             let childrenLength = model.length
@@ -53,9 +66,6 @@ Item {
                     name: "normal"
                     PropertyChanges {
                         target: image
-                        width: carousel.width - 50
-                        height: itemHeight
-                        layer.enabled: true
                         rounded: 20
                     }
                 },
@@ -63,9 +73,8 @@ Item {
                     name: "resized"
                     PropertyChanges{
                         target: image
-                        width: Settings.root.width
-                        height:Settings.root.height
                         rounded: 0
+                        width: body.width
                     }
                 }
 
@@ -92,14 +101,7 @@ Item {
                 }
             }
 
-            transitions: Transition {
-                NumberAnimation {
-                    target: image
-                    properties: "width,height,x,y"
-                    easing.type: Easing.InOutQuart
-                    duration: 500
-                }
-            }
+
 
             MouseArea {
                 anchors.fill: parent
