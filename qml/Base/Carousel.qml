@@ -110,13 +110,18 @@ Item {
                 }
             ]
 
+            onStateChanged: {
+                if ( state === "normal" ) image.fillMode = Image.PreserveAspectCrop
+                else image.fillMode = Image.PreserveAspectFit
+            }
+
             Image {
                 property int rounded: 20
                 property var globalCoords: null
 
                 scale: Qt.KeepAspectRatio
 
-                fillMode: state === "normal" ? Image.PreserveAspectCrop : Image.PreserveAspectFit
+                fillMode: Image.PreserveAspectCrop
                 width: parent.width
                 height: parent.height
 
@@ -162,7 +167,6 @@ Item {
                         body.x = gPos.x
                         body.y = gPos.y
                         body.state = "resized"
-                        console.log()
                     } else {
                         body.state = "normal"
                         Settings.imageLayout.hide()
