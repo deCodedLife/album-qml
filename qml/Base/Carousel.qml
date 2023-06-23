@@ -117,7 +117,7 @@ Item {
                         body.state = "resized"
                     } else {
                         body.state = "normal"
-                        animationTimeout.addAction( () => body.parent = body.originParent, 500 )
+                        animationTimeout.addAction( () => body.parent = body.originParent, 600 )
                     }
                 }
             }
