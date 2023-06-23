@@ -24,7 +24,13 @@ Item {
         y: 0
 
         states: [
-            State { name: "normal" },
+            State {
+                name: "normal"
+                PropertyChanges {
+                    target: body
+                    height: originalHeight
+                }
+            },
             State {
                 name: "resized"
                 PropertyChanges {
