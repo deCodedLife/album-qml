@@ -18,6 +18,7 @@ Item {
 
         orientation: ListView.Horizontal
         snapMode: ListView.SnapToItem
+        horizontalVelocity: 100
         spacing: Settings.defaultmargin
         currentIndex: 0
 
