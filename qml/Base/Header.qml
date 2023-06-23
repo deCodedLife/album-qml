@@ -25,7 +25,7 @@ Rectangle {
 
 
             RowLayout {
-                spacing: Settings.minimalMargin
+                spacing: Settings.defaultmargin
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignVCenter
 
