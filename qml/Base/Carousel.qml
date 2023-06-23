@@ -18,9 +18,7 @@ Item {
         currentIndex: 0
 
         states: [
-            State {
-                name: "normal"
-            },
+            State { name: "normal" },
             State {
                 name: "resized"
                 PropertyChanges {
@@ -62,13 +60,7 @@ Item {
             state: "normal"
 
             states: [
-                State {
-                    name: "normal"
-                    PropertyChanges {
-                        target: image
-                        rounded: 20
-                    }
-                },
+                State { name: "normal" },
                 State {
                     name: "resized"
                     PropertyChanges{
@@ -115,6 +107,7 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
+                    body.itemSelected = index
                     if ( image.state === "normal" ) {
                         let coords = image.mapToItem( Settings.root, Qt.point(0, 0) )
                         body.parent = Settings.imageLayout
@@ -125,7 +118,6 @@ Item {
                         body.parent = body.originParent
                         body.state = "normal"
                     }
-                    body.itemSelected = index
                 }
             }
         }
