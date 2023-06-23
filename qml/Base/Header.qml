@@ -64,11 +64,12 @@ Rectangle {
 
             RowLayout {
                 Layout.fillHeight: true
+                width: optionsList.implicitWidth
 
                 ListView {
+                    id: optionsList
                     Layout.alignment: Qt.AlignVCenter
                     width: 42 * model.length
-                    id: optionsList
                     spacing: 0
 
                     interactive: false
