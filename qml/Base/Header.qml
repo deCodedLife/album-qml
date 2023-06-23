@@ -60,7 +60,7 @@ Rectangle {
                 }
             }
 
-            Rectangle { Layout.fillWidth: true }
+//            Rectangle { Layout.fillWidth: true }
 
             RowLayout {
                 Layout.fillHeight: true
@@ -68,7 +68,6 @@ Rectangle {
 
                 ListView {
                     id: optionsList
-//                    Layout.alignment: Qt.AlignVCenter
                     width: 200
 
                     interactive: false
