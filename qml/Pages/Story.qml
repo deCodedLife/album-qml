@@ -49,7 +49,7 @@ Page {
 
     Component.onCompleted:
     {
-        Settings.headerColor = "transparent"
+//        Settings.headerColor = "transparent"
         Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
         Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
     }
