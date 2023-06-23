@@ -89,8 +89,8 @@ Item {
                 }
             }
 
-            width: carousel.width - 50
-            height: itemHeight
+            width: body.width - 50
+            height: body.height
             fillMode: Image.PreserveAspectCrop
 
             id: image
@@ -100,7 +100,6 @@ Item {
                 maskSource: Item {
                     width: image.width
                     height: image.height
-
                     Rectangle {
                         anchors.centerIn: parent
                         width: image.width
