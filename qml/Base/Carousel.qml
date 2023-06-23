@@ -139,9 +139,9 @@ Item {
 
             onStateChanged: {
                 if ( state === "normal" )
-                    animationTimeout.addAction( () => image.fillMode = Image.PreserveAspectFit, 500 )
-                else
                     animationTimeout.addAction( () => image.fillMode = Image.PreserveAspectCrop, 500 )
+                else
+                    animationTimeout.addAction( () => image.fillMode = Image.PreserveAspectFit, 500 )
 
             }
 
