@@ -93,8 +93,7 @@ Page
         }
     }
 
-    afterInit: initPage()
-    function initPage () {
+    onAfterInit: {
         Settings.headerTitle = "Наши моменты"
         Settings.headerColor = "transparent"
         Settings.headerOptions = [

@@ -7,7 +7,7 @@ Item {
     id: page
     clip: true
 
-    property var afterInit: () => {}
+    signal afterInit
     onHeightChanged: Settings.setHeight( height )
 
     Component.onCompleted: {
