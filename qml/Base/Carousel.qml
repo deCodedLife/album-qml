@@ -22,8 +22,8 @@ Item {
             State {
                 name: "resized"
                 PropertyChanges {
-                    width: Settings.root.width
-                    height:Settings.root.height
+                    width: Settings.imageLayout.width
+                    height:Settings.imageLayout.height
                 }
             }
 

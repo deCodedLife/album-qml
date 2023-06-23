@@ -71,6 +71,12 @@ ApplicationWindow
     Item {
         id: topItem
         anchors.fill: parent
+
+        Rectangle {
+            anchors.fill: parent
+            color: "black"
+            visible: topItem.children.length > 1
+        }
     }
 
     MouseArea {
