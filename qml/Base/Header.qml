@@ -13,8 +13,8 @@ Rectangle {
     Item {
         id: header
         anchors.fill: parent
-        anchors.leftMargin: Settings.minimalMargin
-        anchors.rightMargin: Settings.minimalMargin
+        anchors.leftMargin: Settings.defaultmargin
+        anchors.rightMargin: Settings.defaultmargin
 
         RowLayout{
             anchors.fill: parent
