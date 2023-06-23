@@ -79,50 +79,77 @@ Item {
         }
 
         model: images
-        delegate: Image {
-            property int rounded: 20
-            property var globalCoords: null
+        delegate:
+        Item {
+            id: imageItem
 
-            state: "normal"
-
-            states: [
-                State { name: "normal" },
-                State {
-                    name: "resized"
-                    PropertyChanges{
-                        target: image
-                        rounded: 0
-                        width: body.width
-                    }
-                }
-            ]
+            width: body.width - 50
+            height: body.height
 
             transitions: Transition {
                 NumberAnimation {
-                    target: image
+                    target: imageItem
                     properties: "width,height"
                     easing.type: Easing.InOutQuart
                     duration: 500
                 }
             }
 
-            width: body.width - 50
-            height: body.height
-            fillMode: Image.PreserveAspectCrop
+            states: [
+                State { name: "normal" },
+                State {
+                    name: "resized"
+                    PropertyChanges{
+                        target: imageItem
+                        rounded: 0
+                        width: body.width
+                    }
+                    PropertyChanges {
+                        target: image
+                        width: imageItem.width
+                        height: image.sourceSize.height
+                        image.scale: Qt.KeepAspectRatio
+                    }
+                }
+            ]
 
-            id: image
-            source: [SERVER, modelData[ "file" ]].join("/")
-            layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: Item {
-                    width: image.width
-                    height: image.height
-                    Rectangle {
-                        anchors.centerIn: parent
+            Image {
+                property int rounded: 20
+                property var globalCoords: null
+
+                fillMode: Image.PreserveAspectCrop
+                width: parent.width
+                height: parent.height
+
+                id: image
+                source: [SERVER, modelData[ "file" ]].join("/")
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Item {
                         width: image.width
                         height: image.height
-                        radius: image.rounded
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width: image.width
+                            height: image.height
+                            radius: image.rounded
+                        }
                     }
+                }
+            }
+
+            Timer {
+                id: animationTimeout
+                repeat: false
+
+                function addAction( cb, duration ) {
+                    animationTimeout.interval = duration
+                    animationTimeout.triggered.connect( cb )
+                    animationTimeout.triggered.connect( function afterCB () {
+                        animationTimeout.triggered.disconnect( cb )
+                        animationTimeout.triggered.disconnect( afterCB )
+                    } )
+                    animationTimeout.start()
                 }
             }
 
@@ -131,7 +158,7 @@ Item {
                 onClicked: {
                     body.itemSelected = index
                     let gPos = body.mapToItem( Settings.root, Qt.point(0, 0) )
-                    if ( image.state === "normal" ) {
+                    if ( body.state === "normal" ) {
                         body.parent = Settings.imageLayout
                         body.x = gPos.x
                         body.y = gPos.y
@@ -148,21 +175,6 @@ Item {
                         }, 600 )
                     }
                 }
-            }
-        }
-
-        Timer {
-            id: animationTimeout
-            repeat: false
-
-            function addAction( cb, duration ) {
-                animationTimeout.interval = duration
-                animationTimeout.triggered.connect( cb )
-                animationTimeout.triggered.connect( function afterCB () {
-                    animationTimeout.triggered.disconnect( cb )
-                    animationTimeout.triggered.disconnect( afterCB )
-                } )
-                animationTimeout.start()
             }
         }
     }
