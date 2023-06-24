@@ -17,5 +17,8 @@ AppPage {
         onClicked: AppLoader.openEffect( () => Settings.loadPage( "Pages/Stories.qml" ) )
     }
 
-    onAfterInit: AppHeader.hide()
+    onAfterInit: {
+        AppHeader.hide()
+        AppLoader.isLoaded = true
+    }
 }

@@ -15,6 +15,7 @@ QtObject
 
     property var pagesDom: [ "Pages/HomePage.qml" ]
     property string currentPage: "Pages/HomePage.qml"
+    property bool isLoaded: false
 
     function loadPage( page ) {
         pageHeight = 0

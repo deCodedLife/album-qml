@@ -45,5 +45,6 @@ AppPage
 
     onAfterInit: {
         AppHeader.hide()
+        AppLoader.isLoaded = true
     }
 }

@@ -103,6 +103,7 @@ AppPage
         AppHeader.addOption( "add.svg", () => AppLoader.loadPage( "Pages/StoryAdd.qml" ) )
         AppHeader.addOption( "play.svg", () => AppLoader.loadPage( "Pages/Playback.qml" ) )
         net.getRequest( page.parseData, [ SERVER, "api", "s_stories" ].join("/") )
+        AppLoader.isLoaded = true
     }
 
     Network {
