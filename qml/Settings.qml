@@ -78,9 +78,9 @@ QtObject
     }
 
     function newHeaderOptions( icon, action ) {
-        let newObject = []
-        newObject.push( [...headerOptions] )
+        let newObject = headerOptions
         newObject.push({ "icon": icon, "action": action })
-        headerOptions = [].push( [...newObject] )
+        headerOptions = []
+        headerOptions = newObject
     }
 }
