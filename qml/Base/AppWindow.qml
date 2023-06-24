@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls.Material
 
 import "."
@@ -20,8 +21,17 @@ ApplicationWindow
 
     visible: true
 
-    PageLoader {
+    ColumnLayout {
         anchors.fill: parent
+
+        HeaderComponent {
+            Layout.fillWidth: true
+        }
+
+        PageLoader {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+        }
     }
 
     Item {
