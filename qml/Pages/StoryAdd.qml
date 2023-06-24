@@ -8,6 +8,9 @@ import "../Base"
 AppPage
 {
     ColumnLayout {
+        width: parent.width
+        height: implicitHeight
+
         DayOfWeekRow {
             locale: picker.locale
             Layout.fillWidth: true
