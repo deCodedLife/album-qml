@@ -79,8 +79,6 @@ ApplicationWindow
         onPressed: mouse.accepted = false
     }
 
-    header: ""
-
     onClosing: {
         if( Loader.pagesDom.length > 1 ) {
             close.accepted = false
