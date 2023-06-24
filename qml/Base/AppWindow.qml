@@ -11,9 +11,6 @@ ApplicationWindow
     Material.theme: Settings.currentTheme
     Material.accent: Settings.currentAccent
 
-    Settings.root: root
-    AppLoader.root: root
-
     background: Rectangle {
         anchors.fill: parent
         color: Material.backgroundColor
@@ -68,7 +65,9 @@ ApplicationWindow
             }
         })
 
-//        Settings.root = root
+        Settings.root = root
+        AppLoader.root = root
+
         Settings.imageLayout = topItem
         Settings.appMouse = appMouse
         AppLoader.loadPage( "Pages/Stories.qml" )
