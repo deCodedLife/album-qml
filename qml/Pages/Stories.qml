@@ -15,6 +15,7 @@ AppPage
     function parseData( data ) {
         let response = JSON.parse( data )
         storiesList = response[ "data" ]
+        console.log( "wtf?" )
     }
 
     ColumnLayout {
