@@ -17,9 +17,9 @@ Item
         AppHeader.title = ""
         AppHeader.subtitle = ""
         AppHeader.isVisible = true
+        defaultHeight = height
         AppLoader.pageHeight = height
 
-        defaultHeight = height
         afterInit()
     }
 
