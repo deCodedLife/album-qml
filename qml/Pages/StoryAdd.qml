@@ -8,14 +8,16 @@ import "../Base"
 AppPage
 {
     ColumnLayout {
+        id: datePicker
+
         width: parent.width
         height: implicitHeight
 
         property var selectedTime: 0
         property date selectedDate: new Date(selectedTime)
-        property alias month: grid.month
-        property alias year: grid.year
-        property alias locale: grid.locale
+        property alias month: picker.month
+        property alias year: picker.year
+        property alias locale: picker.locale
 
         DayOfWeekRow {
             locale: picker.locale
