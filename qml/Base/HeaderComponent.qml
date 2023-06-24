@@ -78,8 +78,6 @@ Rectangle {
                 }
             }
 
-            Rectangle { Layout.fillWidth: true }
-
             RowLayout {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -89,6 +87,7 @@ Rectangle {
                 ListView {
                     id: optionsList
                     orientation: ListView.Horizontal
+                    layoutDirection: Qt.LeftToRight
                     Layout.fillWidth: true
                     height: 32
                     spacing: Settings.minimalMargin
