@@ -59,6 +59,7 @@ Rectangle {
                 ColumnLayout{
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    spacing: 2
 
                     Text {
                         id: title
