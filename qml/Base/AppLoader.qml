@@ -29,8 +29,6 @@ QtObject
         currentPage = pagesDom[ pagesDom.length - 1 ]
     }
 
-
-
     property MouseArea appMouse: null
     property point lastMousePos: Qt.point(0, 0)
     property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
