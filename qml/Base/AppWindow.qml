@@ -52,6 +52,7 @@ ApplicationWindow
             if ( children.length > 1 ) background.state = "activated"
             else background.state = "normal"
         }
+        Component.onCompleted: AppLoader.imageLayout = topItem
 
         function hide() { background.state = "nornal" }
     }
@@ -67,24 +68,22 @@ ApplicationWindow
 
         Settings.root = root
         AppLoader.root = root
-
-        Settings.appMouse = appMouse
-        AppLoader.appMouse = appMouse
-
-        Settings.imageLayout = topItem
-        AppLoader.loadPage( "Pages/Stories.qml" )
-    }
-
-    MouseArea {
-        id: appMouse
-        anchors.fill: parent
-        onPressed: mouse.accepted = false
     }
 
     onClosing: {
         if( Loader.pagesDom.length > 1 ) {
             close.accepted = false
             AppLoader.goBack()
+        }
+    }
+
+    MouseArea {
+        id: appMouse
+        anchors.fill: parent
+        onPressed: mouse.accepted = false
+        Component.onCompleted: {
+            Settings.appMouse = appMouse
+            AppLoader.appMouse = appMouse
         }
     }
 
