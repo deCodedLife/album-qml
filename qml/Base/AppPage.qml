@@ -9,6 +9,7 @@ Item
     clip: true
 
     signal afterInit()
+    property int defaultHeight: 0
 
     Component.onCompleted: {
         AppHeader.options = []
@@ -16,8 +17,13 @@ Item
         AppHeader.title = ""
         AppHeader.subtitle = ""
         AppHeader.isVisible = true
+
+        defaultHeight = height
         afterInit()
     }
 
-    onHeightChanged: AppLoader.setHeight( height )
+    onHeightChanged: {
+        if ( height > defaultHeight ) AppLoader.reloadFlickable()
+        AppLoader.pageHeight = height
+    }
 }

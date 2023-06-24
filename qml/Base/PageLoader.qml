@@ -12,11 +12,20 @@ Item {
     Layout.bottomMargin: Settings.is_mobile ? 0 : Settings.defaultmargin
 
     Flickable {
+        id: flickable
+
         contentWidth: body.width
         contentHeight: AppLoader.pageHeight
 
         width: body.width
         height: body.height
+
+        Connections {
+            target: AppLoader
+            function onReloadFlickable() {
+                flickable.contentY = AppLoader.pageHeight
+            }
+        }
 
         Loader {
             id: loader

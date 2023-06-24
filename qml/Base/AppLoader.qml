@@ -5,6 +5,8 @@ import QtQuick.Controls.Material
 
 QtObject
 {
+    signal reloadFlickable
+
     property Item imageLayout: null
     property ApplicationWindow root: null
 
@@ -23,10 +25,6 @@ QtObject
     function replacePage( page ) {
         pagesDom.pop()
         loadPage( page  )
-    }
-
-    function setHeight( height ) {
-        pageHeight = Math.max( pageHeight, height )
     }
 
     function goBack() {
