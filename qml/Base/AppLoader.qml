@@ -1,8 +1,7 @@
 pragma Singleton
 
 import QtQuick
-
-import ".."
+import QtQuick.Controls.Material 2.0
 
 QtObject {
     signal popupEnded()
