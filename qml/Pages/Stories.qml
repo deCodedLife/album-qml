@@ -62,15 +62,6 @@ AppPage
                         }
                     }
 
-                    Text {
-                        anchors.centerIn: parent
-                        color: "white"
-                        font.bold: true
-                        font.pointSize: Settings.h6
-                        text: "Загрузка"
-                        visible: image.state !== Image.Ready
-                    }
-
                     Rectangle {
                         x: 0
                         y: 0
@@ -78,6 +69,15 @@ AppPage
                         anchors.centerIn: parent
                         color: Qt.rgba(0, 0, 0, 0.6)
                         radius: 20
+                    }
+
+                    Text {
+                        anchors.centerIn: parent
+                        color: "white"
+                        font.bold: true
+                        font.pointSize: Settings.h6
+                        text: "Загрузка"
+                        visible: image.state != Image.Ready
                     }
 
                     Text {
