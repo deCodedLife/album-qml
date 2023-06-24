@@ -25,6 +25,5 @@ AppPage
     onAfterInit: {
         AppHeader.color = "transparent"
         AppHeader.title = "Новое событие"
-        AppLoader.isLoaded = true
     }
 }
