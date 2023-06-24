@@ -12,8 +12,8 @@ Rectangle
     radius: width / 2
     z: 10
 
-    x: AppLoader.appMouse.mouseX - width / 2
-    y: AppLoader.appMouse.mouseY - height / 2
+    x: AppLoader.lastMousePos.x - width / 2
+    y: AppLoader.lastMousePos.y - height / 2
 
     NumberAnimation {
         target: rect

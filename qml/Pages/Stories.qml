@@ -82,14 +82,10 @@ AppPage
                 MouseArea {
                     id: imageMouseHandle
                     anchors.fill: image
-                    onClicked: AppLoader.openEffect()
-
-                    Connections {
-                        target: AppLoader
-                        function onPopupEnded() {
-                            AppLoader.pageContent = modelData
-                            AppLoader.loadPage("Pages/Story.qml")
-                        }
+                    onClicked: {
+                        AppLoader.openEffect()
+                        AppLoader.pageContent = modelData
+                        AppLoader.loadPage("Pages/Story.qml")
                     }
                 }
             }

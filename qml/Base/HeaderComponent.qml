@@ -112,7 +112,6 @@ Rectangle {
                             AppLoader.openEffect()
                             modelData[ "action" ]()
                         }
-
                     }
                 }
             }
