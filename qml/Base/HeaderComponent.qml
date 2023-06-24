@@ -81,19 +81,20 @@ Rectangle {
             Rectangle { Layout.fillWidth: true }
 
             RowLayout {
+                Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.preferredWidth: optionsList.width
                 clip: true
+                Layout.alignment: Qt.AlignLeft
 
                 ListView {
                     id: optionsList
                     orientation: ListView.Horizontal
                     height: 32
-                    width: 32 * 2//model.length + ( Settings.minimalMargin * ( model.length - 1 ) )
                     spacing: Settings.minimalMargin
 
                     interactive: false
                     model: AppHeader.options
+
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
