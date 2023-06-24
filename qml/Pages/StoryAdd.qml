@@ -41,8 +41,7 @@ AppPage
             font.bold: true
 
             delegate: Text {
-                property MonthGrid control: datePicker
-
+                property MonthGrid control: picker
                 property bool isCurrentItem: model.date.getTime() === selectedTime
 
                 horizontalAlignment: Text.AlignHCenter
