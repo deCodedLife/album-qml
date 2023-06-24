@@ -101,9 +101,6 @@ AppPage
         AppHeader.color = "transparent"
         AppHeader.addOption( "add.svg", () => AppLoader.loadPage( "Pages/StoryAdd.qml" ) )
         AppHeader.addOption( "play.svg", () => AppLoader.loadPage( "Pages/Playback.qml" ) )
-        console.log( 2 )
-
-        net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
     Network {
@@ -117,5 +114,6 @@ AppPage
             })
             net.get( url )
         }
+        Component.onCompleted: net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 }
