@@ -38,8 +38,8 @@ Item {
                     target: body
                     x: 0
                     y: 0
-                    width: Settings.imageLayout.width
-                    height:Settings.imageLayout.height
+                    width: AppLoader.imageLayout.width
+                    height:AppLoader.imageLayout.height
                     snapMode: ListView.SnapToItem
                     highlightMoveDuration: 100
                     highlightMoveVelocity: -1
@@ -170,7 +170,7 @@ Item {
                     body.itemSelected = index
                     let gPos = body.mapToItem( Settings.root, Qt.point(0, 0) )
                     if ( body.state === "normal" ) {
-                        body.parent = Settings.imageLayout
+                        body.parent = AppLoader.imageLayout
                         body.x = gPos.x
                         body.y = gPos.y
                         body.state = "resized"
