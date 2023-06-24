@@ -5,7 +5,7 @@ import QtQuick.Controls.Material
 import ".."
 import "../Base"
 
-Page {
+AppPage {
     property var storyData: Loader.pageContent
     height: body.implicitHeight
     id: page
