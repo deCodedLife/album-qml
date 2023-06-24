@@ -39,6 +39,6 @@ QtObject {
 
     function openEffect () {
         lastMousePos = Qt.point( appMouse.mouseX, appMouse.mouseY )
-        let object = popupRectangle.createObject( imageLayout )
+        let object = popupRectangle.createObject( root )
     }
 }

@@ -24,7 +24,6 @@ ApplicationWindow
         id: topItem
         width: parent.width
         height: parent.height
-        z: 10
 
         Rectangle {
             id: background
