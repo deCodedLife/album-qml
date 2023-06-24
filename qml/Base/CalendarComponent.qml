@@ -6,7 +6,7 @@ ColumnLayout {
     id: datePicker
 
     width: parent.width
-    height: implicitHeight
+    height: 400
 
     property var selectedTime: 0
     property date selectedDate: new Date(selectedTime)
