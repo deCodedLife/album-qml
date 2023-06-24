@@ -79,8 +79,9 @@ ApplicationWindow
 
     MouseArea {
         id: appMouse
-        anchors.fill: root
-        z: 20
+        width: root.width
+        height: root.header
+        z: 999
         onPressed: mouse.accepted = false
         Component.onCompleted: {
             Settings.appMouse = appMouse
