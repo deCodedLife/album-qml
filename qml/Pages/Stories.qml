@@ -82,12 +82,14 @@ AppPage
                 MouseArea {
                     id: imageMouseHandle
                     anchors.fill: image
-                    onClicked: {
-                        Settings.popupCallback = () => {
-                            Settings.pageContent = modelData
-                            Settings.loadPage("Pages/Story.qml")
+                    onClicked: AppLoader.openEffect()
+
+                    Connections {
+                        target: AppLoader
+                        function onPopupEnded() {
+                            AppLoader.pageContent = modelData
+                            AppLoader.loadPage("Pages/Story.qml")
                         }
-                        Settings.openEffect()
                     }
                 }
             }
@@ -95,10 +97,11 @@ AppPage
     }
 
     onAfterInit: {
-        Settings.headerTitle = "Наши моменты"
-        Settings.headerColor = "transparent"
-        Settings.newHeaderOptions( "add.svg", () => Settings.loadPage( "Pages/StoryAdd.qml" ) )
-        Settings.newHeaderOptions( "play.svg", () => Settings.loadPage( "Pages/Playback.qml" ) )
+        AppHeader.title = "Наши моменты"
+        AppHeader.color = "transparent"
+        AppHeader.addOption( "add.svg", () => AppLoader.loadPage( "Pages/StoryAdd.qml" ) )
+        AppHeader.addOption( "play.svg", () => AppLoader.loadPage( "Pages/Playback.qml" ) )
+
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }
 
