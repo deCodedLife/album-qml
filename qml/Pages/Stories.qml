@@ -32,6 +32,8 @@ AppPage
             cellWidth: parent.width / 2
             cellHeight: parent.width / 2
 
+            onImplicitHeightChanged: isLoaded = true
+
             model: storiesList
             delegate: Item {
                 id: storyItem
@@ -102,8 +104,8 @@ AppPage
         AppHeader.color = "transparent"
         AppHeader.addOption( "add.svg", () => AppLoader.loadPage( "Pages/StoryAdd.qml" ) )
         AppHeader.addOption( "play.svg", () => AppLoader.loadPage( "Pages/Playback.qml" ) )
+        isLoaded = false
         net.getRequest( page.parseData, [ SERVER, "api", "s_stories" ].join("/") )
-        AppLoader.isLoaded = true
     }
 
     Network {
