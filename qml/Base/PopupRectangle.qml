@@ -12,8 +12,8 @@ Rectangle
     radius: width / 2
     z: 10
 
-    x: Loader.lastMousePos.x - width / 2
-    y: Loader.lastMousePos.y - height / 2
+    x: AppLoader.lastMousePos.x - width / 2
+    y: AppLoader.lastMousePos.y - height / 2
 
     NumberAnimation {
         target: rect
@@ -23,7 +23,7 @@ Rectangle
         duration: 500
         to: Settings.root.height * 2
         onFinished: {
-            Loader.popupEnded()
+            AppLoader.popupEnded()
             rect.destroy()
         }
         Component.onCompleted: start()

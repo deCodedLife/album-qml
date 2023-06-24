@@ -61,14 +61,14 @@ ApplicationWindow
         contentItem.Keys.released.connect( function(event) {
             if (event.key === Qt.Key_Back) {
                 event.accepted = true
-                Settings.goBack()
+                AppLoader.goBack()
             }
         })
 
         Settings.root = root
         Settings.imageLayout = topItem
-        Settings.appMosue = appMouse
-        Settings.loadPage( "Pages/Stories.qml" )
+        Settings.appMouse = appMouse
+        AppLoader.loadPage( "Pages/Stories.qml" )
     }
 
     MouseArea {
@@ -78,9 +78,9 @@ ApplicationWindow
     }
 
     onClosing: {
-        if( Settings.pagesDom.length > 1 ) {
+        if( Loader.pagesDom.length > 1 ) {
             close.accepted = false
-            Settings.goBack()
+            AppLoader.goBack()
         }
     }
 

@@ -6,7 +6,7 @@ import QtQuick.Controls.Material
 QtObject
 {
     property ApplicationWindow root: null
-    property MouseArea appMosue: null
+    property MouseArea appMouse: null
     property bool is_mobile: checkPlatform()
 
     readonly property int defaultmargin: 16

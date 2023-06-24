@@ -13,7 +13,7 @@ Item {
 
     Flickable {
         contentWidth: body.width
-        contentHeight: Loader.pageHeight
+        contentHeight: AppLoader.pageHeight
 
         width: body.width
         height: body.height
@@ -22,7 +22,7 @@ Item {
             id: loader
             width: body.width
             height: body.height
-            source: Loader.currentPage
+            source: AppLoader.currentPage
         }
     }
 }

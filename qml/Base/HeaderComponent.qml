@@ -7,8 +7,8 @@ import "../"
 Rectangle {
     width: parent.width
     height: 64
-    color: Header.color
-    visible: Header.isVisible
+    color: AppHeader.color
+    visible: AppHeader.isVisible
 
     Item {
         id: header
@@ -47,7 +47,7 @@ Rectangle {
                     leftPadding: 0
                     rightPadding: 0
 
-                    onClicked: Loader.goBack()
+                    onClicked: AppLoader.goBack()
 
                     width: 32
                     height: 32
@@ -61,15 +61,15 @@ Rectangle {
 
                     Text {
                         id: title
-                        text: Header.title
+                        text: AppHeader.title
                         color: Material.primaryTextColor
-                        font.pointSize: Header.subtitle == "" ? Settings.h3 : Settings.h5
+                        font.pointSize: AppHeader.subtitle == "" ? Settings.h3 : Settings.h5
                     }
 
                     Text {
                         id: subtitle
-                        visible: Header.subtitle != ""
-                        text: Header.subtitle
+                        visible: AppHeader.subtitle != ""
+                        text: AppHeader.subtitle
                         color: Material.primaryTextColor
                         opacity: 0.7
                         font.pointSize: Settings.h6
@@ -92,7 +92,7 @@ Rectangle {
                     spacing: Settings.minimalMargin
 
                     interactive: false
-                    model: Header.options
+                    model: AppHeader.options
                     delegate: Button {
                         icon.source: [SERVER, QML, "Images", modelData[ "icon" ]].join("/")
                         icon.color: Material.primaryTextColor
@@ -108,7 +108,7 @@ Rectangle {
                         leftPadding: 0
                         rightPadding: 0
                         onClicked: {
-                            Loader.openEffect()
+                            AppLoader.openEffect()
                             modelData[ "action" ]()
                         }
 
@@ -118,5 +118,5 @@ Rectangle {
         }
     }
 
-    Component.onCompleted: actionButton.enabled = Loader.pagesDom.length > 1
+    Component.onCompleted: actionButton.enabled = AppLoader.pagesDom.length > 1
 }

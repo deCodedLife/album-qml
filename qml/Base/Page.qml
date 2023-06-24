@@ -9,12 +9,12 @@ Item {
 
     signal afterInit
 
-    Header.options: []
-    Header.color: Material.accentColor
-    Header.title: ""
-    Header.subtitle: ""
-    Header.isVisible: true
+    AppHeader.options: []
+    AppHeader.color: Material.accentColor
+    AppHeader.title: ""
+    AppHeader.subtitle: ""
+    AppHeader.isVisible: true
 
     Component.onCompleted: afterInit()
-    onHeightChanged: Loader.setHeight( height )
+    onHeightChanged: AppLoader.setHeight( height )
 }
