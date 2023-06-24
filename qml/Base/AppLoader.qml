@@ -1,4 +1,4 @@
-pragma Singletom
+pragma Singleton
 
 import QtQuick
 
