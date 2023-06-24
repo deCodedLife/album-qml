@@ -34,6 +34,7 @@ ColumnLayout {
         id: picker
         locale: Qt.locale("ru_RU")
         Layout.fillWidth: true
+        Layout.fillHeight: true
         font.bold: true
 
         delegate: Text {
