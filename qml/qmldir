@@ -3,6 +3,7 @@ singleton AppHeader Base/AppHeader.qml
 singleton AppLoader Base/AppLoader.qml
 
 AppWindow Base/AppWindow.qml
+CalendarComponent Base/CalendarComponent.qml
 CarouselComponent Base/CarouselComponent.qml
 HeaderComponent Base/HeaderComponent.qml
 MapComponent Base/MapComponent.qml
