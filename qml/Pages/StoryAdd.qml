@@ -14,6 +14,8 @@ AppPage
         DayOfWeekRow {
             locale: picker.locale
             Layout.fillWidth: true
+            font.bold: true
+
             delegate: Text {
                 text: shortName
                 font: control.font
@@ -22,13 +24,14 @@ AppPage
                 color: Material.primaryTextColor
 
                 required property string shortName
-                font.bold: true
             }
         }
         MonthGrid {
             id: picker
             locale: Qt.locale("ru_RU")
             Layout.fillWidth: true
+            font.bold: true
+
             delegate: Text {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -36,7 +39,6 @@ AppPage
                 text: model.day
                 font: control.font
                 color: Material.primaryTextColor
-                font.bold: true
             }
         }
     }
