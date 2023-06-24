@@ -4,7 +4,7 @@ import QtQuick
 import "../"
 import "../Base"
 
-Page {
+AppPage {
     Text {
         anchors.centerIn: parent
         text: "Hello world"
@@ -14,11 +14,8 @@ Page {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: {
-            Settings.popupCallback = () => Settings.loadPage( "Pages/Stories.qml" )
-            Settings.openEffect()
-        }
+        onClicked: AppLoader.openEffect( () => Settings.loadPage( "Pages/Stories.qml" ) )
     }
 
-    Component.onCompleted: Settings.hideHeader()
+    onAfterInit: AppHeader.hide()
 }
