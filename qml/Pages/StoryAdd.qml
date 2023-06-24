@@ -1,5 +1,14 @@
 import QtQuick
 
-Item {
+import ".."
+import "../Base"
 
+AppPage
+{
+
+
+    afterInit: {
+        AppHeader.color = "transparent"
+        AppHeader.title = "Новое событие"
+    }
 }

@@ -176,7 +176,7 @@ Item {
                         body.state = "resized"
                     } else {
                         body.state = "normal"
-                        Settings.imageLayout.hide()
+                        AppLoader.imageLayout.hide()
                         let coords = body.mapToItem( Settings.root, Qt.point(0, 0) )
                         animationTimeout.addAction( () => {
                             body.parent = body.originParent

@@ -66,9 +66,9 @@ ApplicationWindow
             if ( children.length > 1 ) background.state = "activated"
             else background.state = "normal"
         }
-        Component.onCompleted: AppLoader.imageLayout = topItem
-
         function hide() { background.state = "nornal" }
+
+        Component.onCompleted: AppLoader.imageLayout = topItem
     }
 
 
