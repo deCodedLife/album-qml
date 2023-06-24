@@ -6,8 +6,8 @@ import QtQuick.Controls.Material
 QtObject {
     signal popupEnded()
 
+    property Item imageLayout: null
     property ApplicationWindow root: null
-    property MouseArea appMouse: null
 
     property double pageHeight: 0
     property var pageContent: [{}]
@@ -31,12 +31,14 @@ QtObject {
         currentPage = pagesDom[ pagesDom.length - 1 ]
     }
 
-    property Item imageLayout: null
-    property var lastMousePos: Qt.point(0, 0)
+
+
+    property MouseArea appMouse: null
+    property point lastMousePos: Qt.point(0, 0)
     property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
 
     function openEffect () {
         lastMousePos = Qt.point( appMouse.mouseX, appMouse.mouseY )
-        let object = popupRectangle.createObject( root )
+        let object = popupRectangle.createObject( imageLayout )
     }
 }
