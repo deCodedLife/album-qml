@@ -8,15 +8,13 @@ Item {
     clip: true
 
     signal afterInit
-    onHeightChanged: Settings.setHeight( height )
 
-    Component.onCompleted: {
-        Settings.headerOptions = []
-        Settings.headerColor = Material.accentColor
-        Settings.headerTitle = ""
-        Settings.headerSubtitle = ""
-        Settings.showHeader()
-        Settings.setHeight( page.height )
-        afterInit()
-    }
+    Header.options: []
+    Header.color: Material.accentColor
+    Header.title: ""
+    Header.subtitle: ""
+    Header.isVisible: true
+
+    Component.onCompleted: afterInit()
+    onHeightChanged: Loader.setHeight( height )
 }

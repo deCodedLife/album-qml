@@ -1,6 +1,11 @@
 singleton Settings Settings.qml
+singleton Header Base/Header.qml
+singletom Loader Base/Loader.qml
+
+AppWindow Base/AppWindow.qml
+CarouselComponent Base/CarouselComponent.qml
+HeaderComponent Base/HeaderComponent.qml
 MapComponent Base/MapComponent.qml
-Header Base/Header.qml
-PopupRectangle PopupRectangle.qml
-Carousel Base/Carousel.qml
-Page Base/Page.qml
+Page Base/PageComponents.qml
+PageLoader Base/PageLoader.qml
+PopupRectangle Base/PopupRectangle.qml
