@@ -7,8 +7,8 @@ import "Base"
 
 AppWindow
 {
-    width: 420
-    height: Settings.is_mobile ? 780 : 730
+    width: 480
+    height: Settings.is_mobile ? 820 : 750
 
     x: Settings.is_mobile ? 0 : Screen.width - 460
     y: Settings.is_mobile ? 0 : (Screen.height / 2) - (height / 2)    
