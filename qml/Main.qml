@@ -1,7 +1,5 @@
 import QtQuick
 import QtQuick.Window
-import QtQuick.Controls
-import QtQuick.Controls.Material
 import QtQuick.Layouts
 
 import "."
@@ -9,8 +7,6 @@ import "Base"
 
 AppWindow
 {
-    id: root
-
     width: 420
     height: Settings.is_mobile ? 780 : 730
 
@@ -33,7 +29,5 @@ AppWindow
         }
     }
 
-    Component.onCompleted: {
-        AppLoader.loadPage( "Pages/Stories.qml" )
-    }
+    Component.onCompleted: AppLoader.loadPage( "Pages/Stories.qml" )
 }

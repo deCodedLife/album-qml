@@ -3,18 +3,22 @@ import QtQuick.Controls.Material
 
 import ".."
 
-Item {
+Item
+{
     id: page
     clip: true
 
     signal afterInit
 
-    AppHeader.options: []
-    AppHeader.color: Material.accentColor
-    AppHeader.title: ""
-    AppHeader.subtitle: ""
-    AppHeader.isVisible: true
+    Component.onCompleted: {
+        AppHeader.options = []
+        AppHeader.color = Material.accentColor
+        AppHeader.title = ""
+        AppHeader.subtitle = ""
+        AppHeader.isVisible = true
 
-    Component.onCompleted: afterInit()
+        afterInit()
+    }
+
     onHeightChanged: AppLoader.setHeight( height )
 }
