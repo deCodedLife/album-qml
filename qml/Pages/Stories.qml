@@ -62,6 +62,15 @@ AppPage
                         }
                     }
 
+                    Text {
+                        anchors.centerIn: parent
+                        color: "white"
+                        font.bold: true
+                        font.pointSize: Settings.h6
+                        text: "Загрузка"
+                        visible: image.state === Image.Loading
+                    }
+
                     Rectangle {
                         x: 0
                         y: 0
