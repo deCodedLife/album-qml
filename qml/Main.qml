@@ -13,15 +13,10 @@ AppWindow
     x: Settings.is_mobile ? 0 : Screen.width - 460
     y: Settings.is_mobile ? 0 : (Screen.height / 2) - (height / 2)    
 
-    ColumnLayout {
-        id: page
-        anchors.fill: parent
-        spacing: 0
+    header: HeaderComponent {}
 
-        PageLoader {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-        }
+    PageLoader {
+        anchors.fill: parent
     }
 
     Component.onCompleted: AppLoader.loadPage( "Pages/Stories.qml" )
