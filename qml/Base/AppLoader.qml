@@ -20,6 +20,11 @@ QtObject
         pagesDom.push( page )
     }
 
+    function replacePage( page ) {
+        pagesDom.pop()
+        loadPage( page )
+    }
+
     function setHeight( height ) {
         pageHeight = Math.max( pageHeight, height )
     }

@@ -7,7 +7,7 @@ AppPage
 {
 
 
-    afterInit: {
+    onAfterInit: {
         AppHeader.color = "transparent"
         AppHeader.title = "Новое событие"
     }
