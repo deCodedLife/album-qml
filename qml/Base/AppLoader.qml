@@ -3,9 +3,8 @@ pragma Singleton
 import QtQuick
 import QtQuick.Controls.Material
 
-QtObject {
-    signal popupEnded()
-
+QtObject
+{
     property Item imageLayout: null
     property ApplicationWindow root: null
 
@@ -37,9 +36,9 @@ QtObject {
     property point lastMousePos: Qt.point(0, 0)
     property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
 
-    function openEffect () {
+    function openEffect ( cb ) {
         lastMousePos = Qt.point( appMouse.mouseX, appMouse.mouseY )
-        console.log( appMouse )
         let object = popupRectangle.createObject( root )
+        object.onFinished.connect(cb)
     }
 }

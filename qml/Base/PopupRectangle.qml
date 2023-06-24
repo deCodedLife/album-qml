@@ -12,6 +12,8 @@ Rectangle
     radius: width / 2
     z: 10
 
+    signal finished
+
     x: AppLoader.lastMousePos.x - width / 2
     y: AppLoader.lastMousePos.y - height / 2
 
@@ -23,9 +25,9 @@ Rectangle
         duration: 500
         to: Settings.root.height * 2
         onFinished: {
-            AppLoader.popupEnded()
+            finished()
             rect.destroy()
         }
-        Component.onCompleted: start()
+        running: true
     }
 }
