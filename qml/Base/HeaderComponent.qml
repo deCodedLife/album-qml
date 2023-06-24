@@ -75,7 +75,7 @@ Rectangle {
                         text: AppHeader.subtitle
                         color: Material.primaryTextColor
                         opacity: 0.7
-                        font.pointSize: Settings.h6
+                        font.pointSize: Settings.h7
                     }
                 }
             }

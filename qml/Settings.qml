@@ -17,6 +17,7 @@ QtObject
     readonly property int h4: 16
     readonly property int h5: 14
     readonly property int h6: 12
+    readonly property int h7: 10
 
     property int currentTheme: Material.Dark
     property int currentAccent: Material.Green
