@@ -15,17 +15,18 @@ ColumnLayout {
     property alias locale: picker.locale
 
     DayOfWeekRow {
+        id: weeks
+
         locale: picker.locale
         Layout.fillWidth: true
         font.bold: true
 
         delegate: Text {
             text: shortName
-            font: control.font
+            font: weeks.font
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             color: Material.primaryTextColor
-
             required property string shortName
         }
     }
