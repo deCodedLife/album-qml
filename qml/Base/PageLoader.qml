@@ -22,7 +22,7 @@ Item {
             id: loader
             width: body.width
             height: body.height
-            source: [ SERVER, AppLoader.currentPage ].join("/")
+            source: [ SERVER, QML, AppLoader.currentPage ].join("/")
         }
     }
 }
