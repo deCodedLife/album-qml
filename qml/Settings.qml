@@ -78,8 +78,9 @@ QtObject
     }
 
     function newHeaderOptions( icon, action ) {
-        let newObject =  JSON.parse(JSON.stringify(headerOptions))
+        let newObject = []
+        newObject.push( [...headerOptions] )
         newObject.push({ "icon": icon, "action": action })
-        headerOptions = newObject
+        headerOptions = [].push( [...newObject] )
     }
 }
