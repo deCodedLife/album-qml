@@ -34,7 +34,7 @@ AppPage
             model: storiesList
             delegate: Item {
                 id: storyItem
-                property var data: modelData
+                property var storyData: modelData
 
                 height: grid.width / 2
                 width: grid.width / 2
@@ -88,7 +88,7 @@ AppPage
                     onClicked: AppLoader.openEffect( loadPage )
 
                     function loadPage() {
-                        AppLoader.pageContent = storyItem.data
+                        AppLoader.pageContent = storyItem.storyData
                         AppLoader.loadPage("Pages/Story.qml")
                     }
                 }
