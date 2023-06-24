@@ -60,7 +60,7 @@ AppPage
                 }
             }
 
-            onClicked: (date) => selectedTime = date.getTime()
+            onClicked: (date) => datePicker.selectedTime = date.getTime()
         }
     }
 
