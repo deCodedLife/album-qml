@@ -86,6 +86,7 @@ ApplicationWindow
             Settings.appMouse = appMouse
             AppLoader.appMouse = appMouse
         }
+        onClicked: console.log( mouseX, mouseY )
     }
 
 }
