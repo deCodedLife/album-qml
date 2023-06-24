@@ -11,6 +11,12 @@ AppPage
         width: parent.width
         height: implicitHeight
 
+        property var selectedTime: 0
+        property date selectedDate: new Date(selectedTime)
+        property alias month: grid.month
+        property alias year: grid.year
+        property alias locale: grid.locale
+
         DayOfWeekRow {
             locale: picker.locale
             Layout.fillWidth: true
