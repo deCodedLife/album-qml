@@ -14,7 +14,7 @@ AppPage {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: AppLoader.openEffect( () => Settings.loadPage( "Pages/Stories.qml" ) )
+        onClicked: AppLoader.openEffect( () => AppLoader.loadPage( "Pages/Stories.qml" ) )
     }
 
     onAfterInit: AppHeader.hide()
