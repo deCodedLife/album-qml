@@ -77,7 +77,7 @@ AppPage
                         font.bold: true
                         font.pointSize: Settings.h6
                         text: "Загрузка"
-                        visible: image.state != Image.Ready
+                        visible: image.status != Image.Ready
                     }
 
                     Text {
