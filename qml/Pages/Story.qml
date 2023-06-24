@@ -6,7 +6,7 @@ import ".."
 import "../Base"
 
 Page {
-    property var storyData: Settings.pageContent
+    property var storyData: Loader.pageContent
     height: body.implicitHeight
     id: page
 
@@ -25,7 +25,7 @@ Page {
             font.bold: true
         }
 
-        Carousel {
+        CarouselComponent {
             images: storyData[ "file" ]
             Layout.fillWidth: true
             itemHeight: 450
@@ -49,8 +49,8 @@ Page {
 
     onAfterInit:
     {
-        Settings.headerColor = "transparent"
-        Settings.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
-        Settings.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
+        AppHeader.headerColor = "transparent"
+        AppHeader.headerTitle = storyData[ "timestamp" ].split(" ")[ 0 ]
+        AppHeader.headerSubtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
     }
 }
