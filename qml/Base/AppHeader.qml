@@ -25,7 +25,10 @@ QtObject {
     }
 
     function addOption( icon, action ) {
-        let newObject = options.push({ "icon": icon, "action": action })
+        let newObject = options ?? []
+        newObject.push({ "icon": icon, "action": action })
+
+        options = []
         options = newObject
     }
 }
