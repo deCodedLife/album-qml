@@ -20,6 +20,10 @@ ApplicationWindow
 
     visible: true
 
+    PageLoader {
+        anchors.fill: parent
+    }
+
     Item {
         id: topItem
         width: parent.width
@@ -79,15 +83,12 @@ ApplicationWindow
 
     MouseArea {
         id: appMouse
-        width: root.width
-        height: root.header
-        z: 999
+        anchors.fill: parent
         onPressed: mouse.accepted = false
         Component.onCompleted: {
             Settings.appMouse = appMouse
             AppLoader.appMouse = appMouse
         }
-        onClicked: console.log( mouseX, mouseY )
     }
 
 }
