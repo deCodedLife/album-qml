@@ -16,7 +16,6 @@ Item
         AppHeader.title = ""
         AppHeader.subtitle = ""
         AppHeader.isVisible = true
-
         afterInit()
     }
 
