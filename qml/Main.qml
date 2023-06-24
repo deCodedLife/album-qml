@@ -18,11 +18,6 @@ AppWindow
         anchors.fill: parent
         spacing: 0
 
-        HeaderComponent {
-            id: appHeader
-            Layout.fillWidth: true
-        }
-
         PageLoader {
             Layout.fillWidth: true
             Layout.fillHeight: true
