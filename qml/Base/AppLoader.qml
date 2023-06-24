@@ -7,6 +7,9 @@ import ".."
 QtObject {
     signal popupEnded()
 
+    property ApplicationWindow root: null
+    property MouseArea appMouse: null
+
     property double pageHeight: 0
     property var pageContent: [{}]
 
@@ -34,7 +37,7 @@ QtObject {
     property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
 
     function openEffect () {
-        lastMousePos = Qt.point( Settings.appMouse.mouseX, Settings.appMouse.mouseY )
-        let object = popupRectangle.createObject( Settings.root)
+        lastMousePos = Qt.point( appMouse.mouseX, appMouse.mouseY )
+        let object = popupRectangle.createObject( root)
     }
 }
