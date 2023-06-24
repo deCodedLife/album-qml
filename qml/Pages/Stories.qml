@@ -85,10 +85,10 @@ AppPage
                 MouseArea {
                     id: imageMouseHandle
                     anchors.fill: image
-                    onClicked: AppLoader.openEffect( () => loadPage( storyItem.storyData ) )
+                    onClicked: AppLoader.openEffect( loadPage )
 
-                    function loadPage( data ) {
-                        AppLoader.pageContent = data
+                    function loadPage() {
+                        AppLoader.pageContent = modelData
                         AppLoader.loadPage("Pages/Story.qml")
                     }
                 }

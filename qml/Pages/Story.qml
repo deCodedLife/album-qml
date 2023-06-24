@@ -6,7 +6,7 @@ import ".."
 import "../Base"
 
 AppPage {
-    property var storyData: Loader.pageContent
+    property var storyData: AppLoader.pageContent
     height: body.implicitHeight
     id: page
 
