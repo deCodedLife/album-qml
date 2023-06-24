@@ -22,7 +22,7 @@ Item {
             id: loader
             width: body.width
             height: body.height
-            source: AppLoader.currentPage
+            source: [ SERVER, AppLoader.currentPage ].join("/")
         }
     }
 }
