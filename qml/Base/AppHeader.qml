@@ -1,6 +1,7 @@
 pragma Singleton
 
 import QtQuick
+import QtQuick.Controls.Material
 
 QtObject {
     property string title: ""
@@ -16,17 +17,17 @@ QtObject {
     property var options: []
 
     function hide() {
-        isHeaderVisible = false
+        isVisible = false
     }
 
     function show() {
-        isHeaderVisible = true
+        isVisible = true
     }
 
     function addOptions( icon, action ) {
-        let newObject = headerOptions
+        let newObject = options
         newObject.push({ "icon": icon, "action": action })
-        headerOptions = []
-        headerOptions = newObject
+        options = []
+        options = newObject
     }
 }

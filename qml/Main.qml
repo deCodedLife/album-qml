@@ -34,6 +34,6 @@ AppWindow
     }
 
     Component.onCompleted: {
-        Loader.loadPage( "Pages/Stories.qml" )
+        AppLoader.loadPage( "Pages/Stories.qml" )
     }
 }
