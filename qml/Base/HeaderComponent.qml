@@ -89,7 +89,7 @@ Rectangle {
                     id: optionsList
                     orientation: ListView.Horizontal
                     height: 32
-                    width: 32 * model.length + ( Settings.minimalMargin * ( model.length - 1 ) )
+                    width: 32 * 2//model.length + ( Settings.minimalMargin * ( model.length - 1 ) )
                     spacing: Settings.minimalMargin
 
                     interactive: false
@@ -108,10 +108,7 @@ Rectangle {
                         verticalPadding: 0
                         leftPadding: 0
                         rightPadding: 0
-                        onClicked: {
-                            AppLoader.openEffect()
-                            modelData[ "action" ]()
-                        }
+                        onClicked: AppLoader.openEffect( modelData[ "action" ] )
                     }
                 }
             }
