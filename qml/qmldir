@@ -9,3 +9,5 @@ MapComponent Base/MapComponent.qml
 AppPage Base/AppPage.qml
 PageLoader Base/PageLoader.qml
 PopupRectangle Base/PopupRectangle.qml
+
+

@@ -22,7 +22,7 @@ QtObject
 
     function replacePage( page ) {
         pagesDom.pop()
-        loadPage( page )
+        loadPage( page  )
     }
 
     function setHeight( height ) {

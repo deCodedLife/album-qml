@@ -19,7 +19,7 @@ QtObject
     readonly property int h6: 12
 
     property int currentTheme: Material.Dark
-    property int currentAccent: Material.Red
+    property int currentAccent: Material.Green
 
     function checkPlatform() {
         if ( Qt.platform.os === "android" ) return true
