@@ -68,8 +68,10 @@ ApplicationWindow
         Settings.root = root
         AppLoader.root = root
 
-        Settings.imageLayout = topItem
         Settings.appMouse = appMouse
+        AppLoader.appMouse = appMouse
+
+        Settings.imageLayout = topItem
         AppLoader.loadPage( "Pages/Stories.qml" )
     }
 
