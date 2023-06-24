@@ -66,7 +66,7 @@ Rectangle {
                         id: title
                         text: AppHeader.title
                         color: Material.primaryTextColor
-                        font.pointSize: AppHeader.subtitle == "" ? Settings.h4 : Settings.h5
+                        font.pointSize: AppHeader.subtitle == "" ? Settings.h4 : Settings.h6
                     }
 
                     Text {
