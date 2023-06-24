@@ -4,9 +4,10 @@ import QtQuick.Controls.Material
 import Qt5Compat.GraphicalEffects
 
 import ".."
+import "../Base"
 import Network
 
-Page
+AppPage
 {
     id: page
     property var storiesList: []

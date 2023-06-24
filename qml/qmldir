@@ -6,6 +6,6 @@ AppWindow Base/AppWindow.qml
 CarouselComponent Base/CarouselComponent.qml
 HeaderComponent Base/HeaderComponent.qml
 MapComponent Base/MapComponent.qml
-Page Base/PageComponents.qml
+AppPage Base/AppPage.qml
 PageLoader Base/PageLoader.qml
 PopupRectangle Base/PopupRectangle.qml
