@@ -87,7 +87,7 @@ Rectangle {
                 ListView {
                     id: optionsList
                     orientation: ListView.Horizontal
-                    layoutDirection: Qt.LeftToRight
+                    layoutDirection: Qt.RightToLeft
                     Layout.fillWidth: true
                     height: 32
                     spacing: Settings.minimalMargin
