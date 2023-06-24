@@ -98,9 +98,7 @@ AppPage
         AppHeader.color = "transparent"
         AppHeader.addOption( "add.svg", () => AppLoader.loadPage( "Pages/StoryAdd.qml" ) )
         AppHeader.addOption( "play.svg", () => AppLoader.loadPage( "Pages/Playback.qml" ) )
-        var headerOptions = AppHeader.options
-        AppHeader.options = []
-        AppHeader.options = headerOptions
+        console.log( 2 )
 
         net.getRequest( parseData, [ SERVER, "api", "s_stories" ].join("/") )
     }

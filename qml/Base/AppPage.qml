@@ -16,6 +16,7 @@ Item
         AppHeader.title = ""
         AppHeader.subtitle = ""
         AppHeader.isVisible = true
+        console.log( 1 )
         afterInit()
     }
 
