@@ -19,8 +19,10 @@ AppPage
                 font: control.font
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                color: Material.primaryTextColor
 
                 required property string shortName
+                font.bold: true
             }
         }
         MonthGrid {
@@ -34,6 +36,7 @@ AppPage
                 text: model.day
                 font: control.font
                 color: Material.primaryTextColor
+                font.bold: true
             }
         }
     }
