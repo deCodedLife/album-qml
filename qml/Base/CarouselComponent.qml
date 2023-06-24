@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls.Material
 import Qt5Compat.GraphicalEffects
 
 import ".."
@@ -139,6 +140,14 @@ Item {
                         }
                     }
                 }
+            }
+
+            BusyIndicator {
+                anchors.centerIn: parent
+                width: 32
+                height: 32
+                running: true
+                visible: image.status != Image.Ready
             }
 
             onStateChanged: {
