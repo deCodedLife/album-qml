@@ -42,7 +42,7 @@ AppPage
 
             delegate: Text {
                 property MonthGrid control: picker
-                property bool isCurrentItem: model.date.getTime() === selectedTime
+                property bool isCurrentItem: model.date.getTime() === datePicker.selectedTime
 
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
