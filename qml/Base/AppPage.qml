@@ -8,7 +8,7 @@ Item
     id: page
     clip: true
 
-    signal afterInit
+    signal afterInit()
 
     Component.onCompleted: {
         AppHeader.options = []

@@ -13,7 +13,6 @@ QtObject
 
     property var pagesDom: [ "Pages/HomePage.qml" ]
     property string currentPage: "Pages/HomePage.qml"
-//    property var popupCallback: null
 
     function loadPage( page ) {
         pageHeight = 0
@@ -35,10 +34,11 @@ QtObject
     property MouseArea appMouse: null
     property point lastMousePos: Qt.point(0, 0)
     property Component popupRectangle: Qt.createComponent( "PopupRectangle.qml" )
+    property var popupCallback: null
 
     function openEffect ( cb ) {
+        popupCallback = cb
         lastMousePos = Qt.point( appMouse.mouseX, appMouse.mouseY )
-        let object = popupRectangle.createObject( root )
-        object.finished.connect( () => cb() )
+        popupRectangle.createObject( root )
     }
 }

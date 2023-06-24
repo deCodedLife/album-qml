@@ -25,7 +25,7 @@ Rectangle
         duration: 500
         to: Settings.root.height * 2
         onFinished: {
-            finished()
+            AppLoader.popupCallback()
             rect.destroy()
         }
         running: true
