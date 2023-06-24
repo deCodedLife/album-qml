@@ -68,7 +68,7 @@ AppPage
                         font.bold: true
                         font.pointSize: Settings.h6
                         text: "Загрузка"
-                        visible: image.state === Image.Loading
+                        visible: image.state !== Image.Ready
                     }
 
                     Rectangle {
