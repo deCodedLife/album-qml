@@ -33,13 +33,26 @@ AppPage
             font.bold: true
 
             delegate: Text {
+                property bool isCurrentItem: model.date.getTime() === selectedTime
+
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                opacity: model.month === control.month ? 1 : 0
                 text: model.day
                 font: control.font
                 color: Material.primaryTextColor
+                opacity: model.month === control.month ? 1 : 0.5
+
+                Rectangle {
+                    anchors.fill: parent
+                    anchors.margins: -4
+                    radius: height / 2
+                    visible: isCurrentItem
+                    color: Material.accentColor
+                    z: -2
+                }
             }
+
+            onClicked: (date) => selectedTime = date.getTime()
         }
     }
 
