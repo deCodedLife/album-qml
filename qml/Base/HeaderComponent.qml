@@ -89,6 +89,7 @@ Rectangle {
                 ListView {
                     id: optionsList
                     orientation: ListView.Horizontal
+                    Layout.fillWidth: true
                     height: 32
                     spacing: Settings.minimalMargin
 
