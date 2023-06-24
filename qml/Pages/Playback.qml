@@ -43,8 +43,5 @@ AppPage
         Rectangle { Layout.fillHeight: true }
     }
 
-    onAfterInit: {
-        AppHeader.hide()
-        AppLoader.isLoaded = true
-    }
+    onAfterInit: AppHeader.hide()
 }

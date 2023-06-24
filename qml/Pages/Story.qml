@@ -52,6 +52,5 @@ AppPage {
         AppHeader.color = "transparent"
         AppHeader.title = storyData[ "timestamp" ].split(" ")[ 0 ]
         AppHeader.subtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
-        AppLoader.isLoaded = true
     }
 }
