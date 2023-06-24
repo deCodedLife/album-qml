@@ -30,6 +30,7 @@ Item {
             width: body.width
             height: body.height
             source: [ SERVER, QML, AppLoader.currentPage ].join("/")
+            onSourceChanged: flickable.contentY = 0
         }
     }
 }
