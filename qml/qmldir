@@ -1,6 +1,6 @@
 singleton Settings Settings.qml
-singleton Header Base/Header.qml
-singletom AppLoader Base/AppLoader.qml
+singleton AppHeader Base/AppHeader.qml
+singleton AppLoader Base/AppLoader.qml
 
 AppWindow Base/AppWindow.qml
 CarouselComponent Base/CarouselComponent.qml
