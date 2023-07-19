@@ -39,8 +39,7 @@ QtObject
         )
     }
 
-    Network {
-        id: net
+    property Network net: Network {
         function getRequest( cb, url ) {
             net.loaded.connect((data) => cb(data))
             net.loaded.connect(function release () {
