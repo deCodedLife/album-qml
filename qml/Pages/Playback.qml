@@ -50,19 +50,19 @@ AppPage
                 }
 
                 onRotationChanged: (delta) => storyImage.rotation -= delta
-                onScaleChanged: (delta) => storyImage.scale += Math.log2(delta)
+//                onScaleChanged: (delta) => storyImage.scale += Math.log2(delta)
 
-                WheelHandler {
-                    id: wheel
-                    target: storyImage
-                    acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
-                    rotationScale: 1 / 120
-                    property: "rotation"
-                }
+//                WheelHandler {
+//                    id: wheel
+//                    target: storyImage
+//                    acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
+//                    rotationScale: 1 / 120
+//                    property: "scale"
+//                }
             }
         }
 
-        Rectangle { Layout.fillHeight: true }
+//        Rectangle { Layout.fillHeight: true }
     }
 
     onAfterInit: {
