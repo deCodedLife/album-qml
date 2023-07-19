@@ -37,6 +37,8 @@ AppPage
                     id: storyImage
                     width: page.width
                     height: flick.height
+                    anchors.centerIn: parent
+                    transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
                     scale: Qt.KeepAspectRatio
                     source: [SERVER, modelData[ "file" ]].join("/")
