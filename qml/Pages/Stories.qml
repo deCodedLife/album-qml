@@ -31,7 +31,7 @@ AppPage
             cellWidth: parent.width / 2
             cellHeight: parent.width / 2
 
-            model: storiesList
+            model: Settings.storiesList
             delegate: Item {
                 id: storyItem
                 property var storyData: modelData
