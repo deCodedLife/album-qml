@@ -29,6 +29,9 @@ AppPage
                 width: page.width
                 height: imageList.height
 
+                boundsMovement: Flickable.FollowBoundsBehavior
+                boundsBehavior: Flickable.DragAndOvershootBounds
+
                 contentHeight: Math.max(storyImage.height * storyImage.scale, flick.height )
                 contentWidth: Math.max( storyImage.width * storyImage.scale, imageList.width )
 
