@@ -43,12 +43,16 @@ AppPage
                     scale: Qt.KeepAspectRatio + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
+
                 }
 
                 PinchHandler {
                     id: pinch
                     target: null
-                    onScaleChanged: (delta) => storyImage.zoom += Math.log2( delta ) * 0.1
+                    onScaleChanged: function (delta)  {
+                        let zoom = storyImage.zoom
+                        storyImage.zoom = Math.min( Math.log2( delta ) * 0.1, 1.5 )
+                    }
                     onRotationChanged: (delta) => storyImage.rotation += delta
                 }
             }
