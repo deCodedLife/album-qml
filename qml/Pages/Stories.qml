@@ -10,12 +10,6 @@ import Network
 AppPage
 {
     id: page
-    property var storiesList: []
-
-    function parseData( data ) {
-        let response = JSON.parse( data )
-        storiesList = response[ "data" ]
-    }
 
     ColumnLayout {
         id: body
@@ -31,7 +25,7 @@ AppPage
             cellWidth: parent.width / 2
             cellHeight: parent.width / 2
 
-            model: storiesList
+            model: Settings.storiesList
             delegate: Item {
                 id: storyItem
                 property var storyData: modelData
@@ -110,19 +104,5 @@ AppPage
         AppHeader.color = "transparent"
         AppHeader.addOption( "add.svg", () => AppLoader.loadPage( "Pages/StoryAdd.qml" ) )
         AppHeader.addOption( "play.svg", () => AppLoader.loadPage( "Pages/Playback.qml" ) )
-        net.getRequest( page.parseData, [ SERVER, "api", "s_stories" ].join("/") )
-    }
-
-    Network {
-        id: net
-        onLoaded: ( data ) => parseData( data )
-        function getRequest( cb, url ) {
-            net.loaded.connect((data) => cb(data))
-            net.loaded.connect(function release () {
-                net.loaded.disconnect(cb)
-                net.loaded.disconnect(release)
-            })
-            net.get( url )
-        }
     }
 }
