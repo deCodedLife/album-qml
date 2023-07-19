@@ -5,6 +5,8 @@ import QtQuick.Layouts
 import "."
 import "Base"
 
+import Network
+
 AppWindow
 {
     width: 450
@@ -15,7 +17,20 @@ AppWindow
 
     Component.onCompleted:
     {
+        Settings.net = net
         Settings.loadStories()
         AppLoader.loadPage( "Pages/Stories.qml" )
+    }
+
+    Network {
+        id: net
+        function getRequest( cb, url ) {
+            net.loaded.connect((data) => cb(data))
+            net.loaded.connect(function release () {
+                net.loaded.disconnect(cb)
+                net.loaded.disconnect(release)
+            })
+            net.get( url )
+        }
     }
 }
