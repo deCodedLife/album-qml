@@ -53,7 +53,7 @@ AppPage
                     }
                     onScaleChanged: function (delta)  {
                         storyImage.zoom += Math.log2( delta )
-                        storyImage.scale = Math.min( storyImage.zoom, 3 )
+                        storyImage.scale = Math.max( Math.min( storyImage.zoom, 3 ), 0.5 )
                     }
                     onRotationChanged: (delta) => storyImage.rotation += delta
                 }
