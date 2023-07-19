@@ -17,10 +17,11 @@ AppPage
         ListView {
             id: imageList
 
+            orientation: ListView.Horizontal
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            model: Settings.storiesList
+            model: images
             delegate: Flickable {
                 id: flick
                 clip: true
@@ -80,6 +81,5 @@ AppPage
         AppHeader.color = "transparent"
 
         Settings.storiesList.forEach( story => images.push(...story[ "file" ]) )
-        console.log( JSON.stringify( images ) )
     }
 }
