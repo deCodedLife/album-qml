@@ -49,17 +49,23 @@ AppPage
 
                 PinchHandler {
                     id: pinch
-                    target: null
-                    onActiveChanged: {
-                        flick.contentX = pinch.centroid.position.x
-                        flick.contentY = pinch.centroid.position.y
-                    }
-                    onScaleChanged: function (delta)  {
-                        storyImage.zoom += Math.log2( delta )
-                        storyImage.zoom = Math.max( Math.min( storyImage.zoom, 3 ), 0.5 )
-                        storyImage.scale = storyImage.zoom
-                    }
-                    onRotationChanged: (delta) => storyImage.rotation += delta
+                    target: storyImage
+
+                    maximumScale: 3
+                    minimumScale: 0.5
+
+
+
+//                    onActiveChanged: {
+//                        flick.contentX = pinch.centroid.position.x
+//                        flick.contentY = pinch.centroid.position.y
+//                    }
+//                    onScaleChanged: function (delta)  {
+//                        storyImage.zoom += Math.log2( delta )
+//                        storyImage.zoom = Math.max( Math.min( storyImage.zoom, 3 ), 0.5 )
+//                        storyImage.scale = storyImage.zoom
+//                    }
+//                    onRotationChanged: (delta) => storyImage.rotation += delta
                 }
             }
         }
