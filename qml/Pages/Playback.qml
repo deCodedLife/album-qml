@@ -12,7 +12,6 @@ AppPage
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: Settings.defaultmargin
 
         ListView {
             id: imageList
@@ -43,13 +42,12 @@ AppPage
 
                     anchors.centerIn: parent
                     fillMode: Image.PreserveAspectFit
-                    transformOrigin: Item.Center
                     scale: Math.min( page.width / width, page.height / height, 1 ) + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
                 }
 
-                onRotationChanged: (delta) => storyImage.rotation -= delta
+//                onRotationChanged: (delta) => storyImage.rotation -= delta
 //                onScaleChanged: (delta) => storyImage.scale += Math.log2(delta)
 
 //                WheelHandler {
