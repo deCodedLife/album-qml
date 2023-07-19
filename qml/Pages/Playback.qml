@@ -40,6 +40,7 @@ AppPage
                     anchors.fill: parent
                     anchors.centerIn: parent
 
+                    transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
                     scale: Math.min( page.width / width, page.height / height, 1 ) + zoom
 
