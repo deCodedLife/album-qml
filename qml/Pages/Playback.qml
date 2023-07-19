@@ -40,7 +40,7 @@ AppPage
 
                     transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
-                    scale: 1 + zoom
+                    scale: Qt.KeepAspectRatio + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
                 }
@@ -48,7 +48,7 @@ AppPage
                 PinchHandler {
                     id: pinch
                     target: null
-                    onScaleChanged: (delta) => storyImage.zoom += Math.log2(delta)
+                    onScaleChanged: (delta) => storyImage.zoom += Math.log2( delta ) * 0.1
                     onRotationChanged: (delta) => storyImage.rotation += delta
                 }
             }
