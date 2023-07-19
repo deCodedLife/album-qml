@@ -57,7 +57,7 @@ AppPage
                     target: storyImage
                     acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
                     rotationScale: 1 / 120
-                    property: "scale"
+                    property: "rotation"
                 }
             }
         }
