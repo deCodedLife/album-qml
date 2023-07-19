@@ -51,8 +51,8 @@ AppPage
                     id: pinch
                     target: null
                     onScaleChanged: function (delta)  {
-                        let zoom = storyImage.zoom
-                        storyImage.scale = Math.min( zoom + Math.log2( delta ) * 0.1, 1.5 )
+                        storyImage.zoom += Math.log2( delta ) * 0.1
+                        storyImage.scale = Math.min( storyImage.zoom, 1.5 )
                     }
                     onRotationChanged: (delta) => storyImage.rotation += delta
                 }
