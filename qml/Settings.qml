@@ -33,9 +33,20 @@ QtObject
 
     property var storiesList: []
     function loadStories() {
-        net.getRequest(
+        let net = new Network
+        getRequest(
+            net,
             data => { storiesList = JSON.parse( data )[ "data" ]; console.log( "test" ) },
             [ SERVER, "api", "s_stories" ].join("/")
         )
+    }
+
+    function getRequest( net, cb, url ) {
+        net.loaded.connect((data) => cb(data))
+        net.loaded.connect(function release () {
+            net.loaded.disconnect(cb)
+            net.loaded.disconnect(release)
+        })
+        net.get( url )
     }
 }

@@ -19,6 +19,7 @@ AppWindow
     {
         Settings.net = net
         Settings.loadStories()
+        console.log( Settings.storiesList )
         AppLoader.loadPage( "Pages/Stories.qml" )
     }
 
