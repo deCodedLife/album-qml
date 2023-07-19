@@ -28,8 +28,8 @@ AppPage
                 width: imageList.width
                 height: imageList.height
 
-                contentHeight: Math.max(storyImage.width, page.width )
-                contentWidth: Math.max( storyImage.height, page.height )
+                contentHeight: Math.max(storyImage.width * storyImage.scale, page.width )
+                contentWidth: Math.max( storyImage.height * storyImage.scale, page.height )
 
                 Image {
                     id: storyImage
@@ -37,10 +37,9 @@ AppPage
                     property double zoom: 0.0
                     property double zoomStem: 0.1
 
-                    width: parent.width
-                    height: parent.height
-
+                    anchors.fill: parent
                     anchors.centerIn: parent
+
                     fillMode: Image.PreserveAspectFit
                     scale: Math.min( page.width / width, page.height / height, 1 ) + zoom
 
