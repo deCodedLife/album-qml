@@ -47,32 +47,28 @@ AppPage
                     scale: Math.min( page.width / width, page.height / height, 1 ) + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
+                    Component.onCompleted: console.log( source, rect )
                 }
 
-                MouseArea {
-                    anchors.fill: parent
+//                onRotationChanged: (delta) => storyImage.rotation -= delta
+//                onScaleChanged: (delta) => storyImage.scale += Math.log2(delta)
 
-                }
+//                WheelHandler {
+//                    id: wheel
+//                    target: storyImage
+//                    acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
+//                    rotationScale: 1 / 120
+//                    property: "scale"
+//                }
 
-                onRotationChanged: (delta) => storyImage.rotation -= delta
-                onScaleChanged: (delta) => storyImage.scale += Math.log2(delta)
-
-                WheelHandler {
-                    id: wheel
-                    target: storyImage
-                    acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
-                    rotationScale: 1 / 120
-                    property: "scale"
-                }
-
-                DragHandler {
-                    id: drag
-                    target: storyImage
-                    onTranslationChanged: function (delta) {
-                        storyImage.x = delta.x
-                        storyImage.y += delta.y
-                    }
-                }
+//                DragHandler {
+//                    id: drag
+//                    target: storyImage
+//                    onTranslationChanged: function (delta) {
+//                        storyImage.x = delta.x
+//                        storyImage.y += delta.y
+//                    }
+//                }
             }
         }
 
