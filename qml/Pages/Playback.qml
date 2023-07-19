@@ -19,6 +19,7 @@ AppPage
             orientation: ListView.Horizontal
             Layout.fillWidth: true
             Layout.fillHeight: true
+            interactive: false
 
             model: images
             delegate: Flickable {
@@ -32,19 +33,13 @@ AppPage
                 contentWidth: Math.max( storyImage.height * storyImage.scale, imageList.height )
 
                 Image {
-                    id: storyImage
                     property double zoom: 0.0
-
+                    id: storyImage
                     width: page.width
                     height: flick.height
-//                    anchors.centerIn: parent
-
-//                    transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
                     scale: Qt.KeepAspectRatio
-
                     source: [SERVER, modelData[ "file" ]].join("/")
-
                 }
 
                 PinchHandler {
