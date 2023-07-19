@@ -60,7 +60,7 @@ AppPage
 //                        map.alignCoordinateToPoint( map.startCenroid, pinch.centroid.position )
                     }
                     onRotationChanged: (delta) => {
-//                        map.bearing -= delta
+                        storyImage.rotation -= delta
 //                        map.alignCoordinateToPoint( map.startCenroid, pinch.centroid.position )
                     }
                 }
