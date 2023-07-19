@@ -29,8 +29,8 @@ AppPage
                 width: page.width
                 height: imageList.height
 
-                contentHeight: Math.max(storyImage.width * storyImage.scale, flick.width )
-                contentWidth: Math.max( storyImage.height * storyImage.scale, imageList.height )
+                contentHeight: Math.max(storyImage.height * storyImage.scale, flick.height )
+                contentWidth: Math.max( storyImage.width * storyImage.scale, imageList.width )
 
                 Image {
                     property double zoom: 0.0
