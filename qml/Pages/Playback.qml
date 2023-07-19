@@ -45,6 +45,10 @@ AppPage
                 PinchHandler {
                     id: pinch
                     target: null
+                    onActiveChanged: {
+                        image.x = pinch.centroid.position.x
+                        image.y = pinch.centroid.position.y
+                    }
                     onScaleChanged: function (delta)  {
                         storyImage.zoom += Math.log2( delta )
                         storyImage.scale = Math.min( storyImage.zoom, 3 )

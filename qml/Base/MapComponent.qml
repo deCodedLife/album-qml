@@ -29,7 +29,7 @@ Item {
             target: null
             onActiveChanged: {
                 if ( active ) {
-                    map.startCenroid = map.toCoordinate( pinch.centroid.positio, false )
+                    map.startCenroid = map.toCoordinate( pinch.centroid.position, false )
                 }
             }
             onScaleChanged: (delta) => {
