@@ -26,16 +26,17 @@ AppPage
                 clip: true
 
                 width: page.width
-                height: page.height
+                height: imageList.height
 
-                contentHeight: Math.max(storyImage.width * storyImage.scale, page.width )
-                contentWidth: Math.max( storyImage.height * storyImage.scale, page.height )
+                contentHeight: Math.max(storyImage.width * storyImage.scale, flick.width )
+                contentWidth: Math.max( storyImage.height * storyImage.scale, imageList.height )
 
                 Image {
                     id: storyImage
                     property double zoom: 0.0
 
-                    anchors.fill: parent
+                    width: page.width
+                    height: flick.height
                     anchors.centerIn: parent
 
                     transformOrigin: Item.Center
