@@ -33,7 +33,7 @@ AppPage
                 boundsBehavior: Flickable.DragAndOvershootBounds
 
                 contentHeight: Math.max(storyImage.height * storyImage.scale, flick.height )
-                contentWidth: Math.max( storyImage.width * storyImage.scale, imageList.width )
+                contentWidth: Math.max( storyImage.width * storyImage.scale * 1.5, imageList.width )
 
                 Image {
                     property double zoom: 0.0
@@ -53,19 +53,6 @@ AppPage
 
                     maximumScale: 3
                     minimumScale: 0.5
-
-
-
-//                    onActiveChanged: {
-//                        flick.contentX = pinch.centroid.position.x
-//                        flick.contentY = pinch.centroid.position.y
-//                    }
-//                    onScaleChanged: function (delta)  {
-//                        storyImage.zoom += Math.log2( delta )
-//                        storyImage.zoom = Math.max( Math.min( storyImage.zoom, 3 ), 0.5 )
-//                        storyImage.scale = storyImage.zoom
-//                    }
-//                    onRotationChanged: (delta) => storyImage.rotation += delta
                 }
             }
         }
