@@ -38,6 +38,9 @@ AppPage
                     property double zoom: 0.0
                     property double zoomStem: 0.1
 
+                    width: parent.width
+                    height: parent.height
+
                     anchors.centerIn: parent
                     fillMode: Image.PreserveAspectFit
                     transformOrigin: Item.Center
