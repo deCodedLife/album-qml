@@ -25,8 +25,8 @@ AppPage
                 id: flick
                 clip: true
 
-                width: imageList.width
-                height: imageList.height
+                width: page.width
+                height: page.height
 
                 contentHeight: Math.max(storyImage.width * storyImage.scale, page.width )
                 contentWidth: Math.max( storyImage.height * storyImage.scale, page.height )
@@ -35,7 +35,7 @@ AppPage
                     id: storyImage
                     property double zoom: 0.0
 
-//                    anchors.fill: parent
+                    anchors.fill: parent
                     anchors.centerIn: parent
 
                     transformOrigin: Item.Center
