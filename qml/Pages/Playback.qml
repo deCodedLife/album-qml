@@ -37,11 +37,11 @@ AppPage
 
                     width: page.width
                     height: flick.height
-                    anchors.centerIn: parent
+//                    anchors.centerIn: parent
 
-                    transformOrigin: Item.Center
+//                    transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
-                    scale: Qt.KeepAspectRatio + zoom
+                    scale: Qt.KeepAspectRatio
 
                     source: [SERVER, modelData[ "file" ]].join("/")
 
@@ -52,7 +52,7 @@ AppPage
                     target: null
                     onScaleChanged: function (delta)  {
                         let zoom = storyImage.zoom
-                        storyImage.zoom = Math.min( Math.log2( delta ) * 0.1, 1.5 )
+                        storyImage.scale = Math.min( zoom + Math.log2( delta ) * 0.1, 1.5 )
                     }
                     onRotationChanged: (delta) => storyImage.rotation += delta
                 }
