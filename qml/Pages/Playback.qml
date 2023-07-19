@@ -47,16 +47,36 @@ AppPage
                     source: [SERVER, modelData[ "file" ]].join("/")
                 }
 
+                PinchHandler {
+                    id: pinch
+                    target: null
+                    onActiveChanged: {
+//                        if ( active ) {
+//                            map.startCenroid = map.toCoordinate( pinch.centroid.positio, false )
+//                        }
+                    }
+                    onScaleChanged: (delta) => {
+                        storyImage.zoom += Math.log2(delta)
+//                        map.alignCoordinateToPoint( map.startCenroid, pinch.centroid.position )
+                    }
+                    onRotationChanged: (delta) => {
+//                        map.bearing -= delta
+//                        map.alignCoordinateToPoint( map.startCenroid, pinch.centroid.position )
+                    }
+                }
+
 //                onRotationChanged: (delta) => storyImage.rotation -= delta
 //                onScaleChanged: (delta) => storyImage.scale += Math.log2(delta)
 
-                WheelHandler {
-                    id: wheel
-                    target: storyImage
-                    acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
-                    rotationScale: 1 / 120
-                    property: "zoom"
-                }
+
+
+//                WheelHandler {
+//                    id: wheel
+//                    target: storyImage
+//                    acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
+//                    rotationScale: 1 / 120
+//                    property: "zoom"
+//                }
             }
         }
 
