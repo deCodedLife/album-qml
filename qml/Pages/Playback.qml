@@ -78,7 +78,8 @@ AppPage
     onAfterInit: {
         AppHeader.title = ""
         AppHeader.color = "transparent"
-
-        Settings.storiesList.forEach( story => images.push(...story[ "file" ]) )
+        let imagesList = []
+        Settings.storiesList.forEach( story => imagesList.push(...story[ "file" ]) )
+        images = imagesList
     }
 }
