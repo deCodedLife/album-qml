@@ -31,8 +31,6 @@ AppPage
                 contentHeight: Math.max(storyImage.width * storyImage.scale, page.width )
                 contentWidth: Math.max( storyImage.height * storyImage.scale, page.height )
 
-                contentX:
-
                 Image {
                     id: storyImage
                     property double zoom: 0.0
