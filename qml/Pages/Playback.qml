@@ -51,8 +51,8 @@ AppPage
                     id: pinch
                     target: null
                     onActiveChanged: {
-                        image.x = pinch.centroid.position.x
-                        image.y = pinch.centroid.position.y
+                        flick.contentX = pinch.centroid.position.x
+                        flick.contentY = pinch.centroid.position.y
                     }
                     onScaleChanged: function (delta)  {
                         storyImage.zoom += Math.log2( delta )
@@ -64,7 +64,13 @@ AppPage
             }
         }
 
-//        Rectangle { Layout.fillHeight: true }
+        Timer
+        {
+            interval: 3 * 1000
+            repeat: true
+            onTriggered: imageList.currentIndex++
+        }
+
     }
 
     onAfterInit: {
