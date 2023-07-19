@@ -47,7 +47,6 @@ AppPage
                     scale: Math.min( page.width / width, page.height / height, 1 ) + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
-                    Component.onCompleted: console.log( source, rect )
                 }
 
                 onRotationChanged: (delta) => storyImage.rotation -= delta
@@ -59,15 +58,6 @@ AppPage
                     acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland" ? PointerDevice.Mouse | PointerDevice.TouchPad : PointerDevice.Mouse
                     rotationScale: 1 / 120
                     property: "scale"
-                }
-
-                DragHandler {
-                    id: drag
-                    target: storyImage
-                    onTranslationChanged: function (delta) {
-                        storyImage.x = delta.x
-                        storyImage.y += delta.y
-                    }
                 }
             }
         }
