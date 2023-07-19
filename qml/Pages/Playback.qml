@@ -31,18 +31,18 @@ AppPage
                 contentHeight: Math.max(storyImage.width * storyImage.scale, page.width )
                 contentWidth: Math.max( storyImage.height * storyImage.scale, page.height )
 
+                contentX:
+
                 Image {
                     id: storyImage
-
                     property double zoom: 0.0
-                    property double zoomStem: 0.1
 
-                    anchors.fill: parent
+//                    anchors.fill: parent
                     anchors.centerIn: parent
 
                     transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
-                    scale: Math.min( page.width / width, page.height / height, 1 ) + zoom
+                    scale: Math.min( flick.width / width, flick.height / height, 1 ) + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
                 }
