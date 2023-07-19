@@ -40,7 +40,7 @@ AppPage
 
                     transformOrigin: Item.Center
                     fillMode: Image.PreserveAspectFit
-                    scale: Math.min( flick.width / width, flick.height / height, 1 ) + zoom
+                    scale: 1 + zoom
 
                     source: [SERVER, modelData[ "file" ]].join("/")
                 }
