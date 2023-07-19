@@ -3,12 +3,9 @@ pragma Singleton
 import QtQuick
 import QtQuick.Controls.Material
 
-//import Network
-
 QtObject
 {
     property ApplicationWindow root: null
-//    property Network net: null
     property MouseArea appMouse: null
     property bool is_mobile: checkPlatform()
 
@@ -32,21 +29,4 @@ QtObject
     }
 
     property var storiesList: []
-    function loadStories() {
-//        let net = new Network
-//        getRequest(
-//            net,
-//            data => { storiesList = JSON.parse( data )[ "data" ]; console.log( "test" ) },
-//            [ SERVER, "api", "s_stories" ].join("/")
-//        )
-    }
-
-    function getRequest( net, cb, url ) {
-        net.loaded.connect((data) => cb(data))
-        net.loaded.connect(function release () {
-            net.loaded.disconnect(cb)
-            net.loaded.disconnect(release)
-        })
-        net.get( url )
-    }
 }

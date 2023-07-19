@@ -13,9 +13,5 @@ AppWindow
     x: Settings.is_mobile ? 0 : Screen.width - 460
     y: Settings.is_mobile ? 0 : (Screen.height / 2) - (height / 2)    
 
-    Component.onCompleted:
-    {
-        AppLoader.loadPage( "Pages/Stories.qml" )
-//        Settings.loadStories()
-    }
+    Component.onCompleted: AppLoader.loadPage( "Pages/Stories.qml" )
 }
