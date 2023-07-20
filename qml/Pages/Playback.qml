@@ -17,7 +17,7 @@ AppPage
         ProgressBar {
             id: progress
             Layout.fillWidth: true
-            to: delaySec * 5000
+            to: delaySec * 1000
 
             Timer {
                 id: progressTimer
