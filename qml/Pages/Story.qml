@@ -7,7 +7,7 @@ import "../Base"
 
 AppPage {
     property var storyData: AppLoader.pageContent
-    height: body.implicitHeight + 200
+    height: body.implicitHeight
     id: page
 
     ColumnLayout {
@@ -43,6 +43,8 @@ AppPage {
             Layout.fillWidth: true
             Layout.preferredHeight: 200
             implicitHeight: 200
+            height: 200
+
             flickableDirection: Flickable.VerticalFlick
             TextArea.flickable: TextArea {
                 wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
