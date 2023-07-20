@@ -44,18 +44,44 @@ AppPage
                     scale: Qt.KeepAspectRatio
                     source: [SERVER, modelData[ "file" ]].join("/")
 
+                    transitions: Transition {
+                        NumberAnimation {
+                            target: imageItem
+                            properties: "scale,rotation"
+                            easing.type: Easing.InOutQuart
+                            duration: 500
+                        }
+                    }
+
                     PinchHandler {
                         id: pinch
                         maximumScale: 3
                         minimumScale: 0.5
+
+                        onActiveChanged: {
+                            if ( active ) nextStory.stop()
+                            else reset.start()
+                        }
                     }
                 }
             }
         }
 
         Timer {
-            running: true
+            id: reset
             interval: 3 * 1000
+            onTriggered: {
+                flick.returnToBounds()
+                storyImage.scale = Qt.KeepAspectRatio
+                storyImage.rotation = 0
+                nextStory.start()
+            }
+        }
+
+        Timer {
+            id: nextStory
+            running: true
+            interval: 5 * 1000
             repeat: true
             onTriggered: imageList.currentIndex++
         }
