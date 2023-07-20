@@ -7,7 +7,7 @@ import "../Base"
 
 AppPage {
     property var storyData: AppLoader.pageContent
-    height: body.implicitHeight
+    height: body.implicitHeight + 50
     id: page
 
     ColumnLayout {
@@ -41,6 +41,7 @@ AppPage {
         TextArea {
             Layout.fillWidth: true
             height: 250
+            contentWidth: body.width
             text: storyData[ "comment" ]
         }
 
