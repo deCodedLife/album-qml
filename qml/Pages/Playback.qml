@@ -17,11 +17,11 @@ AppPage
         ProgressBar {
             id: progress
             Layout.fillWidth: true
-            to: delaySec * 500
+            to: delaySec * 5000
 
             Timer {
                 id: progressTimer
-                interval: 0.01
+                interval: 1
                 repeat: true
                 onTriggered: progress.value += 1
             }
