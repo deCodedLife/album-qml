@@ -7,7 +7,7 @@ import "../Base"
 
 AppPage {
     property var storyData: AppLoader.pageContent
-    height: body.implicitHeight
+    height: body.implicitHeight + 200
     id: page
 
     ColumnLayout {
