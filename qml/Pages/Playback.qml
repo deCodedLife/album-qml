@@ -65,6 +65,10 @@ AppPage
                     }
                 }
 
+                onFlickStarted: {
+                    nextStory.stop()
+                    reset.stop()
+                }
                 onFlickEnded: reset.start()
 
                 Timer {
