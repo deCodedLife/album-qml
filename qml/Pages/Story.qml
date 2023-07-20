@@ -41,7 +41,6 @@ AppPage {
         Flickable {
             id: flickable
             Layout.fillWidth: true
-            Layout.fillHeight: true
             Layout.preferredHeight: 200
             implicitHeight: 200
             flickableDirection: Flickable.VerticalFlick
