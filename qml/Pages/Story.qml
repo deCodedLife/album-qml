@@ -7,7 +7,7 @@ import "../Base"
 
 AppPage {
     property var storyData: AppLoader.pageContent
-    height: body.implicitHeight + 50
+    height: body.implicitHeight
     id: page
 
     ColumnLayout {
@@ -43,6 +43,7 @@ AppPage {
             height: 250
             wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
             text: storyData[ "comment" ]
+            onContentHeightChanged: height = contentHeight
         }
 
         Rectangle{ Layout.fillHeight: true }
