@@ -54,10 +54,6 @@ AppPage {
 
             ScrollBar.vertical: ScrollBar {}
         }
-
-
-
-        Rectangle { Layout.fillHeight: true }
     }
 
     function getRandomText() {
