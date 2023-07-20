@@ -54,6 +54,7 @@ AppPage {
             }
 
             ScrollBar.vertical: ScrollBar {}
+            Component.onCompleted: AppLoader.reloadFlickable()
         }
     }
 
@@ -72,6 +73,6 @@ AppPage {
         AppHeader.color = "transparent"
         AppHeader.title = storyData[ "timestamp" ].split(" ")[ 0 ]
         AppHeader.subtitle = storyData[ "timestamp" ].split(" ")[ 1 ]
-        AppLoader.reloadFlickable()
+
     }
 }
