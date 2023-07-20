@@ -7,7 +7,7 @@ import "../Base"
 
 AppPage {
     property var storyData: AppLoader.pageContent
-    height: body.implicitHeight
+    height: body.implicitHeight + 250
     id: page
 
     ColumnLayout {
@@ -41,12 +41,23 @@ AppPage {
         TextArea {
             Layout.fillWidth: true
             height: 250
+            contentHeight: 250
             wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
+            placeholderText: getRandomText()
             text: storyData[ "comment" ]
-            onContentHeightChanged: height = contentHeight
         }
 
         Rectangle{ Layout.fillHeight: true }
+    }
+
+    function getRandomText() {
+        let randomPhrase = [
+            "Какие у тебя были эмоции?",
+            "Как это развидеть?",
+            "Какие-нибудь детали?",
+            "*ТУТ БЫЛ КОНТЕКСТ*",
+        ]
+        return randomPhrase[ Math.floor( Math.random() * randomPhrase.length ) ]
     }
 
     onAfterInit:
