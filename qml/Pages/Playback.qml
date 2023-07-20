@@ -66,16 +66,16 @@ AppPage
                 }
 
                 onFlickEnded: reset.start()
-            }
 
-            Timer {
-                id: reset
-                interval: 3 * 1000
-                onTriggered: {
-                    flick.returnToBounds()
-                    storyImage.scale = Qt.KeepAspectRatio
-                    storyImage.rotation = 0
-                    nextStory.start()
+                Timer {
+                    id: reset
+                    interval: 3 * 1000
+                    onTriggered: {
+                        flick.returnToBounds()
+                        storyImage.scale = Qt.KeepAspectRatio
+                        storyImage.rotation = 0
+                        nextStory.start()
+                    }
                 }
             }
         }        
