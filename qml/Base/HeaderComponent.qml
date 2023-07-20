@@ -111,7 +111,10 @@ Rectangle {
                         verticalPadding: 0
                         leftPadding: 0
                         rightPadding: 0
-                        onClicked: AppLoader.openEffect( modelData[ "action" ] )
+                        onClicked: {
+                            icon.color = Material.accentColor
+                            AppLoader.openEffect( modelData[ "action" ] )
+                        }
                     }
                 }
             }

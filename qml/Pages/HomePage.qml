@@ -7,7 +7,7 @@ import "../Base"
 AppPage {
     Text {
         anchors.centerIn: parent
-        text: "Hello world"
+        text: "Тут будут другие фишки"
         font.pointSize: Settings.h4
         color: "white"
     }
