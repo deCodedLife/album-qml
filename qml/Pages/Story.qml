@@ -40,14 +40,12 @@ AppPage {
 
         Flickable {
             id: flickable
-
             Layout.fillWidth: true
-            height: 200
+            Layout.fillHeight: true
 
             flickableDirection: Flickable.VerticalFlick
 
             TextArea.flickable: TextArea {
-
                 wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
                 placeholderText: getRandomText()
                 text: storyData[ "comment" ]
