@@ -38,14 +38,26 @@ AppPage {
             color: Material.primaryTextColor
         }
 
-        TextArea.flickable: TextArea {
+        Flickable {
+            id: flickable
+
             Layout.fillWidth: true
             height: 200
-            wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
-            placeholderText: getRandomText()
-            text: storyData[ "comment" ]
-            onContentHeightChanged: Qt.callLater(() => contentY = contentHeight - height)
+
+            flickableDirection: Flickable.VerticalFlick
+
+            TextArea.flickable: TextArea {
+
+                wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
+                placeholderText: getRandomText()
+                text: storyData[ "comment" ]
+                onContentHeightChanged: Qt.callLater(() => contentY = contentHeight - height)
+            }
+
+            ScrollBar.vertical: ScrollBar {}
         }
+
+
 
         Rectangle { Layout.fillHeight: true }
     }
