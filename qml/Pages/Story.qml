@@ -40,13 +40,14 @@ AppPage {
 
         TextArea.flickable: TextArea {
             Layout.fillWidth: true
-            Layout.fillHeight: true
             height: 200
             wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
             placeholderText: getRandomText()
             text: storyData[ "comment" ]
             onContentHeightChanged: Qt.callLater(() => contentY = contentHeight - height)
         }
+
+        Rectangle { Layout.fillHeight: true }
     }
 
     function getRandomText() {
