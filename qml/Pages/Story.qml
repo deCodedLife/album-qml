@@ -38,14 +38,14 @@ AppPage {
             color: Material.primaryTextColor
         }
 
-        TextArea {
+        TextArea.flickable: TextArea {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            implicitHeight: 200
+            height: 200
             wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
             placeholderText: getRandomText()
             text: storyData[ "comment" ]
-            onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
+            onContentHeightChanged: Qt.callLater(() => contentY = contentHeight - height)
         }
     }
 
