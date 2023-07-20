@@ -34,7 +34,7 @@ AppPage
                 progressTimer.stop()
             }
             function reset() {
-                progress.value = 1
+                progress.value = 0
                 progressTimer.start()
             }
         }
@@ -89,7 +89,10 @@ AppPage
                                 nextStory.stop()
                                 progress.stop()
                             }
-                            else reset.start()
+                            else {
+                                if ( reset.running ) return
+                                reset.start()
+                            }
                         }
                     }
                 }
@@ -99,7 +102,10 @@ AppPage
                     reset.stop()
                     progress.stop()
                 }
-                onFlickEnded: reset.start()
+                onFlickEnded: {
+                    if ( reset.running ) return
+                    reset.start()
+                }
 
                 Timer {
                     id: reset
