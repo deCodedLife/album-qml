@@ -17,7 +17,6 @@ AppPage
         ProgressBar {
             id: progress
             Layout.fillWidth: true
-            position: 0
             to: delaySec
 
             Timer {
@@ -25,12 +24,12 @@ AppPage
                 interval: 0.01
                 repeat: true
                 onTriggered: {
-                    progress.position += interval
+                    progress.value += interval
                 }
             }
 
             function stop () {
-                progress.position = 0
+                progress.value = 0
                 progressTimer.stop()
             }
         }
