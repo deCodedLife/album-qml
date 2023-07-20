@@ -31,12 +31,10 @@ AppPage
 
                 boundsMovement: Flickable.FollowBoundsBehavior
                 boundsBehavior: Flickable.DragAndOvershootBounds
-
                 contentHeight: Math.max(storyImage.height * storyImage.scale, flick.height )
-                contentWidth: Math.max( storyImage.width * storyImage.scale * 1.5, imageList.width )
+                contentWidth: Math.max( storyImage.width * storyImage.scale, imageList.width )
 
                 Image {
-                    property double zoom: 0.0
                     id: storyImage
                     width: page.width
                     height: flick.height
@@ -45,20 +43,18 @@ AppPage
                     fillMode: Image.PreserveAspectFit
                     scale: Qt.KeepAspectRatio
                     source: [SERVER, modelData[ "file" ]].join("/")
-                }
 
-                PinchHandler {
-                    id: pinch
-                    target: storyImage
-
-                    maximumScale: 3
-                    minimumScale: 0.5
+                    PinchHandler {
+                        id: pinch
+                        maximumScale: 3
+                        minimumScale: 0.5
+                    }
                 }
             }
         }
 
-        Timer
-        {
+        Timer {
+            running: true
             interval: 3 * 1000
             repeat: true
             onTriggered: imageList.currentIndex++
