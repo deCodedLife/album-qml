@@ -19,11 +19,11 @@ AppPage
             Layout.fillWidth: true
 
             from: 0
-            to: delaySec * 100
+            to: delaySec * 10
 
             Timer {
                 id: progressTimer
-                interval: 10
+                interval: 100
                 repeat: true
                 running: true
                 onTriggered: progress.value += 1
