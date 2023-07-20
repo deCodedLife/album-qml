@@ -41,7 +41,7 @@ AppPage {
         TextArea {
             Layout.fillWidth: true
             height: 250
-            contentWidth: body.width
+            wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
             text: storyData[ "comment" ]
         }
 
