@@ -17,6 +17,8 @@ AppPage
         ProgressBar {
             id: progress
             Layout.fillWidth: true
+
+            from: 0
             to: delaySec * 100
 
             Timer {
@@ -30,6 +32,10 @@ AppPage
             function stop () {
                 progress.value = 0
                 progressTimer.stop()
+            }
+            function reset() {
+                progress.value = 1
+                progressTimer.start()
             }
         }
 
@@ -102,7 +108,7 @@ AppPage
                         flick.returnToBounds()
                         storyImage.scale = Qt.KeepAspectRatio
                         storyImage.rotation = 0
-                        progressTimer.start()
+                        progress.reset()
                         nextStory.start()
                     }
                 }
@@ -115,7 +121,7 @@ AppPage
             interval: delaySec * 1000
             repeat: true
             onTriggered: {
-                progress.value = 0
+                progress.reset()
                 imageList.currentIndex++
             }
         }
