@@ -40,17 +40,12 @@ AppPage {
 
         TextArea {
             Layout.fillWidth: true
-            height: 200
-            implicitHeight: 200
+            Layout.fillHeight: true
             wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
             placeholderText: getRandomText()
             text: storyData[ "comment" ]
             onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
         }
-
-
-
-        Rectangle{ Layout.fillHeight: true }
     }
 
     function getRandomText() {
