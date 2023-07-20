@@ -17,12 +17,13 @@ AppPage
         ProgressBar {
             id: progress
             Layout.fillWidth: true
-            to: delaySec * 1000
+            to: delaySec * 100
 
             Timer {
                 id: progressTimer
-                interval: 1
+                interval: 10
                 repeat: true
+                running: true
                 onTriggered: progress.value += 1
             }
 
@@ -113,7 +114,10 @@ AppPage
             running: true
             interval: delaySec * 1000
             repeat: true
-            onTriggered: imageList.currentIndex++
+            onTriggered: {
+                progress.value = 0
+                imageList.currentIndex++
+            }
         }
 
     }
