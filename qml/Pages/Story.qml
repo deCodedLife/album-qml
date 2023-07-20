@@ -41,7 +41,7 @@ AppPage {
         TextArea {
             Layout.fillWidth: true
             height: 250
-            contentHeight: 250
+            implicitHeight: 250
             wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
             placeholderText: getRandomText()
             text: storyData[ "comment" ]
