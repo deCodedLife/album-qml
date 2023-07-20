@@ -64,6 +64,8 @@ AppPage
                         }
                     }
                 }
+
+                onFlickEnded: reset.start()
             }
         }
 
