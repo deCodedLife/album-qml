@@ -9,9 +9,31 @@ AppPage
 {
     id: page
     property var images: []
+    property int delaySec: 5
 
     ColumnLayout {
         anchors.fill: parent
+
+        ProgressBar {
+            id: progress
+            Layout.fillWidth: true
+            position: 0
+            to: delaySec
+
+            Timer {
+                id: progressTimer
+                interval: 0.01
+                repeat: true
+                onTriggered: {
+                    progress.position += interval
+                }
+            }
+
+            function stop () {
+                progress.position = 0
+                progressTimer.stop()
+            }
+        }
 
         ListView {
             id: imageList
@@ -59,7 +81,10 @@ AppPage
                         minimumScale: 0.5
 
                         onActiveChanged: {
-                            if ( active ) nextStory.stop()
+                            if ( active ) {
+                                nextStory.stop()
+                                progress.stop()
+                            }
                             else reset.start()
                         }
                     }
@@ -68,6 +93,7 @@ AppPage
                 onFlickStarted: {
                     nextStory.stop()
                     reset.stop()
+                    progress.stop()
                 }
                 onFlickEnded: reset.start()
 
@@ -78,6 +104,7 @@ AppPage
                         flick.returnToBounds()
                         storyImage.scale = Qt.KeepAspectRatio
                         storyImage.rotation = 0
+                        progressTimer.start()
                         nextStory.start()
                     }
                 }
@@ -87,7 +114,7 @@ AppPage
         Timer {
             id: nextStory
             running: true
-            interval: 5 * 1000
+            interval: delaySec * 1000
             repeat: true
             onTriggered: imageList.currentIndex++
         }
