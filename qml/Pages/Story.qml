@@ -43,6 +43,7 @@ AppPage {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
+            implicitHeight: 200
             flickableDirection: Flickable.VerticalFlick
 
             TextArea.flickable: TextArea {
