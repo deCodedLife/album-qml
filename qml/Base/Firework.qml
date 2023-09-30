@@ -18,9 +18,7 @@ AnimatedImage {
     z: -1
 
     onStatusChanged: (status) => {
-         if ( status === Image.Ready ) {
-             destroyer.start()
-         }
+         if ( status === Image.Ready ) destroyer.start()
     }
 
     Timer {

@@ -20,7 +20,7 @@ AppPage
         running: false
         repeat: true
         onTriggered: {
-            for ( let i = 0; i < 20; i++ ) fireworkImage.createObject( page )
+            for ( let i = 0; i < 5; i++ ) fireworkImage.createObject( page )
         }
     }
 
@@ -30,7 +30,7 @@ AppPage
             return
         }
         isActive = true
-        for ( let i = 0; i < 20; i++ ) fireworkImage.createObject( Settings.root )
+        for ( let i = 0; i < 5; i++ ) fireworkImage.createObject( Settings.root )
         fireworksGenerator.start()
     }
 

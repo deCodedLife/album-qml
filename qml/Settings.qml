@@ -21,6 +21,8 @@ QtObject
     readonly property int h6: 12
     readonly property int h7: 10
 
+    property var fireworkImage: {[]}
+
     property var birthdayDates: [
         {
             "name": "Мирослава",

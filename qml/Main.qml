@@ -14,7 +14,23 @@ AppWindow
     x: Settings.is_mobile ? 0 : Screen.width - 460
     y: Settings.is_mobile ? 0 : (Screen.height / 2) - (height / 2)    
 
+    function getData( url ) : async {
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+
+        request.onreadystatechange = function () {
+            console.log( 'YOOOOO' )
+            if (request.readyState === 4 && request.status === 200) {
+                Settings.fireworkImage = request.responseText
+            }
+        }
+
+        request.send(null);
+    }
+
     onAfterInit: {
+//        getData( [SERVER, QML, "Images/fireworks.gif"].join("/") )
+
         Settings.loadStories()
         let currentDate = new Date().getDate()
 
