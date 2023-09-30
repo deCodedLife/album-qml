@@ -48,7 +48,7 @@ AppPage
             source: [SERVER, QML, "Images/present.png"].join("/") // SERVER
 
             onStatusChanged: (status) => {
-                 if ( status === Image.Ready) {
+                 if ( status === Image.Ready ) {
                      imageShowUP.start()
                      textShouUP.start()
                  }
@@ -58,7 +58,7 @@ AppPage
                 id: imageShowUP
                 running: false
                 to: (Settings.root.height / 2) - (gift.height)
-                duration: 1200
+                duration: 2000
                 easing.type: Easing.InOutQuart
                 onFinished: gift.y = (Settings.root.height / 2) - (gift.height)
             }
