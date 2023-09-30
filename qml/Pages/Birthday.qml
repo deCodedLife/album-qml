@@ -62,11 +62,6 @@ AppPage
                 easing.type: Easing.InOutQuart
                 onFinished: gift.y = (Settings.root.height / 2) - (gift.height)
             }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: produceFireworks()
-            }
         }
 
         Text {
@@ -88,6 +83,12 @@ AppPage
                 onFinished: text.opacity = 1
             }
         }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: produceFireworks()
+        z: 1
     }
 
 
