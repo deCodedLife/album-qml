@@ -7,7 +7,7 @@ import Network
 
 QtObject
 {
-    property ApplicationWindow root: null
+    property var root: null
     property MouseArea appMouse: null
     property bool is_mobile: checkPlatform()
 
@@ -20,6 +20,17 @@ QtObject
     readonly property int h5: 14
     readonly property int h6: 12
     readonly property int h7: 10
+
+    property var birthdayDates: [
+        {
+            "name": "Мирослава",
+            "date": new Date( new Date().getFullYear() + "-09-30 08:00:00" )
+        },
+        {
+            "name": "Гриша",
+            "date": new Date( new Date().getFullYear() + "-08-17 07:00:00" )
+        }
+    ]
 
     property int currentTheme: Material.Dark
     property int currentAccent: Material.Green

@@ -18,6 +18,7 @@ Item
         AppHeader.title = ""
         AppHeader.subtitle = ""
         AppHeader.isVisible = true
+        Settings.currentTheme = Material.Dark
 
         defaultHeight = height
         afterInit()

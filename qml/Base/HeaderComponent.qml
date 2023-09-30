@@ -9,7 +9,9 @@ Rectangle {
     width: parent.width
     height: 64
     color: AppHeader.color
+    enabled: AppHeader.isVisible
     visible: AppHeader.isVisible
+    z: 10
 
     Item {
         id: header
@@ -61,6 +63,7 @@ Rectangle {
                     Layout.fillHeight: true
                     spacing: 0
                     clip: true
+                    enabled: AppHeader.title.length != 0 || AppHeader.subtitle.length != 0
 
                     Text {
                         id: title
@@ -85,6 +88,7 @@ Rectangle {
                 Layout.fillHeight: true
                 clip: true
                 Layout.alignment: Qt.AlignLeft
+                enabled: AppHeader.options.length != 0
 
                 ListView {
                     id: optionsList

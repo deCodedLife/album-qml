@@ -8,7 +8,7 @@ QtObject
     signal reloadFlickable
 
     property Item imageLayout: null
-    property ApplicationWindow root: null
+    property var root: null
 
     property double pageHeight: 0
     property var pageContent: [{}]
@@ -39,7 +39,10 @@ QtObject
 
     function openEffect ( cb ) {
         popupCallback = cb
-        lastMousePos = Qt.point( appMouse.mouseX, appMouse.mouseY )
+        let point = Qt.point( root.width / 2, root.height / 2 )
+        if ( appMouse != null ) point = Qt.point( appMouse.mouseX, appMouse.mouseY )
+
+        lastMousePos = point
         popupRectangle.createObject( root )
     }
 }

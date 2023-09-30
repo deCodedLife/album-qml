@@ -20,6 +20,8 @@ ApplicationWindow
     }
 
     visible: true
+    signal afterInit()
+    flags: Qt.WindowStaysOnTopHint
 
     ColumnLayout {
         anchors.fill: parent
@@ -82,6 +84,8 @@ ApplicationWindow
 
         Settings.root = root
         AppLoader.root = root
+
+        afterInit()
     }
 
     onClosing: {
@@ -94,7 +98,10 @@ ApplicationWindow
     MouseArea {
         id: appMouse
         anchors.fill: parent
-        onPressed: mouse.accepted = false
+        hoverEnabled: false
+        onPressed: (mouse) => {
+            mouse.accepted = false
+        }
         Component.onCompleted: {
             Settings.appMouse = appMouse
             AppLoader.appMouse = appMouse
