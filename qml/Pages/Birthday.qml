@@ -47,7 +47,16 @@ AppPage
             sourceSize: Qt.size( 215, 200 )
             source: [SERVER, QML, "Images/present.png"].join("/") // SERVER
 
+            onStatusChanged: (status) => {
+                 if ( status === Image.Ready) {
+                     imageShowUP.start()
+                     textShouUP.start()
+                 }
+            }
+
             NumberAnimation on y {
+                id: imageShowUP
+                running: false
                 to: (Settings.root.height / 2) - (gift.height)
                 duration: 1200
                 easing.type: Easing.InOutQuart
@@ -72,6 +81,8 @@ AppPage
             opacity: 0
 
             NumberAnimation on opacity {
+                id: textShouUP
+                running: false
                 to: 1
                 duration: 1700
                 onFinished: text.opacity = 1
