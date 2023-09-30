@@ -6,11 +6,9 @@ Timer {
     property Component fireworkImage: Qt.createComponent( "Firework.qml" )
     running: AppLoader.currentPage === "Pages/Birthday.qml"
     interval: Math.random() * 1000
-    repeat: false
+    repeat: true
 
     onTriggered: {
-        if ( AppLoader.currentPage !== "Pages/Birthday.qml" ) return
         fireworkImage.createObject( Settings.root )
-        delete timer
     }
 }

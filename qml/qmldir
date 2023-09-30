@@ -11,4 +11,7 @@ AppPage Base/AppPage.qml
 PageLoader Base/PageLoader.qml
 PopupRectangle Base/PopupRectangle.qml
 
+Firework Base/Firework.qml
+FireworkService Base/FireworkService.qml
+
 

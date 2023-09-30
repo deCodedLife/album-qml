@@ -24,7 +24,7 @@ AppWindow
             let birthday = Settings.birthdayDates[ index ]
             if ( currentDate === birthday[ "date" ].getDate() ) {
                 Settings.currentTheme = Material.Light
-                AppLoader.openEffect( () => AppLoader.loadPage( "Pages/Birthday.qml" ) )
+                AppLoader.loadPage( "Pages/Birthday.qml" )
                 return
             }
 

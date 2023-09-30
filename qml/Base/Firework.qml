@@ -14,10 +14,8 @@ AnimatedImage {
 
     width: 400
     height: 400
-    source: [SERVER, QML, "Images/fireworks.gif"].join("/")
+    source: ""
     z: -1
-    enabled: AppLoader.currentPage === "Pages/Birthday.qml"
-    visible: AppLoader.currentPage === "Pages/Birthday.qml"
 
     Timer {
         id: destroyer
@@ -30,12 +28,13 @@ AnimatedImage {
         }
     }
 
-    Component.onCompleted: {
-        console.log( AppLoader.currentPage )
-        if ( AppLoader.currentPage != "Pages/Birthday.qml" ) {
-            firework.destroy()
-            delete firework
+    Timer {
+        interval: Math.random() * 1000
+        repeat: false
+        running: true
+        onTriggered: {
+            firework.source = [SERVER, QML, "Images/fireworks.gif"].join("/")
+            destroyer.start()
         }
-        destroyer.start()
     }
 }

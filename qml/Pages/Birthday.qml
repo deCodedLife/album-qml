@@ -12,23 +12,24 @@ AppPage
 
     property Component fireworks: Qt.createComponent( "../Base/FireworkService.qml" )
     property Component fireworkImage: Qt.createComponent( "../Base/Firework.qml" )
+    property bool isActive: false
 
     Timer {
         id: fireworksGenerator
-        interval: 2000
+        interval: 1800
         running: false
         repeat: true
         onTriggered: {
-            for ( let i = 0; i < 20; i++ ) fireworks.createObject( Settings.root )
+            for ( let i = 0; i < 20; i++ ) fireworkImage.createObject( page )
         }
     }
 
     function produceFireworks() {
-        if ( fireworksGenerator.running ) {
+        if ( isActive ) {
             AppLoader.openEffect( () => AppLoader.goBack() )
             return
         }
-
+        isActive = true
         for ( let i = 0; i < 20; i++ ) fireworkImage.createObject( Settings.root )
         fireworksGenerator.start()
     }
@@ -63,7 +64,7 @@ AppPage
             id: text
 
             x: page.width / 2 - text.contentWidth / 2
-            y: page.height - text.contentHeight - Settings.minimalMargin
+            y: page.height - text.contentHeight * 2 - Settings.minimalMargin
 
             text: "С днём рождения, зая)"
             font.pixelSize: Settings.h1
