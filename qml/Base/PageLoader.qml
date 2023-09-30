@@ -29,7 +29,7 @@ Item {
             id: loader
             width: body.width
             height: body.height
-            source: [ "http://localhost", QML, AppLoader.currentPage ].join("/")
+            source: [SERVER, QML, AppLoader.currentPage ].join("/")
             onSourceChanged: flickable.contentY = 0
         }
     }

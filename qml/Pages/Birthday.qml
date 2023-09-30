@@ -44,7 +44,7 @@ AppPage
             width: 215
             height: 200
             sourceSize: Qt.size( 215, 200 )
-            source: [ "http://localhost" , QML, "Images/present.png"].join("/") // SERVER
+            source: [SERVER, QML, "Images/present.png"].join("/") // SERVER
 
             NumberAnimation on y {
                 to: (Settings.root.height / 2) - (gift.height)

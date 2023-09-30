@@ -14,7 +14,7 @@ AnimatedImage {
 
     width: 400
     height: 400
-    source: ["http://localhost", QML, "Images/fireworks.gif"].join("/")
+    source: [SERVER, QML, "Images/fireworks.gif"].join("/")
     z: -1
     enabled: AppLoader.currentPage === "Pages/Birthday.qml"
     visible: AppLoader.currentPage === "Pages/Birthday.qml"
