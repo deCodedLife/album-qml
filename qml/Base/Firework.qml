@@ -17,24 +17,23 @@ AnimatedImage {
     source: ""
     z: -1
 
+    onStatusChanged: (status) => {
+         if ( status === Image.Ready ) {
+             destroyer.start()
+         }
+    }
+
     Timer {
         id: destroyer
         interval: 1800
         repeat: false
-        onTriggered: {
-            firework.destroy()
-            firework.source = ""
-            delete firework
-        }
+        onTriggered: firework.destroy()
     }
 
     Timer {
         interval: Math.random() * 1000
         repeat: false
         running: true
-        onTriggered: {
-            firework.source = [SERVER, QML, "Images/fireworks.gif"].join("/")
-            destroyer.start()
-        }
+        onTriggered: firework.source = [SERVER, QML, "Images/fireworks.gif"].join("/")
     }
 }
